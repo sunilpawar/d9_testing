@@ -1,0 +1,47 @@
+#block-adblock-8, #block-adblock-5 {
+  margin-bottom: 20px;
+  width: 320px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 777px) {
+  #block-adblock-8, #block-adblock-5 {
+    width: 728px;
+    height: 90px;
+  }
+}
+
+@media (min-width: 999px) {
+  #block-adblock-8, #block-adblock-5 {
+    vertical-align: top;
+    display: inline-block;
+  }
+}
+
+#block-adblock-7 {
+  margin-bottom: 20px;
+  width: 300px;
+  height: 250px;
+}
+
+.amazon-ad-block {
+  text-align: center;
+}
+
+#block-therapysitesad-2 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 777px) {
+  .behavenet-mobile-ads {
+    display: none;
+  }
+}
+
+#block-adblock-10 {
+  width: 300px;
+  margin: 2rem auto;
+}

@@ -2,6 +2,7 @@ name: Behavenet Ads
 type: module
 description: Provides blocks needed to render Behavenet Ads.
 core: 8.x
+core_version_requirement: ^8 || ^9
 package: Behavenet
 dependencies:
   - hal

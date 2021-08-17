@@ -1,0 +1,17 @@
+{% extends '@behave/content/node.html.twig' %}
+{% set content %}
+  {% for field, renderable in content if field != 'field_related_content' %}
+    {% if field != 'field_related_terms' %}
+      {{ renderable }}
+    {% else %}
+      {{ renderable }}
+      {# Tack related content onto the end of the related terms #}
+      {% if attribute(content.field_related_content, '#items') | length > 0 %}
+        {% for item in attribute(content.field_related_content, '#items') %}
+          {% set item = content.field_related_content[loop.index -1] %}
+          <span{{ item.attributes.addClass('field__item') }}>{{ item }}</span>{% if not loop.last %} | {% endif %}
+        {% endfor %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endset %}

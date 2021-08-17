@@ -1,0 +1,251 @@
+@import 'init';
+@import 'components/inline-links/inline-links';
+@import 'inline-field';
+
+// Styling tweaks specific to the Behavenet site, but not worthy of being put
+// into a component. These are styles that are loaded on every page. Those only
+// loaded in some situations should be turned into components.
+
+//
+// Header
+//
+
+// Branding
+#block-behave-branding {
+  text-align: center;
+
+  @include zen-respond-to(xl) {
+    text-align: left;
+    float: left;
+    margin-right: 20px;
+    width: 180px
+  }
+}
+
+// Search
+#views-exposed-form-behavenet-search-page-1 {
+  #edit-keys {
+    @include zen-respond-to(m) {
+      width: 500px;
+    }
+  }
+  #edit-actions {
+    clear: none;
+    margin-top: 22px;
+  }
+}
+
+.menu--behavenet-main-menu .menu {
+  @extend %inline-links;
+  &__item {
+    @extend %inline-links__item;
+    text-align: center;
+    @include padding(.5);
+    //@include padding-left(.5);
+    //@include padding-right(.5);
+    &:last-child {
+      // Overrides menu styling that removes padding on last-child.
+      @include padding-right(.5);
+    }
+    &:hover, &:focus {
+      background-color: color('menu-bg-hover');
+    }
+  }
+  font-weight: bold;
+  a {
+    text-decoration: none;
+  }
+
+  @include zen-respond-to(m) {
+    margin-left: 200px;
+  }
+}
+
+//
+// Content
+//
+.behavenet_terms__children, .behavenet_terms__breadcrumbs {
+  @include margin-top(1);
+}
+
+.behavenet-highlighted-content,   // Fieldgroup for highlighted fields.
+article.node__movie,              // Movie text.
+article.node__opinion,            // Opinion blog text.
+.field--name-description,         // Description field for Compounds and
+                                  // Directory entries.
+.node__27647 .field--name-body    // People landing page
+{
+  background-color: color('grey-extra-light');
+  @include padding-left(1);
+  @include padding-right(1);
+  @include padding-bottom(1);
+  @include padding-top(1);
+  h3 {
+    // Prevent marin collapse at the top of the box.
+    @include margin-top(0);
+  }
+}
+
+// Opinion blog nodes.
+article.node__opinion {
+  h2 {
+    @include margin-bottom(0);
+  }
+}
+
+// Book nodes
+.field--name-field-book-author-lastname,
+.field--name-field-book-author-firstname {
+  @include inline-field();
+}
+
+// People nodes
+.field--name-field-people-dob,
+.field--name-field-people-dod,
+.field--name-field-first-name,
+.field--name-field-last-name {
+  @include inline-field();
+}
+
+// DSM Criteria display.
+.field--name-field-dsm-criteria .field__item {
+  border-bottom: double;
+}
+
+// Movies landing page.
+.block-views-blockmovies-block-1 .view-header {
+  @include margin-bottom(1);
+}
+
+//
+// Views
+//
+
+// Resources search view.
+#block-views-block-directories-block-1 {
+  .form--inline .form-actions {
+    // Specificity needed to override core settings.
+    display: inline-block;
+    margin-top: 39px;
+  }
+  table {
+    border: 1px solid color('grey');
+  }
+  tbody {
+    background-color: color('grey-extra-light');
+  }
+  td {
+    padding: 10px;
+    &.is-active {
+      background-color: transparent;
+    }
+  }
+  th {
+    padding: 10px;
+    border-bottom: 1px solid color('grey');
+  }
+  tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, .05);
+  }
+}
+
+
+//
+// Sidebars
+//
+
+// Glossary listing
+#block-glossarylisting-2 {
+  ul {
+    list-style: none;
+    padding-left: 0;
+    ul {
+      margin-left: 1em;
+    }
+  }
+  li:not(.js-hasChildren) {
+    padding-left: 1em;
+  }
+}
+
+// Sharing links
+#block-easysocial {
+  .easy_social_box {
+    padding-left: 0;
+  }
+  .fb_iframe_widget span {
+    // Needed to remove inline styling in the template.
+    // @TODO: overwrite the template and do this correctly.
+    vertical-align: top !important;
+  }
+}
+
+// Social media links
+.social-media-links {
+  // Make room for the icon
+  padding-left: 38px;
+  @include padding-bottom(1);
+  .social-media-links-row {
+    height: 40px;
+    line-height: 32px;
+    margin-bottom: 4px;
+  }
+  .social-media-icon {
+    display: block;
+    float: left;
+    width: 32px;
+    height: 32px;
+    background-repeat: no-repeat;
+    background-position: top left;
+    margin-left: -38px
+  }
+  .social-media-icon-gplus {
+    background-image: url(../../../images/gplus-32.png);
+  }
+  .social-media-icon-facebook {
+    background-image: url(../../../images/facebook.png);
+  }
+  .social-media-icon-twitter {
+    background-image: url(../../../images/twitter.png);
+  }
+  .social-media-icon-email {
+    background-image: url(../../../images/email.png);
+  }
+  .social-media-icon-rss {
+    background-image: url(../../../images/rss.png);
+  }
+  .social-media-icon-pinterest {
+    background-image: url(../../../images/pinterest.png);
+  }
+
+  @include zen-respond-to(m) {
+    font-size: 12px;
+    .line-break:before {
+      content: "\a";
+      white-space: pre;
+    }
+    .social-media-links-row {
+      line-height: 16px;
+    }
+  }
+}
+
+// Customizations for the Drugs page.
+body.page-node-27644 {
+  .layout-behavenet__content h2 {
+    margin-top: 0;
+    font-size: 1.25rem;
+  }
+}
+
+.field--label-inline::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.ui-widget-content a {
+  display: block;
+  background: none !important;
+  border: none !important;
+}

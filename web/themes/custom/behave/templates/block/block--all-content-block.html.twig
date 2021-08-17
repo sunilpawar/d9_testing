@@ -1,0 +1,24 @@
+{% extends '@classy/block/block.html.twig' %}
+{% set split_by_type = attribute(content, '#split_by_type') %}
+{% set content %}
+  {{ attach_library('behave/jumpmenu') }}
+  {% if split_by_type %}
+    {% import '@behave/behavenet.twig' as behavenet %}
+    {% for type, options in content.items %}
+      <h2>{{ behavenet.pluralize(type)|capitalize }}</h2>
+      <select class="js-jumpmenu">
+        <option>- Choose -</option>
+        {% for item in options %}
+          <option value="{{ item.url }}">{{ item.text }}</option>
+        {% endfor %}
+      </select>
+    {% endfor %}
+  {% else %}
+    <select class="js-jumpmenu">
+      <option>- Choose -</option>
+      {% for item in content.items %}
+        <option value="{{ item.url }}">{{ item.text }}</option>
+      {% endfor %}
+    </select>
+  {% endif %}
+{% endset %}

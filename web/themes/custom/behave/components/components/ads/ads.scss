@@ -1,0 +1,51 @@
+@import 'init';
+
+// Header/Footer ads (728 x 90)
+#block-adblock-8, #block-adblock-5 {
+  margin-bottom: 20px;
+  width: 320px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include zen-respond-to(m) {
+    width: 728px;
+    height: 90px;
+  }
+
+  @include zen-respond-to(xl) {
+    vertical-align: top;
+    display: inline-block;
+  }
+}
+
+// Second sidebar 300 x 250 ad.
+#block-adblock-7 {
+  margin-bottom: 20px;
+  width: 300px;
+  height: 250px;
+}
+
+// Amazon ad block
+.amazon-ad-block {
+  text-align: center;
+}
+
+// TherapySites ad
+#block-therapysitesad-2 {
+  @include margin-top(1);
+  @include margin-bottom(1);
+}
+
+// Hide mobile ads on wider screens.
+.behavenet-mobile-ads {
+  @include zen-respond-to(m) {
+    display: none;
+  }
+}
+
+// Content Footer ad (300 x 250)
+#block-adblock-10 {
+  width: 300px;
+  margin: 2rem auto;
+}

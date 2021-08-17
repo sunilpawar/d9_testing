@@ -1,0 +1,10 @@
+{% extends '@classy/block/block.html.twig' %}
+{% set content %}
+{{ attach_library('behave/jumpmenu') }}
+<select class="js-jumpmenu">
+  <option>- Choose -</option>
+  {% for item in content.items %}
+    <option value="{{ item.url }}">{{ item.text }}</option>
+  {% endfor %}
+</select>
+{% endset %}

@@ -1,0 +1,75 @@
+// Responsive 3-column grid for Behavenet.com
+//
+// The `.layout-behavenet` layout is a responsive grid layout that is:
+// - 1 column at mobile sizes
+// - 2 columns at tablet sizes
+// - 3 columns at desktop sizes
+//
+// The `.layout-behavenet` class is used on the container div for the layout. A
+// *grid item* in the container can be created using one of the following
+// classes:
+//
+// - `.layout-behavenet__full` : 3-column wide grid item; starts a new row
+// - `.layout-behavenet__left-sidebar` : 160px wide column spanning column 1; starts a new row on all screens
+// - `.layout-behavenet__right-sidebar` : 300px wide column spanning column 3; starts a new row on tablet and mobile screens
+// - `.layout-behavenet__content` : Remaining space in the center column; starts a new row on mobile screens.
+//
+// Markup: layout-behavenet.twig
+//
+// Style guide: layouts.layout-behavenet
+
+.layout-behavenet,
+%layout-behavenet {
+  // We set the context to flow, so that this container can be used in most
+  // places in the HTML, i.e. it must be nested inside something that has
+  // padding.
+  @include zen-grid-container($context: flow);
+
+  // Smallest screens get the default styling.
+  &__full,
+  &__left-sidebar,
+  &__right-sidebar,
+  &__content {
+    clear: both;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @include zen-respond-to(m) {
+    display: flex;
+    flex-flow: row wrap;
+
+    // "m" size uses a two column layout with one fixed width left sidebar.
+    &__left-sidebar {
+      width: 200px;
+      flex: 0 0 200px;
+      order: 1;
+    }
+    &__content {
+      width: calc(100% - 200px);
+      order: 2;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    &__right-sidebar {
+      width: 100%;
+      text-align: center;
+      order: 3;
+    }
+  }
+
+  @include zen-respond-to(xl) {
+    // "xl" is a three column layout.
+    &__right-sidebar {
+      text-align: left;
+      width: 340px;
+      flex: 0 0 340px;
+      order: 3;
+    }
+    &__content {
+      width: calc(100% - 200px - 340px);
+      order: 2;
+    }
+  }
+}

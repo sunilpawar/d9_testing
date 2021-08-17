@@ -1,0 +1,11 @@
+{#{% extends '@behave/field/amazon-inline.html.twig' %}#}
+{% if title is empty %}
+  {% set title %}
+    {% if item.OfferSummary.LowestNewPrice.FormattedPrice is not empty %}
+      Buy from Amazon for {{ item.OfferSummary.LowestNewPrice.FormattedPrice }}
+    {% else %}
+      Buy from Amazon
+    {% endif %}
+  {% endset %}
+{% endif %}
+{% if pre_title is not empty %}{{ pre_title }}{% endif %}<a {{ attributes }} href="{{ url }}">{{ title }}</a>

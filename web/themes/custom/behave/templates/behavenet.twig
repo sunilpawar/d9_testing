@@ -1,0 +1,62 @@
+{# Macros for use in the Behavenet site. #}
+
+{# Given a content type, prints a properly capitolized string. #}
+{# @todo: need to provide output if the content type does not match an existing option. #}
+{% macro pluralize(content_type) %}{% spaceless %}
+  {% set content_type = content_type|trim|lower %}
+  {% if content_type in ['compound', 'credit', 'device', 'combination', 'indication', 'movie', 'preparation', 'source'] %}
+    {{ content_type }}s
+  {% endif %}
+  {% if content_type in ['people', 'actions'] %}
+    {{ content_type }}
+  {% endif %}
+  {% if content_type in ['chemical_classes', 'clinical_classes', 'effect_classes', 'isomers'] %}
+    {{ content_type | replace('_', ' ') }}
+  {% endif %}
+  {% if content_type == 'generic_drugs' %}
+    molecular entities
+  {% endif %}
+  {% if content_type == 'drugs' %}
+    trade name drugs
+  {% endif %}
+  {% if content_type == 'company' %}
+    companies
+  {% endif %}
+  {% if content_type == 'directory' %}
+    resources
+  {% endif %}
+  {% if content_type == 'field_acronyms' %}
+    acronyms
+  {% endif %}
+  {% if content_type == 'book' %}
+    books, etc.
+  {% endif %}
+{% endspaceless %}{% endmacro %}
+
+{#
+  Given an array of items such as: [
+    url => destination_url,
+    text => display_text,
+  ], this macro will display lists <= 10 items as unordered lists and longer
+  lists as jumpmenus.
+
+  @TODO: generalize to use with core-generated lists.
+#}
+{% macro displayList(items, forceJump) %}
+  {% set forceJump = forceJump | default(FALSE) %}
+  {% if not forceJump and items | length <= 10 %}
+    <ul>
+      {% for item in items %}
+        <li><a href="{{ item.url }}">{{ item.text }}</a></li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    {{ attach_library('behave/jumpmenu') }}
+    <select class="js-jumpmenu">
+      <option selected>- Choose -</option>
+      {% for item in items %}
+        <option value="{{ item.url }}">{{ item.text }}</option>
+      {% endfor %}
+    </select>
+  {% endif %}
+{% endmacro %}

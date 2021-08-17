@@ -1,0 +1,34 @@
+{#
+/**
+ * @file
+ * Theme override for the related content by term view.
+ *
+ * @see behave_preprocess_views_view__related_content_by_term()
+ */
+#}
+{% import 'themes/custom/behave/templates/behavenet.twig' as behavenet %}
+{% for group in rows %}
+  {# Customize the title for Resources on the Drugs page. #}
+  {% if attribute(group, '#title_plain') == 'directory' and display_id == 'oveo_block_1' %}
+    <h2>Drug Resources</h2>
+  {%  else %}
+    <h2>{{ behavenet.pluralize(attribute(group, '#title_plain')) | capitalize }}</h2>
+  {% endif %}
+  {% set items = attribute(group, '#rows') %}
+  {% if items | length <= 10 %}
+    <ul>
+      {% for item in items %}
+        <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    {{ attach_library('behave/jumpmenu') }}
+    <select class="js-jumpmenu">
+      <option selected>- Choose -</option>
+      {% for item in items %}
+        {% set result = attribute(item, '#row') %}
+        <option value="{{ result._entity.url }}">{{ result.node_field_data_title }}</option>
+      {% endfor %}
+    </select>
+  {% endif %}
+{% endfor %}

@@ -1,0 +1,22 @@
+{% extends 'node.html.twig' %}
+{% set dates %}
+  {% if unknown_dob %}
+    ? -
+  {% else %}
+    {{ content.field_people_dob }} -
+  {% endif %}
+  {% if unknown_dod %}
+    ?
+  {% else %}
+    {{ content.field_people_dod }}
+  {% endif %}
+{% endset %}
+{% set content %}
+  {% for field in element_children(elements) if field != 'field_people_dod' %}
+    {% if field == 'field_people_dob' %}
+      {{ dates }}
+    {% else %}
+      {{ attribute(content, field) }}
+    {% endif %}
+  {% endfor %}
+{% endset %}

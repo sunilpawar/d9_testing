@@ -1,0 +1,23 @@
+//
+// Mixin: inline-field
+//
+// Allows fields to be displayed inline rather than in blocks.
+//
+@mixin inline-field() {
+  display: inline;
+  & .field__items, & .field__item {
+    display: inline;
+    padding-right: 0;    /* LTR */
+  }
+  & .field__label:not(.visually-hidden) {
+    display: inline;
+    float: none;
+    padding-right: 0;    /* LTR */
+  }
+  &.field--label-inline:after {
+    content: none;
+    clear: none;
+    display: inline;
+  }
+}
+

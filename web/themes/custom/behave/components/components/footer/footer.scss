@@ -1,0 +1,14 @@
+@import 'init';
+
+// Branding footer
+//
+// Markup: footer.twig
+//
+// Style guide: components.footer
+
+.footer,
+%footer {
+  @include type-layout(s, 1);
+  @include padding(1 0, s);
+  text-align: center;
+}

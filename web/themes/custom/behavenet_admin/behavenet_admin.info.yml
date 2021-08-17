@@ -1,0 +1,7 @@
+name: Behavenet Admin
+type: theme
+description: Behavenet admin theme
+package: Behavenet
+core_version_requirement: ^8 || ^9
+base theme: seven
+

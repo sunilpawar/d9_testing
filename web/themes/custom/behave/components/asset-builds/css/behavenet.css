@@ -1,0 +1,362 @@
+/* Register form popup styling */
+/* #block-userregistrationform {
+  display: none;
+} */
+.spb_center {
+  max-height: 600px;
+  overflow-y: auto;
+  margin-top: 0;
+  transform: translateY(-50%);
+}
+.spb_center, .spb_center .form-item__description, .spb_center .form-item .description {
+  font-size: 12px !important;
+}
+.spb-popup-main-wrapper {
+  padding: .5rem 2rem 1.5rem;
+  /* width: auto !important; */
+}
+@media (min-width: 600px) {
+  .spb-popup-main-wrapper {
+    width: 480px !important;
+  }
+}
+.spb_center .register-name {
+  border: none;
+  padding: 0;
+}
+.spb_center .register-name legend {
+  font-weight: bold;
+}
+.spb_center .register-name label {
+  display: none;
+}
+.spb_center .register-name label {
+  display: none;
+}
+.spb_center .register-name .form-item {
+  margin: 1rem 0;
+}
+
+.inline-links,
+.inline.links,
+.menu--behavenet-main-menu .menu {
+  padding: 0;
+}
+
+.inline-links__item,
+.inline.links li,
+.menu--behavenet-main-menu .menu__item {
+  display: inline;
+  list-style-type: none;
+  padding: 0 1em 0 0;
+}
+
+.inline-links__item:last-child,
+.inline.links li:last-child,
+.menu--behavenet-main-menu .menu__item:last-child {
+  padding-right: 0;
+}
+
+[dir="rtl"] .inline-links__item,
+[dir="rtl"] .inline.links li,
+.inline.links [dir="rtl"] li,
+[dir="rtl"] .menu--behavenet-main-menu .menu__item,
+.menu--behavenet-main-menu [dir="rtl"] .menu__item {
+  display: inline-block;
+  padding: 0 0 0 1em;
+}
+
+[dir="rtl"] .inline-links__item:last-child,
+[dir="rtl"] .inline.links li:last-child,
+.inline.links [dir="rtl"] li:last-child,
+[dir="rtl"] .menu--behavenet-main-menu .menu__item:last-child,
+.menu--behavenet-main-menu [dir="rtl"] .menu__item:last-child {
+  padding-left: 0;
+}
+
+#block-behave-branding {
+  text-align: center;
+}
+
+@media (min-width: 999px) {
+  #block-behave-branding {
+    text-align: left;
+    float: left;
+    margin-right: 20px;
+    width: 180px;
+  }
+}
+
+@media (min-width: 777px) {
+  #views-exposed-form-behavenet-search-page-1 #edit-keys, #views-exposed-form-behavenet-search-page-1 #edit-keys--2 {
+    width: 500px;
+  }
+}
+
+#views-exposed-form-behavenet-search-page-1 #edit-actions, #views-exposed-form-behavenet-search-page-1 #edit-actions--2 {
+  clear: none;
+  margin-top: 22px;
+}
+
+.menu--behavenet-main-menu .menu {
+  font-weight: bold;
+}
+
+.menu--behavenet-main-menu .menu__item {
+  text-align: center;
+  padding: 0.75rem;
+}
+
+.menu--behavenet-main-menu .menu__item:last-child {
+  padding-right: 0.75rem;
+}
+
+.menu--behavenet-main-menu .menu__item:hover, .menu--behavenet-main-menu .menu__item:focus {
+  background-color: #eaf3f8;
+}
+
+.menu--behavenet-main-menu .menu a {
+  text-decoration: none;
+}
+
+@media (min-width: 777px) {
+  .menu--behavenet-main-menu .menu {
+    margin-left: 200px;
+  }
+}
+
+.behavenet_terms__children, .behavenet_terms__breadcrumbs {
+  margin-top: 1.5rem;
+}
+
+.behavenet-highlighted-content,
+article.node__movie,
+article.node__opinion,
+.field--name-description,
+.node__27647 .field--name-body {
+  background-color: #eeeeee;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+}
+
+.behavenet-highlighted-content h3,
+article.node__movie h3,
+article.node__opinion h3,
+.field--name-description h3,
+.node__27647 .field--name-body h3 {
+  margin-top: 0;
+}
+
+article.node__opinion h2 {
+  margin-bottom: 0;
+}
+
+.field--name-field-book-author-lastname,
+.field--name-field-book-author-firstname {
+  display: inline;
+}
+
+.field--name-field-book-author-lastname .field__items, .field--name-field-book-author-lastname .field__item,
+.field--name-field-book-author-firstname .field__items,
+.field--name-field-book-author-firstname .field__item {
+  display: inline;
+  padding-right: 0;
+  /* LTR */
+}
+
+.field--name-field-book-author-lastname .field__label:not(.visually-hidden),
+.field--name-field-book-author-firstname .field__label:not(.visually-hidden) {
+  display: inline;
+  float: none;
+  padding-right: 0;
+  /* LTR */
+}
+
+.field--name-field-book-author-lastname.field--label-inline:after,
+.field--name-field-book-author-firstname.field--label-inline:after {
+  content: none;
+  clear: none;
+  display: inline;
+}
+
+.field--name-field-people-dob,
+.field--name-field-people-dod,
+.field--name-field-first-name,
+.field--name-field-last-name {
+  display: inline;
+}
+
+.field--name-field-people-dob .field__items, .field--name-field-people-dob .field__item,
+.field--name-field-people-dod .field__items,
+.field--name-field-people-dod .field__item,
+.field--name-field-first-name .field__items,
+.field--name-field-first-name .field__item,
+.field--name-field-last-name .field__items,
+.field--name-field-last-name .field__item {
+  display: inline;
+  padding-right: 0;
+  /* LTR */
+}
+
+.field--name-field-people-dob .field__label:not(.visually-hidden),
+.field--name-field-people-dod .field__label:not(.visually-hidden),
+.field--name-field-first-name .field__label:not(.visually-hidden),
+.field--name-field-last-name .field__label:not(.visually-hidden) {
+  display: inline;
+  float: none;
+  padding-right: 0;
+  /* LTR */
+}
+
+.field--name-field-people-dob.field--label-inline:after,
+.field--name-field-people-dod.field--label-inline:after,
+.field--name-field-first-name.field--label-inline:after,
+.field--name-field-last-name.field--label-inline:after {
+  content: none;
+  clear: none;
+  display: inline;
+}
+
+.field--name-field-dsm-criteria .field__item {
+  border-bottom: double;
+}
+
+.block-views-blockmovies-block-1 .view-header {
+  margin-bottom: 1.5rem;
+}
+
+#block-views-block-directories-block-1 .form--inline .form-actions {
+  display: inline-block;
+  margin-top: 39px;
+}
+
+#block-views-block-directories-block-1 table {
+  border: 1px solid #999999;
+}
+
+#block-views-block-directories-block-1 tbody {
+  background-color: #eeeeee;
+}
+
+#block-views-block-directories-block-1 td {
+  padding: 10px;
+}
+
+#block-views-block-directories-block-1 td.is-active {
+  background-color: transparent;
+}
+
+#block-views-block-directories-block-1 th {
+  padding: 10px;
+  border-bottom: 1px solid #999999;
+}
+
+#block-views-block-directories-block-1 tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+#block-glossarylisting-2 ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#block-glossarylisting-2 ul ul {
+  margin-left: 1em;
+}
+
+#block-glossarylisting-2 li:not(.js-hasChildren) {
+  padding-left: 1em;
+}
+
+#block-easysocial .easy_social_box {
+  padding-left: 0;
+}
+
+#block-easysocial .fb_iframe_widget span {
+  vertical-align: top !important;
+}
+
+.social-media-links {
+  padding-left: 38px;
+  padding-bottom: 1.5rem;
+}
+
+.social-media-links .social-media-links-row {
+  height: 40px;
+  line-height: 32px;
+  margin-bottom: 4px;
+}
+
+.social-media-links .social-media-icon {
+  display: block;
+  float: left;
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
+  background-position: top left;
+  margin-left: -38px;
+}
+
+.social-media-links .social-media-icon-gplus {
+  background-image: url(../../../images/gplus-32.png);
+}
+
+.social-media-links .social-media-icon-facebook {
+  background-image: url(../../../images/facebook.png);
+}
+
+.social-media-links .social-media-icon-twitter {
+  background-image: url(../../../images/twitter.png);
+}
+
+.social-media-links .social-media-icon-email {
+  background-image: url(../../../images/email.png);
+}
+
+.social-media-links .social-media-icon-rss {
+  background-image: url(../../../images/rss.png);
+}
+
+.social-media-links .social-media-icon-pinterest {
+  background-image: url(../../../images/pinterest.png);
+}
+
+@media (min-width: 777px) {
+  .social-media-links {
+    font-size: 12px;
+  }
+  .social-media-links .line-break:before {
+    content: "\a";
+    white-space: pre;
+  }
+  .social-media-links .social-media-links-row {
+    line-height: 16px;
+  }
+}
+
+body.page-node-27644 .layout-behavenet__content h2 {
+  margin-top: 0;
+  font-size: 1.25rem;
+}
+
+.field--label-inline::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.ui-widget-content a {
+  display: block;
+  background: none !important;
+  border: none !important;
+}
+
+/* Modal popup */
+.form-item-field-log-in-value input, .form-item-field-log-in-value label {
+  display: none;
+}
+.form-item-field-log-in-value .description {
+    margin: 0;
+}

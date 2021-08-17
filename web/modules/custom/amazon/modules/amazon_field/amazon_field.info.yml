@@ -2,6 +2,7 @@ name: Amazon Field
 type: module
 description: Provides a field to enter Amazon ASIN's.
 core: 8.x
+core_version_requirement: ^8 || ^9
 package: Amazon
 dependencies:
   - amazon

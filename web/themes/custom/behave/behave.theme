@@ -1,0 +1,671 @@
+<?php
+/**
+ * @file
+ * Contains the theme's functions to manipulate Drupal's default markup.
+ *
+ * Complete documentation for this file is available online.
+ * @see https://drupal.org/node/1728096/
+ */
+
+use Drupal\block_content\Entity\BlockContent;
+use Drupal\Core\Render\Element;
+use Drupal\Core\Url;
+use Drupal\node\Entity\Node;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\taxonomy\Entity\Vocabulary;
+use Drupal\taxonomy\TermInterface;
+
+/**
+ * Implements HOOK_theme_suggestions_field_alter.
+ */
+function behave_theme_suggestions_field_alter(array &$suggestions, array $variables) {
+  // Allow view mode and field specific preprocess functions to keep the code as
+  // compartmentalized as possible.
+  $element = $variables['element'];
+  $suggestions[] = 'field__' . $element['#view_mode'];
+  $suggestions[] = 'field__' . $element['#view_mode'] . '__' . $element['#field_name'];
+}
+
+/**
+ * Implements hook_theme_registry_alter().
+ * Leaving here in case it's needed again.
+function behave_theme_registry_alter(&$theme_registry) {
+  //if (isset($theme_registry['field__field_related_content'])) {
+  //  // Uses this modules field template override.
+  //  $theme_registry['field__field_related_content']['template'] = 'field--field-related-content';
+  //  $theme_registry['field__field_related_content']['path'] = drupal_get_path('theme', 'behave') . '/templates/field';
+  //}
+  //
+  //// Use our template for displaying Behavenet Terms.
+  //$theme_registry['taxonomy_term__behavenet_terms'] = $theme_registry['taxonomy_term'];
+  //$theme_registry['taxonomy_term__behavenet_terms']['template'] = 'taxonomy-term--behavenet-terms';
+  //$theme_registry['taxonomy_term__behavenet_terms']['path'] = drupal_get_path('theme', 'behave') . '/templates/field';
+
+  //$theme_registry['views__related_content_by_term'] = $theme_registry['views_view'];
+  //$theme_registry['views__related_content_by_term']['template'] = 'views--related-content-by-term';
+  //$theme_registry['views__related_content_by_term']['path'] = drupal_get_path('theme', 'behave') . '/templates/views';
+}
+ */
+
+function behave_theme_suggestions_views_view_alter(array &$suggestions, array $variables) {
+  if (!empty($variables['view'])) {
+  //  $view_id = $variables['view']->id();
+  //  $display_id = $variables['view']->current_display;
+  //  $suggestions[] = "views_view__$view_id";
+  //  $suggestions[] = "views_view__$display_id";
+  //  $suggestions[] = "views_view__$view_id" . "__$display_id";
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function behave_theme_suggestions_taxonomy_term_alter(&$suggestions, $variables) {
+  $elements = $variables['elements'];
+
+  if (isset($elements['#taxonomy_term']) && isset($elements['#theme']) && isset($elements['#view_mode'])) {
+    $term = $elements['#taxonomy_term'];
+
+    if ($term instanceof TermInterface) {
+      $suggestions[] = $elements['#theme'] . '__' . $term->bundle() . '__' . $elements['#view_mode'];
+      $suggestions[] = $elements['#theme'] . '__' . $term->id() . '__' . $elements['#view_mode'];
+    }
+  }
+}
+
+/*******************************************************************************
+ * Views preprocess functions.
+ ******************************************************************************/
+/**
+ * Implements hook_preprocess_views_view__VIEW_NAME().
+ */
+function behave_preprocess_views_view__related_content_by_term(&$variables) {
+  // Add plaintext version of the group titles for use in the pluralize Twig
+  // macro.
+  foreach($variables['rows'] as &$group) {
+    $group['#title_plain'] = strtolower(trim(strip_tags($group['#title'])));
+  }
+}
+
+/*******************************************************************************
+ * Template preprocess functions.
+ ******************************************************************************/
+function behave_preprocess_html(&$variables) {
+  if ($node = \Drupal::request()->attributes->get('node')) {
+    $variables['attributes']['class'][] = 'page-node-' . $node->id();
+  }
+}
+
+function behave_preprocess_menu__behavenet_main_menu(&$variables) {
+  foreach ($variables['items'] as $index => $item) {
+    $variables['items'][$index]['attributes']->addClass('menu__item');
+  }
+}
+
+function behave_preprocess_node(&$variables) {
+  // Add the node type and nid to the list of classes on the <article> tag.
+  if (!empty($variables['elements']['#node'])) {
+    if (empty($variables['attributes']['class'])) {
+      $variables['attributes']['class'] = [];
+    }
+    $variables['attributes']['class'][] = 'node__' . $variables['elements']['#node']->bundle();
+    $variables['attributes']['class'][] = 'node__' . $variables['elements']['#node']->id();
+  }
+}
+
+function behave_preprocess_node__people(&$variables) {
+  /** @var Node $node */
+  $node = $variables['node'];
+  // Let the tempplate know about unknown dates.
+  $variables['unknown_dod'] = FALSE;
+  $variables['unknown_dob'] = FALSE;
+  if (empty($node->field_people_dod->getValue())) {
+    $variables['unknown_dod'] = TRUE;
+  }
+  if (empty($node->field_people_dob->getValue())) {
+    $variables['unknown_dob'] = TRUE;
+  }
+}
+
+function behave_preprocess_node__indication(&$variables) {
+  //dsm($variables);
+  $description = $variables['node']->get('field_indication_description')->getValue();
+  if (!empty($description)) {
+    $variables['description'] = [
+      '#markup' => $description[0]['value'],
+    ];
+  }
+}
+
+function behave_preprocess_breadcrumb(&$variables) {
+  // Don't show "Home" as a breadcrumb option
+  $links = $breadcrumbs = [];
+  if (!empty($variables['element']['content']['#links'])) {
+    $links = $variables['element']['content']['#links'];
+    $breadcrumbs = &$variables['element']['content']['#links'];
+  }
+  else if (!empty($variables['links']) && !empty($variables['breadcrumb'])) {
+    $links = $variables['links'];
+    $breadcrumbs = &$variables['breadcrumb'];
+  }
+
+  foreach ($links as $index => $link) {
+    if ($link->getUrl()->getRouteName() == '<front>' || $link->getUrl()->getRouteName() == 'view.frontpage.page_1') {
+      unset ($breadcrumbs[$index]);
+    }
+  }
+}
+
+/**
+ * Prepares variables for taxonomy-term--behavenet-terms.html.twig
+ */
+function behave_preprocess_taxonomy_term(&$variables) {
+  /** @var Drupal\taxonomy\Entity\Term $term */
+  $term = $variables['elements']['#taxonomy_term'];
+  if (empty($term)) {
+    throw new Exception('Missing taxonomy term in preprocess taxonomy term function.');
+  }
+
+  // Generate our own breadcrumbs for Behavenet Terms.
+  $ancestryData = behave_get_ancestory($term);
+  $ancestry = [];
+  foreach ($ancestryData as $ancestor) {
+    // For breadcrumbs we want to order from farthest to closest relative.
+    $ancestor = array_reverse($ancestor);
+    $row = [];
+    foreach ($ancestor as $text => $tid) {
+      $row[] = [
+        'text' => $text,
+        'url' => Url::fromRoute('entity.taxonomy_term.canonical', ['taxonomy_term' => $tid]),
+      ];
+    }
+    $ancestry[] = $row;
+  }
+  $variables['breadcrumbs'] = $ancestry;
+
+  // Collect child terms for display.
+  $children = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadChildren($term->id());
+
+  
+  $variables['children'] = [];
+  foreach ($children as $child) {
+    $label = $child->getName() ;
+    $term_id_obtained = $term->id();
+    $sort_string = strtolower($label . $term_id_obtained);
+    $variables['children'][$sort_string] =  [
+      'text' => $child->getName(),
+      'url' => $child->url(),
+    ];
+   
+    
+  }
+   ksort($variables['children']);
+  /* usort($variables['children'], function($a, $b) {
+    return $a['text'] <=> $b['text'];
+  });*/
+
+  
+
+  // Check if this term is a list or not -- changes wording in the display.
+  $variables['isList'] = FALSE;
+  if ($term->hasField('field_is_list')) {
+    $isList = $term->field_is_list->getValue();
+    $variables['isList'] = isset($isList[0]) ? (bool)$isList[0]['value'] : FALSE;
+  }
+
+  // Check if this term is in a list and pass which one(s) to the template.
+  // Members of a list are the related terms when the main term's field_is_list
+  // is TRUE.
+  $variables['memberOf'] = [];
+  $listsIds = \Drupal::entityQuery('taxonomy_term')
+    ->condition('field_is_list', 1)
+    ->condition('field_related_terms', $term->id())
+    ->execute();
+  if ($listsIds) {
+    $termStorage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+    $lists = $termStorage->loadMultiple($listsIds);
+    /** @var Drupal\taxonomy\Entity\Term $list */
+    foreach ($lists as $tid => $list) {
+      $variables['memberOf'][$tid] = [
+        'text' => $list->getName(),
+        'url' => $list->url(),
+      ];
+    }
+  }
+
+  // Check if there is a DSM Criteria that links to this term.
+  $variables['dsm_criteria_ids'] = \Drupal::entityQuery('node')
+    ->condition('status', 1)
+    ->condition('type', 'dsm')
+    ->condition('field_related_terms.entity.tid', $term->id())
+    ->execute();
+
+  // Some terms have additional lists added to their display.
+  $special = [
+    '10665' => 'taxonomy_term:actions',
+    '10677' => 'taxonomy_term:chemical_classes',
+    '10663' => 'taxonomy_term:clinical_classes',
+    '11106' => 'taxonomy_term:effect_classes',
+    '8152' => 'taxonomy_term:isomers',
+    '11872' => 'node:compound',
+    '10599' => 'node:preparation',
+    '8125' => 'node:combination',
+    '11873' => 'node:source',
+    '16793' => 'node:company',
+  ];
+  if (isset($special[$term->id()])) {
+    list($type, $machine_name) = explode(':', $special[$term->id()]);
+    $query = \Drupal::entityQuery($type);
+    $entities = [];
+    if ($type == 'node') {
+      $nids = $query->condition('status', 1)
+        ->condition('type', $machine_name)
+        ->sort('title')
+        ->execute();
+      $entities = Node::loadMultiple($nids);
+    }
+    else if ($type == 'taxonomy_term') {
+      $tids = $query->condition('vid', $machine_name)
+        ->sort('name')
+        ->execute();
+      $entities = Term::loadMultiple($tids);
+    }
+
+    $special_items = [];
+    foreach ($entities as $entity) {
+      $special_items[] = [
+        'url' => Url::fromRoute("entity.$type.canonical", [$type => $entity->id()]),
+        'text' => $entity->label(),
+      ];
+    }
+    $variables['special_items'] = $special_items;
+    $variables['special_items_header'] = $machine_name;
+  }
+
+  // Phobias and Mania blocks added to some terms. These are left as blocks so
+  // we can start with default content and let site admins edit that content
+  // without risking overwriting it later
+  $special_blocks = [
+    11235 => [
+      [
+        'bid' => 23,
+        'title' => 'Feared Objects & Situations',
+      ],
+    ],
+    14515 => [
+      [
+        'bid' => 24,
+        'title' => 'Manias by Madness',
+      ],
+      [
+        'bid' => 25,
+        'title' => 'Manias by Object',
+      ],
+    ],
+  ];
+  if (isset($special_blocks[$term->id()])) {
+    foreach ($special_blocks[$term->id()] as $info) {
+      $block = BlockContent::load($info['bid']);
+      $render['title'] = $info['title'];
+      $render['content'] = \Drupal::entityTypeManager()
+        ->getViewBuilder('block_content')
+        ->view($block);
+      $variables['special_blocks'][] = $render;
+    }
+  }
+}
+
+
+/*******************************************************************************
+ * Field preprocess functions.
+ ******************************************************************************/
+/**
+ * Implements hook_preprocess_field__FIELD_NAME().
+ *
+ * Sorts indications by approval date.
+ */
+function behave_preprocess_field__field_indication(&$variables) {
+  // Sort indications by approval date, put those without an approval date at
+  // the end of the list.
+  $sorted = [];
+  $no_date = [];
+  foreach (Element::children($variables['element']) as $child) {
+    if (isset($variables['element'][$child]['#node'])) {
+      $date = $variables['element'][$child]['#node']->get('field_indication_approval')->getValue();
+    }
+    else if (isset($variables['element'][$child]['#options']['entity'])) {
+      $date = $variables['element'][$child]['#options']['entity']->get('field_indication_approval')->getValue();
+    }
+    else {
+      continue;
+    }
+
+    $date = strtotime($date[0]['value']);
+    if ($date <= 0) {
+      $no_date[] = $child;
+    }
+    else {
+      // Avoid overwriting different indications with the same approval date.
+      while (isset($sorted[$date])) {
+        $date++;
+      }
+      $sorted[$date] = $child;
+    }
+  }
+  krsort($sorted);
+
+  // Put those without approval dates at the end of the list.
+  if (!empty($no_date)) {
+    $sorted = array_merge($sorted, $no_date);
+  }
+  $variables['sorted_children'] = array_values($sorted);
+}
+
+/**
+ * Implements hook_preprocess_field__FIELD_NAME().
+ *
+ * Converts Twitter hashtags or users into links.
+ */
+function behave_preprocess_field__field_movie_twitter(array &$variables) {
+  if ($variables['element']['#field_name'] == 'field_movie_twitter') {
+    // Convert the hashtag or username entered into a link to Twitter.
+    $value = $variables['element'][0]['#context']['value'];
+    if (empty($value)) {
+      return;
+    }
+    // @hashtag goes to Twitter, #hashtag goes to TweetChat, plain string goes
+    // to Twitter.
+    $twitterUrl = '';
+    if (strpos($value, '#') === 0) {
+      $twitterUrl = Url::fromUri('http://www.tchat.io/rooms/' . substr($value, 1));
+    }
+    else {
+      if (strpos($value, '@') === 0) {
+        $twitterUrl = Url::fromUri('https://twitter.com/' . substr($value, 1));
+      }
+      else {
+        $twitterUrl = Url::fromUri('https://twitter.com/' . $value);
+      }
+    }
+    $variables['items'][0]['content'] = [
+      '#title' => $value,
+      '#type' => 'link',
+      '#url' => $twitterUrl,
+    ];
+  }
+}
+
+/**
+ * Implements hook_preprocess_field__FIELD_NAME().
+ */
+function behave_preprocess_field__node__field_related_terms__movie(array &$variables) {
+//function behave_preprocess_field(array &$variables) {
+//  dsm($variables);
+}
+
+/**
+ * Implements hook_preprocess_field__FIELD_NAME().
+ *
+ * Groups related content by the type of the related content.
+ */
+function behave_preprocess_field__field_related_content(array &$variables) {
+  $element = $variables['element'];
+
+  // An array in the form of
+  //  'movie' => [array, of, movie, keys],
+  //  'book' => [array, of, book, keys],
+  //  ...
+  $related_types = [];
+  foreach(Element::children($element) as $key) {
+    if (isset($element[$key]['#node'])) {
+      $bundle = $element[$key]['#node']->bundle();
+    }
+    elseif (isset($element[$key]['#options']['entity'])) {
+      $bundle = $element[$key]['#options']['entity']->bundle();
+    }
+    else {
+      $bundle = '';
+    }
+    if (!isset($related_types[$bundle])) {
+      $related_types[$bundle] = [];
+    }
+    $related_types[$bundle][] = $key;
+  }
+  $variables['related_types'] = $related_types;
+}
+
+function behave_preprocess_field__node__created(&$variables) {
+  /** @var \Drupal\node\Entity\Node $node */
+  $node = $variables['element']['#object'];
+  $created = $node->get('created')->getValue();
+  $created = $created[0]['value'];
+  $variables['items'][0]['content']['#markup'] = date('m/d/Y', $created);
+}
+
+/**
+ * Implements hook_preprocess_field__FIELD_NAME().
+ *
+ * Makes a bundle variable available to the title field template.
+ */
+function behave_preprocess_field__node__title(&$variables) {
+  if (isset($variables['element']['#bundle'])) {
+    $variables['bundle'] = $variables['element']['#bundle'];
+  }
+}
+
+
+/*******************************************************************************
+ * Misc helper functions.
+ ******************************************************************************/
+
+/**
+ * Returns an array of ancestry paths from the given term to root terms. Each
+ * row is an array in the form of term->name => term->tid ordered from closest
+ * to farthest relative
+ *
+ * @param Term $root_term
+ *   Term to find the ancestory for.
+ *
+ * @return array
+ */
+function behave_get_ancestory($root_term) {
+  if (empty($root_term)) {
+    return [];
+  }
+
+  /*
+   * Build an array with one unique breadcrumb per entry.  Start with the
+   * immediate parents and work back until we hit root terms.  At each
+   * iteration:
+   *
+   *   - Get the parents of the current term.
+   *     - If there is only one parent, add to the $hierarchy array row
+   *     - If there is more than one parent
+   *       - Duplicate the current $hierarchy row for each additional parent
+   *       - Add each parent starting from the current row
+   *   - In the end we have an array, each row is an array representing the
+   *     ancestry in the form of term->name => term->tid (order from closest to
+   *     farthest ancestor)
+   *   - For a few vocabularies, add the name of the vocab as the top level
+   *     parent.
+   */
+  $hierarchy = array();
+
+  // Get the immediate parents of the given term
+  $parents = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadParents($root_term->id());
+  foreach ($parents as $parent) {
+    $hierarchy[] = array($parent->getName() => $parent->id());
+  }
+
+  // Work backwards from these parents until we reach a root term
+  for ($n = 0; !empty($hierarchy[$n]); $n++) {
+    while ($next_gen = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadParents(end($hierarchy[$n]))) {
+      if (count($next_gen) > 1) {
+        // Multiple parents, need to duplicate the current row
+        array_splice($hierarchy, $n + 1, 0, array_fill(0, count($next_gen) -1, $hierarchy[$n]));
+      }
+
+      // Prepend parent(s)
+      $i = 0;
+      foreach ($next_gen as $tid => $term) {
+        $hierarchy[$n + $i][$term->getName()] = $tid;
+        $i++;
+      }
+    }
+  }
+
+  // Now add vocab name for select vocabularies
+  // Term lookup for each vocab.
+  $lookup = [
+    'actions' => 10665,
+    'chemical_classes' => 10677,
+    'clinical_classes' => 10663,
+    'effect_classes' => 11106,
+    'isomers' => 8152,
+  ];
+  if (isset($lookup[$root_term->bundle()])) {
+    $vocab = Vocabulary::load($root_term->bundle());
+    if (empty($hierarchy)) {
+      $hierarchy[] = [
+        $vocab->get('name') => $lookup[$root_term->bundle()],
+      ];
+    }
+    else {
+      foreach($hierarchy as &$row) {
+        $row[$vocab->get('name')] = $lookup[$root_term->bundle()];
+      }
+    }
+  }
+
+  return $hierarchy;
+}
+
+
+/**
+ * Override or insert variables into the maintenance page template.
+ *
+ * @param array $variables
+ *   Variables to pass to the theme template.
+ * @param string $hook
+ *   The name of the template being rendered ("maintenance_page" in this case.)
+ */
+/* -- Delete this line if you want to use this function
+function behave_preprocess_maintenance_page(&$variables, $hook) {
+  // When a variable is manipulated or added in preprocess_html or
+  // preprocess_page, that same work is probably needed for the maintenance page
+  // as well, so we can just re-use those functions to do that work here.
+  behave_preprocess_html($variables, $hook);
+  behave_preprocess_page($variables, $hook);
+}
+// */
+
+/**
+ * Override or insert variables into the html templates.
+ *
+ * @param array $variables
+ *   Variables to pass to the theme template.
+ * @param string $hook
+ *   The name of the template being rendered ("html" in this case.)
+ */
+/* -- Delete this line if you want to use this function
+function behave_preprocess_html(&$variables, $hook) {
+  $variables['sample_variable'] = t('Lorem ipsum.');
+
+  // The body tag's classes are controlled by the $classes_array variable. To
+  // remove a class from $classes_array, use array_diff().
+  $variables['classes_array'] = array_diff($variables['classes_array'],
+    array('class-to-remove')
+  );
+}
+// */
+
+/**
+ * Override or insert variables into the page templates.
+ *
+ * @param array $variables
+ *   Variables to pass to the theme template.
+ * @param string $hook
+ *   The name of the template being rendered ("page" in this case.)
+ */
+/* -- Delete this line if you want to use this function
+function behave_preprocess_page(&$variables, $hook) {
+  $variables['sample_variable'] = t('Lorem ipsum.');
+}
+// */
+
+/**
+ * Override or insert variables into the region templates.
+ *
+ * @param array $variables
+ *   Variables to pass to the theme template.
+ * @param string $hook
+ *   The name of the template being rendered ("region" in this case.)
+ */
+/* -- Delete this line if you want to use this function
+function behave_preprocess_region(&$variables, $hook) {
+  // Don't use Zen's region--no-wrapper.tpl.php template for sidebars.
+  if (strpos($variables['region'], 'sidebar_') === 0) {
+    $variables['theme_hook_suggestions'] = array_diff(
+      $variables['theme_hook_suggestions'], array('region__no_wrapper')
+    );
+  }
+}
+// */
+
+/**
+ * Override or insert variables into the block templates.
+ *
+ * @param array $variables
+ *   Variables to pass to the theme template.
+ * @param string $hook
+ *   The name of the template being rendered ("block" in this case.)
+ */
+/* -- Delete this line if you want to use this function
+function behave_preprocess_block(&$variables, $hook) {
+  // Add a count to all the blocks in the region.
+  // $variables['classes_array'][] = 'count-' . $variables['block_id'];
+
+  // By default, Zen will use the block--no-wrapper.tpl.php for the main
+  // content. This optional bit of code undoes that:
+  if ($variables['block_html_id'] == 'block-system-main') {
+    $variables['theme_hook_suggestions'] = array_diff(
+      $variables['theme_hook_suggestions'], array('block__no_wrapper')
+    );
+  }
+}
+// */
+
+/**
+ * Override or insert variables into the node templates.
+ *
+ * @param array $variables
+ *   Variables to pass to the theme template.
+ * @param string $hook
+ *   The name of the template being rendered ("node" in this case.)
+ */
+/* -- Delete this line if you want to use this function
+function behave_preprocess_node(&$variables, $hook) {
+  $variables['sample_variable'] = t('Lorem ipsum.');
+
+  // Optionally, run node-type-specific preprocess functions, like
+  // behave_preprocess_node_page() or behave_preprocess_node_story().
+  $function = __FUNCTION__ . '_' . $variables['node']->type;
+  if (function_exists($function)) {
+    $function($variables, $hook);
+  }
+}
+// */
+
+/**
+ * Override or insert variables into the comment templates.
+ *
+ * @param array $variables
+ *   Variables to pass to the theme template.
+ * @param string $hook
+ *   The name of the template being rendered ("comment" in this case.)
+ */
+/* -- Delete this line if you want to use this function
+function behave_preprocess_comment(&$variables, $hook) {
+  $variables['sample_variable'] = t('Lorem ipsum.');
+}
+// */
