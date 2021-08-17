@@ -1,0 +1,5 @@
+name: Behavenet General Settings
+type: module
+description: General settings and tweaks for the Behavenet.com site.
+core: 8.x
+package: Behavenet

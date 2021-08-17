@@ -1,0 +1,29 @@
+uuid: 09cbb073-aaf8-49a6-b58e-f0d099b7f268
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_drugs
+    - node.type.combination
+    - node.type.drugs
+id: node.combination.field_drugs
+field_name: field_drugs
+entity_type: node
+bundle: combination
+label: 'Trade names for this combination'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      drugs: drugs
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

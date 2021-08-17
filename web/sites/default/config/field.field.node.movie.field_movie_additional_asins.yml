@@ -1,0 +1,21 @@
+uuid: d0e972ab-54cd-4b90-bbb5-1615e319a7c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_movie_additional_asins
+    - node.type.movie
+  module:
+    - amazon_field
+id: node.movie.field_movie_additional_asins
+field_name: field_movie_additional_asins
+entity_type: node
+bundle: movie
+label: 'Related items from Amazon'
+description: 'Additional Amazon IDs (ASINs) related to this entry. These will be displayed using the title as links to Amazon.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: amazon_asin_field

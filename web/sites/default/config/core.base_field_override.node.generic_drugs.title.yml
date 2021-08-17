@@ -1,0 +1,18 @@
+uuid: 4a71ba91-e1ce-422f-b000-0dda0e38e204
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.generic_drugs
+id: node.generic_drugs.title
+field_name: title
+entity_type: node
+bundle: generic_drugs
+label: 'Generic Name'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,21 @@
+uuid: 6c688b30-a259-453d-b58f-f1e12a75b44d
+langcode: en
+status: true
+dependencies:
+  module:
+    - bn_ads
+  theme:
+    - zen
+id: zen_adblock_2
+theme: zen
+region: sidebar_first
+weight: -10
+provider: null
+plugin: ad_block
+settings:
+  id: ad_block
+  label: 'DFP Skyscraper Ad'
+  provider: bn_ads
+  label_display: '0'
+  type: skyscraper
+visibility: {  }

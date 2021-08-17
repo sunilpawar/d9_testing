@@ -1,0 +1,5 @@
+services:
+  bn_general.twig.BehavenetTwigExtensions:
+    class: Drupal\bn_general\BehavenetTwigExtensions
+    tags:
+      - { name: twig.extension }

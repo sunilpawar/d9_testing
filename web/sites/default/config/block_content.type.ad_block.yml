@@ -1,0 +1,8 @@
+uuid: 9f039680-8f2d-4940-a6c0-4b2f2ca1aeeb
+langcode: en
+status: true
+dependencies: {  }
+id: ad_block
+label: 'HTML block'
+revision: 1
+description: 'HTML block designed for chunks of HTML such as advertising blocks or product placements.'

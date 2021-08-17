@@ -1,0 +1,27 @@
+uuid: ef0a219d-d449-4dd0-8000-a7de9dd8b2eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_isomer
+    - node.type.generic_drugs
+    - taxonomy.vocabulary.isomers
+id: node.generic_drugs.field_isomer
+field_name: field_isomer
+entity_type: node
+bundle: generic_drugs
+label: Isomer
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      isomers: isomers
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ * Contains oveo.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function oveo_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the oveo module.
+    case 'help.page.oveo':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Allows block displays to override exposed filters and sorts via the block configuration.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_views_view_alter().
+function oveo_theme_suggestions_views_view_alter(array &$suggestions, array $variables) {
+  // Allow preprocessing and templating on a view-by-view basis.
+  $suggestions[] = 'view__' . $variables['view']->id();
+}
+ */

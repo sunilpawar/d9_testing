@@ -1,0 +1,205 @@
+uuid: 1ccb035d-ccd8-42f1-975f-954be65932b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.generic_drugs.field_actions
+    - field.field.node.generic_drugs.field_chemical_class
+    - field.field.node.generic_drugs.field_clinical_class
+    - field.field.node.generic_drugs.field_compound
+    - field.field.node.generic_drugs.field_credit
+    - field.field.node.generic_drugs.field_dea_number
+    - field.field.node.generic_drugs.field_drug_combo
+    - field.field.node.generic_drugs.field_effect_class
+    - field.field.node.generic_drugs.field_generic
+    - field.field.node.generic_drugs.field_generic_acronyms
+    - field.field.node.generic_drugs.field_generic_alt_spellings
+    - field.field.node.generic_drugs.field_generic_precursor
+    - field.field.node.generic_drugs.field_graphic
+    - field.field.node.generic_drugs.field_isomer
+    - field.field.node.generic_drugs.field_medline_url
+    - field.field.node.generic_drugs.field_outside_media
+    - field.field.node.generic_drugs.field_related_content
+    - field.field.node.generic_drugs.field_related_terms
+    - field.field.node.generic_drugs.field_schedule
+    - field.field.node.generic_drugs.field_slang_terms
+    - field.field.node.generic_drugs.field_source
+    - node.type.generic_drugs
+  module:
+    - bn_general
+    - options
+    - user
+    - video_embed_field
+id: node.generic_drugs.default
+targetEntityType: node
+bundle: generic_drugs
+mode: default
+content:
+  field_actions:
+    weight: 5
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_chemical_class:
+    weight: 2
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_clinical_class:
+    weight: 3
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_compound:
+    weight: 15
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_credit:
+    weight: 9
+    label: visually_hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_dea_number:
+    weight: 11
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_drug_combo:
+    weight: 16
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_effect_class:
+    weight: 4
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_generic:
+    weight: 8
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_generic_acronyms:
+    weight: 1
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_generic_alt_spellings:
+    weight: 0
+    label: visually_hidden
+    settings:
+      prefix: (
+      suffix: )
+    third_party_settings: {  }
+    type: prefix_suffix_field_formatter
+    region: content
+  field_generic_precursor:
+    weight: 14
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_isomer:
+    weight: 13
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_medline_url:
+    weight: 10
+    label: visually_hidden
+    settings:
+      link_text: MedlinePlus
+      rel: 0
+      target: 0
+      trim_length: ''
+    third_party_settings: {  }
+    type: link_text_field_formatter
+    region: content
+  field_outside_media:
+    weight: 19
+    label: visually_hidden
+    settings:
+      responsive: true
+      width: 854
+      height: 480
+      autoplay: false
+    third_party_settings: {  }
+    type: video_embed_field_video
+    region: content
+  field_related_content:
+    weight: 18
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_related_terms:
+    weight: 17
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_schedule:
+    weight: 7
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_slang_terms:
+    weight: 6
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_source:
+    weight: 12
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  field_graphic: true
+  links: true

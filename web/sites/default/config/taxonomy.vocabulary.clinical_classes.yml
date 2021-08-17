@@ -1,0 +1,8 @@
+uuid: f42dd22a-a72c-4ff0-a709-9a25d8dac7f8
+langcode: en
+status: true
+dependencies: {  }
+name: 'Clinical Class'
+vid: clinical_classes
+description: ''
+weight: 0

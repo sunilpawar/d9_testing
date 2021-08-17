@@ -1,0 +1,21 @@
+uuid: bd2c7e0e-92fb-4d93-8222-5dee6e3aa35b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_amazon_asin
+    - node.type.movie
+  module:
+    - amazon_field
+id: node.movie.field_amazon_asin
+field_name: field_amazon_asin
+entity_type: node
+bundle: movie
+label: 'Amazon ASIN'
+description: 'The primary Amazon ID (ASIN) related to this entry. It will be displayed using the cover art image (124 x 160 pixels) linked to Amazon.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: amazon_asin_field

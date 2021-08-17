@@ -1,0 +1,28 @@
+uuid: 2b98d366-04a8-41c4-aea9-1c2f6f41b37e
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.terms_landing_page
+  module:
+    - block_visibility_groups
+    - bn_general
+  theme:
+    - behave
+id: alltermsblock
+theme: behave
+region: content
+weight: -24
+provider: null
+plugin: all_terms_block
+settings:
+  id: all_terms_block
+  label: 'All terms block'
+  provider: bn_general
+  label_display: '0'
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: terms_landing_page
+    context_mapping: {  }

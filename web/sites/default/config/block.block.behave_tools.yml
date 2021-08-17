@@ -1,0 +1,27 @@
+uuid: 48bfd91a-4b4d-430b-b3ff-35c348f2d120
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.tools
+  module:
+    - system
+  theme:
+    - behave
+_core:
+  default_config_hash: kbZnlXPH-KXosVUtbqP358kJBM7cf2X2ytDORFgsraM
+id: behave_tools
+theme: behave
+region: header
+weight: -17
+provider: null
+plugin: 'system_menu_block:tools'
+settings:
+  id: 'system_menu_block:tools'
+  label: Tools
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

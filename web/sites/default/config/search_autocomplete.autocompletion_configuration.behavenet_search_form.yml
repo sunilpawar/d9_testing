@@ -1,0 +1,20 @@
+langcode: en
+id: behavenet_search_form
+uuid: 3663cae7-e0b7-43c3-b95f-6f652f77bfd4
+label: 'Behavenet search form'
+selector: '#views-exposed-form-behavenet-search-page-1 #edit-keys'
+status: true
+minChar: 3
+autoSubmit: true
+autoRedirect: true
+maxSuggestions: 20
+noResultLabel: 'No results found for [search-phrase]. Click to perform full search.'
+noResultValue: '[search-phrase]'
+noResultLink: ''
+moreResultsLabel: 'View all results for [search-phrase].'
+moreResultsValue: '[search-phrase]'
+moreResultsLink: ''
+source: /autocomplete/search
+theme: basic-blue.css
+editable: true
+deletable: true

@@ -1,0 +1,28 @@
+uuid: 582726b5-c8fa-4b77-ac28-02a61ba10c81
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_compound
+    - node.type.compound
+    - node.type.generic_drugs
+id: node.generic_drugs.field_compound
+field_name: field_compound
+entity_type: node
+bundle: generic_drugs
+label: Compound
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      compound: compound
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

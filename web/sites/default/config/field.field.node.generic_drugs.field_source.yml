@@ -1,0 +1,28 @@
+uuid: 884ffd57-c9ae-4a31-94ae-9ef3db944f57
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_source
+    - node.type.generic_drugs
+    - node.type.source
+id: node.generic_drugs.field_source
+field_name: field_source
+entity_type: node
+bundle: generic_drugs
+label: Source
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      source: source
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

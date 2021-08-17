@@ -1,0 +1,38 @@
+uuid: 4c4ed27a-fd94-4621-b7be-c55fd5bbad96
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.drugs.field_company
+    - field.field.node.drugs.field_drug_combo
+    - field.field.node.drugs.field_drug_pi_url
+    - field.field.node.drugs.field_drug_url
+    - field.field.node.drugs.field_generic
+    - field.field.node.drugs.field_graphic
+    - field.field.node.drugs.field_indication
+    - field.field.node.drugs.field_outside_media
+    - field.field.node.drugs.field_related_content
+    - node.type.drugs
+  module:
+    - user
+id: node.drugs.teaser
+targetEntityType: node
+bundle: drugs
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_company: true
+  field_drug_combo: true
+  field_drug_pi_url: true
+  field_drug_url: true
+  field_generic: true
+  field_graphic: true
+  field_indication: true
+  field_outside_media: true
+  field_related_content: true

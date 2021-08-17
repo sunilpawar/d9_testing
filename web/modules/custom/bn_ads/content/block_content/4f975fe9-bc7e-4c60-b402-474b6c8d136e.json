@@ -1,0 +1,97 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/block\/24?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/basic"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/revision_user": [
+            {
+                "href": "http:\/\/default\/users\/admin?_format=hal_json"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": "24"
+        }
+    ],
+    "uuid": [
+        {
+            "value": "4f975fe9-bc7e-4c60-b402-474b6c8d136e"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": "36"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "basic"
+        }
+    ],
+    "info": [
+        {
+            "value": "Manias by Madness",
+            "lang": "en"
+        }
+    ],
+    "changed": [
+        {
+            "value": "1490117266",
+            "lang": "en"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "1490117266"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/revision_user": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/users\/admin?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "f08c85ed-4e81-4fbd-9c67-ae9698ba1ea1"
+                    }
+                ]
+            }
+        ]
+    },
+    "revision_translation_affected": [
+        {
+            "value": "1",
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": "1",
+            "lang": "en"
+        }
+    ],
+    "body": [
+        {
+            "value": "<select class=\"js-jumpmenu\"><option selected>- Choose -<\/option>\r\n  <option value=\"\/syllogomania\">accumulation of possessions<\/option>\r\n  <option value=\"\/mania-a-potu\">alcohol intoxication, violent behavior with<\/option>\r\n  <option value=\"\/callomania\">beauty, delusional conviction of one's own<\/option>\r\n  <option value=\"\/thanatomania\">death magic has resulted in one's illness, delusional belief that <\/option>\r\n  <option value=\"\/dysmorphomania\">deformity, delusion of<\/option>\r\n  <option value=\"\/typhomania\">delirium from typhus fever<\/option>\r\n  <option value=\"\/dysmorphomania\">delusion of deformity<\/option>\r\n  <option value=\"\/erotomania\">delusion of love by another<\/option>\r\n  <option value=\"\/entheomania\">delusion of one's endowment with divine inspiration<\/option>\r\n  <option value=\"\/demonomania\">delusion that one is inhabitated by evil spirits<\/option>\r\n  <option value=\"\/theomania\">delusional belief in one's own divine mission<\/option>\r\n  <option value=\"\/theomania\">delusional belief in one's own divinity<\/option>\r\n  <option value=\"\/sophomania\">delusional belief in one's own superior intelligence<\/option>\r\n  <option value=\"\/thanatomania\">delusional belief that \"death magic\" has resulted in one's illness<\/option>\r\n  <option value=\"\/syphilomania\">delusional belief that one is infected with syphilis<\/option>\r\n  <option value=\"\/callomania\">delusional conviction of one's own beauty<\/option>\r\n  <option value=\"\/entheomania\">divine inspiration, delusion of one's endowment with<\/option>\r\n  <option value=\"\/theomania\">divine mission, delusional belief in one's own <\/option>\r\n  <option value=\"\/theomania\">divinity, delusional belief in one's own <\/option>\r\n  <option value=\"\/demonomania\">evil spirits, delusion that one is inhabitated by<\/option>\r\n  <option value=\"\/pseudomania\">feigned insanity<\/option>\r\n  <option value=\"\/esthesiomania\">hallucinations, psychosis dominated by<\/option>\r\n  <option value=\"\/androphonomania\">homicidal insanity<\/option>\r\n  <option value=\"\/potomania\">hyponatremia caused by drinking alcohol in beer<\/option>\r\n  <option value=\"\/pseudomania\">insanity, feigned<\/option>\r\n  <option value=\"\/androphonomania\">insanity, homicidal<\/option>\r\n  <option value=\"\/desanimania\">insanity, mindless<\/option>\r\n  <option value=\"\/pathomania\">insanity, moral<\/option>\r\n  <option value=\"\/sebastomania\">insanity, religious<\/option>\r\n  <option value=\"\/sophomania\">intelligence, delusional belief in one's own superior<\/option>\r\n  <option value=\"\/polymania\">mania affecting several different mental faculties<\/option>\r\n  <option value=\"\/hypermania\">mania, severe<\/option>\r\n  <option value=\"\/hypomania\">manic mood, mild<\/option>\r\n  <option value=\"\/desanimania\">mindless insanity<\/option>\r\n  <option value=\"\/pathomania\">moral insanity<\/option>\r\n  <option value=\"\/syllogomania\">possessions, accumulation of<\/option>\r\n  <option value=\"\/esthesiomania\">psychosis dominated by hallucinations<\/option>\r\n  <option value=\"\/sebastomania\">religious insanity<\/option>\r\n  <option value=\"\/syphilomania\">syphilis, delusional belief that one is infected with <\/option>\r\n  <option value=\"\/typhomania\">typhus fever delirium<\/option>\r\n  <option value=\"\/mania-a-potu\">violent behavior with alcohol intoxication<\/option>\r\n<\/select>\r\n",
+            "format": "full_html_no_editor",
+            "summary": "",
+            "lang": "en"
+        }
+    ]
+}

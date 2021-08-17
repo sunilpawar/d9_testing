@@ -1,0 +1,98 @@
+uuid: 203cfd49-8850-4cc4-a072-57feec767cc5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.book.field_amazon_asin
+    - field.field.node.book.field_book_author_firstname
+    - field.field.node.book.field_book_author_lastname
+    - field.field.node.book.field_book_publication_date
+    - field.field.node.book.field_related_content
+    - field.field.node.book.field_related_terms
+    - node.type.book
+  module:
+    - amazon_field
+    - field_group
+    - user
+third_party_settings:
+  field_group:
+    group_highlighted:
+      children:
+        - field_amazon_asin
+        - field_book_author_firstname
+        - field_book_author_lastname
+        - field_book_publication_date
+        - field_related_terms
+      parent_name: ''
+      weight: 0
+      label: 'Highlighted content'
+      format_type: html_element
+      format_settings:
+        label: 'Highlighted content'
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: behavenet-highlighted-content
+      region: content
+id: node.book.default
+targetEntityType: node
+bundle: book
+mode: default
+content:
+  field_amazon_asin:
+    type: amazon_field_formatter
+    weight: 0
+    label: hidden
+    settings:
+      max_age: ''
+      template: inline
+      advanced:
+        extraResponseGroups: Offers
+    third_party_settings: {  }
+    region: content
+  field_book_author_firstname:
+    weight: 1
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_book_author_lastname:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_book_publication_date:
+    weight: 3
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_related_content:
+    weight: 1
+    label: visually_hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_related_terms:
+    weight: 4
+    label: visually_hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  links: true

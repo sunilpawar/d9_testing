@@ -1,0 +1,29 @@
+uuid: 2e67d10c-204f-42bb-b19a-6687bb7c23ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_indication
+    - node.type.device
+    - node.type.indication
+id: node.device.field_indication
+field_name: field_indication
+entity_type: node
+bundle: device
+label: Indication
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      indication: indication
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

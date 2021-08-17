@@ -1,0 +1,20 @@
+uuid: 7130c5d7-09ff-4e75-b51e-30799f8ebd57
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_chemical_class
+field_name: field_chemical_class
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

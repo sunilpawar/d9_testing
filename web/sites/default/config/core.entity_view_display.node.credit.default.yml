@@ -1,0 +1,24 @@
+uuid: 01aa9ced-8570-4e69-9743-67ff0dd1ae8a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.credit.body
+    - node.type.credit
+  module:
+    - text
+    - user
+id: node.credit.default
+targetEntityType: node
+bundle: credit
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  links: true

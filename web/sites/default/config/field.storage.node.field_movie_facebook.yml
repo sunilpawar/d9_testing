@@ -1,0 +1,19 @@
+uuid: 59f8cfe4-c363-4ddc-8ac4-bc7f14629d04
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_movie_facebook
+field_name: field_movie_facebook
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

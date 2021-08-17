@@ -1,0 +1,21 @@
+uuid: 10ae106b-baa2-4c17-8b41-830746430532
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_people_dob
+    - node.type.people
+  module:
+    - datetime
+id: node.people.field_people_dob
+field_name: field_people_dob
+entity_type: node
+bundle: people
+label: 'Date of birth'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

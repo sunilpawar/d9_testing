@@ -1,0 +1,23 @@
+uuid: eec6566c-7165-4f0d-b9bf-a0daf71292c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_company_url
+    - node.type.company
+  module:
+    - link
+id: node.company.field_company_url
+field_name: field_company_url
+entity_type: node
+bundle: company
+label: 'Company website URL'
+description: 'The full URL for the company website such as <em>http://www.example.com</em>.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

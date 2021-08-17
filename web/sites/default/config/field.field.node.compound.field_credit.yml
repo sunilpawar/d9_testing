@@ -1,0 +1,28 @@
+uuid: 7e466119-40f7-496f-b780-3129382c334e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_credit
+    - node.type.compound
+    - node.type.credit
+id: node.compound.field_credit
+field_name: field_credit
+entity_type: node
+bundle: compound
+label: Credit
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      credit: credit
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

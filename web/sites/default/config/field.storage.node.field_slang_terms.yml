@@ -1,0 +1,19 @@
+uuid: 22a8d95d-6c0e-45b3-900a-1079397d97e8
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_slang_terms
+field_name: field_slang_terms
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

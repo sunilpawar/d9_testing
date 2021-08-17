@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains bn_autocomplete.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function bn_autocomplete_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the bn_autocomplete module.
+    case 'help.page.bn_autocomplete':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Provides the search autocomplete options.') . '</p>';
+      return $output;
+
+    default:
+  }
+}

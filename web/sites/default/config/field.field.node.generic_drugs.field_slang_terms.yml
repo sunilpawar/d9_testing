@@ -1,0 +1,19 @@
+uuid: 82485762-a78b-4879-9b62-98d2221a409d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_slang_terms
+    - node.type.generic_drugs
+id: node.generic_drugs.field_slang_terms
+field_name: field_slang_terms
+entity_type: node
+bundle: generic_drugs
+label: 'Slang Terms'
+description: 'Enter one slang term per line. They will be sorted alphabetically when displayed.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

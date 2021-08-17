@@ -1,0 +1,19 @@
+uuid: 0473cd96-6020-4897-a68e-bda2a2a39779
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_source_sci_name
+    - node.type.source
+id: node.source.field_source_sci_name
+field_name: field_source_sci_name
+entity_type: node
+bundle: source
+label: 'Scientific name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

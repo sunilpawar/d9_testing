@@ -1,0 +1,31 @@
+uuid: 4bfeaa41-67ae-4ea3-b1a2-a3d28799ec23
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.directories_landing_page
+    - views.view.directories
+  module:
+    - block_visibility_groups
+    - views
+  theme:
+    - behave
+id: views_block__directories_block_1
+theme: behave
+region: content
+weight: -7
+provider: null
+plugin: 'views_block:directories-block_1'
+settings:
+  id: 'views_block:directories-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: directories_landing_page
+    context_mapping: {  }

@@ -1,0 +1,31 @@
+uuid: 1ca3b30c-780a-4bc2-9c94-00630493ddf5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.field_collection_item.field_dsm_criteria_fc.field_dsm_criteria
+    - field.field.field_collection_item.field_dsm_criteria_fc.field_dsm_version
+    - field_collection.field_collection.field_dsm_criteria_fc
+  module:
+    - text
+id: field_collection_item.field_dsm_criteria_fc.default
+targetEntityType: field_collection_item
+bundle: field_dsm_criteria_fc
+mode: default
+content:
+  field_dsm_criteria:
+    weight: 1
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_dsm_version:
+    weight: 0
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden: {  }

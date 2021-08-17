@@ -1,0 +1,14 @@
+uuid: 1cc4b7b0-8927-47cc-8448-729f7b1c3f48
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: c4zaT5cyPxuTXI6JOWt3qRtMvICT9tHB6d9a5VG-CmQ
+id: feedback
+label: 'Website feedback'
+recipients:
+  - behavenet@example.com
+reply: ''
+weight: 0
+message: null
+redirect: null

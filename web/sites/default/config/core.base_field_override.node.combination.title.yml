@@ -1,0 +1,18 @@
+uuid: 4d7a9194-bf77-4c0a-81b9-87b1f2b6743f
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.combination
+id: node.combination.title
+field_name: title
+entity_type: node
+bundle: combination
+label: 'Combination Title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

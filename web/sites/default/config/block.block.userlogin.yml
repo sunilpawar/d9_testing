@@ -1,0 +1,26 @@
+uuid: 0d5d62de-198c-4c1e-8677-854c98c1c7bf
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_visibility_groups
+    - user
+  theme:
+    - behavenet_admin
+id: userlogin
+theme: behavenet_admin
+region: content
+weight: -1
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: 'User login'
+  provider: user
+  label_display: visible
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }

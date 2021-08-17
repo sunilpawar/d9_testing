@@ -1,0 +1,28 @@
+uuid: 40fa9b9f-8653-4f9c-ba1b-587e62990292
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_credit
+    - node.type.credit
+    - node.type.generic_drugs
+id: node.generic_drugs.field_credit
+field_name: field_credit
+entity_type: node
+bundle: generic_drugs
+label: Credit
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      credit: credit
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

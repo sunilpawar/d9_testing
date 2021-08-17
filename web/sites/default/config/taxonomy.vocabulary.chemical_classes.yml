@@ -1,0 +1,8 @@
+uuid: ece64e4a-1161-4e0f-b500-bf9c78b44d42
+langcode: en
+status: true
+dependencies: {  }
+name: 'Chemical Class'
+vid: chemical_classes
+description: ''
+weight: 0

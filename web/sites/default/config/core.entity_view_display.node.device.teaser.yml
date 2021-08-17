@@ -1,0 +1,36 @@
+uuid: 17d3c630-4246-408c-b730-e9cc4d8dbac6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.device.field_amazon_asin
+    - field.field.node.device.field_company
+    - field.field.node.device.field_device_manual_url
+    - field.field.node.device.field_device_url
+    - field.field.node.device.field_graphic
+    - field.field.node.device.field_indication
+    - field.field.node.device.field_related_content
+    - field.field.node.device.field_related_terms
+    - node.type.device
+  module:
+    - user
+id: node.device.teaser
+targetEntityType: node
+bundle: device
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_amazon_asin: true
+  field_company: true
+  field_device_manual_url: true
+  field_device_url: true
+  field_graphic: true
+  field_indication: true
+  field_related_content: true
+  field_related_terms: true

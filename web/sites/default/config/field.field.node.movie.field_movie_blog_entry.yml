@@ -1,0 +1,26 @@
+uuid: e60ae5b9-0afc-407d-9194-9b48c76627fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_movie_blog_entry
+    - node.type.movie
+  module:
+    - text
+id: node.movie.field_movie_blog_entry
+field_name: field_movie_blog_entry
+entity_type: node
+bundle: movie
+label: 'Blog entry'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    summary: ''
+    value: ' '
+    format: full_html
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

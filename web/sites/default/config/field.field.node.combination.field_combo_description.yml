@@ -1,0 +1,21 @@
+uuid: 8461c60b-57ab-45c0-aab9-79ef848ca8cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_combo_description
+    - node.type.combination
+  module:
+    - text
+id: node.combination.field_combo_description
+field_name: field_combo_description
+entity_type: node
+bundle: combination
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

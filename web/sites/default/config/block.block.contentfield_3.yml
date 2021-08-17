@@ -1,0 +1,43 @@
+uuid: 06420153-e3b3-4ef0-83d7-2b5acc7977a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_graphic
+  module:
+    - ctools
+    - fieldblock
+    - image
+  theme:
+    - behave
+id: contentfield_3
+theme: behave
+region: sidebar_second
+weight: -22
+provider: null
+plugin: 'fieldblock:node'
+settings:
+  id: 'fieldblock:node'
+  label: 'Graphic (field_graphic)'
+  provider: fieldblock
+  label_display: '0'
+  label_from_field: 0
+  field_name: field_graphic
+  formatter_id: image
+  formatter_settings:
+    image_style: second_sidebar_image
+    image_link: ''
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      combination: combination
+      compound: compound
+      device: device
+      drugs: drugs
+      generic_drugs: generic_drugs
+      preparation: preparation
+      source: source
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

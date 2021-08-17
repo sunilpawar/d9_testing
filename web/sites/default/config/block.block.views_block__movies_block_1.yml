@@ -1,0 +1,31 @@
+uuid: a5874534-0365-4458-9269-6c4d28893a22
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.movies_landing_page
+    - views.view.movies
+  module:
+    - block_visibility_groups
+    - views
+  theme:
+    - behave
+id: views_block__movies_block_1
+theme: behave
+region: content
+weight: -22
+provider: null
+plugin: 'views_block:movies-block_1'
+settings:
+  id: 'views_block:movies-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: movies_landing_page
+    context_mapping: {  }

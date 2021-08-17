@@ -1,0 +1,18 @@
+uuid: 046ba5c0-5189-4fba-a771-79a0341f0783
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Book
+type: book
+description: 'A book with optional links to Amazon for purchase.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

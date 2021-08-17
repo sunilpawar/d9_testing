@@ -1,0 +1,21 @@
+uuid: 52f1f427-aa0c-4ae0-8e9d-b89d8d15b3dd
+langcode: en
+status: true
+dependencies:
+  module:
+    - bn_ads
+  theme:
+    - bartik
+id: adblock_3
+theme: bartik
+region: sidebar_second
+weight: -10
+provider: null
+plugin: ad_block
+settings:
+  id: ad_block
+  label: 'DFP Rectangle Ad'
+  provider: bn_ads
+  label_display: '0'
+  type: rectangle
+visibility: {  }

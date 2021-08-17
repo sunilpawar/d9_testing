@@ -1,0 +1,22 @@
+uuid: 5338effe-981b-41e5-a43f-d11c0b00bfd2
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - behave
+_core:
+  default_config_hash: XtBG3fliTtHNskVg12mVtQGITGSbd5M-pxIzX0IAFAA
+id: behave_powered
+theme: behave
+region: header
+weight: -19
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

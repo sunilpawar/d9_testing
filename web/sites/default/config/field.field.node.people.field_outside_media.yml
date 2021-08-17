@@ -1,0 +1,25 @@
+uuid: fe473321-eb2b-4bc4-b86f-45087a9543a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_outside_media
+    - node.type.people
+  module:
+    - video_embed_field
+id: node.people.field_outside_media
+field_name: field_outside_media
+entity_type: node
+bundle: people
+label: 'Outside media'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_providers:
+    vimeo: '0'
+    youtube: '0'
+    youtube_playlist: '0'
+field_type: video_embed_field

@@ -1,0 +1,21 @@
+uuid: 429488df-a845-46e5-8320-c98679647d61
+langcode: en
+status: true
+dependencies:
+  module:
+    - bn_ads
+  theme:
+    - behave
+id: adblock_5
+theme: behave
+region: header
+weight: -23
+provider: null
+plugin: ad_block
+settings:
+  id: ad_block
+  label: 'Ad block'
+  provider: bn_ads
+  label_display: '0'
+  type: leader
+visibility: {  }

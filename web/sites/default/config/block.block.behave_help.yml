@@ -1,0 +1,22 @@
+uuid: dcb86ee6-1b33-4586-a782-74d3e57453f7
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - behave
+_core:
+  default_config_hash: ruI-m5-gZSdnjpI5dTdCblPWKaWF7gscrQUTgr-bcUc
+id: behave_help
+theme: behave
+region: help
+weight: -8
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,97 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/block\/22?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/basic"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/revision_user": [
+            {
+                "href": "http:\/\/default\/users\/admin?_format=hal_json"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": "22"
+        }
+    ],
+    "uuid": [
+        {
+            "value": "45450ff6-a359-4445-9de0-e0d30cebe37d"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": "34"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "basic"
+        }
+    ],
+    "info": [
+        {
+            "value": "Footer copyright",
+            "lang": "en"
+        }
+    ],
+    "changed": [
+        {
+            "value": "1489683576",
+            "lang": "en"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "1489683576"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/revision_user": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/users\/admin?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "f08c85ed-4e81-4fbd-9c67-ae9698ba1ea1"
+                    }
+                ]
+            }
+        ]
+    },
+    "revision_translation_affected": [
+        {
+            "value": "1",
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": "1",
+            "lang": "en"
+        }
+    ],
+    "body": [
+        {
+            "value": "<p>Copyright\u00a9 1995-2017 BehaveNet\u00ae Inc |&nbsp;<a href=\"http:\/\/behavenet.com\/terms-of-use\">Terms of Use<\/a>&nbsp;|&nbsp;<a href=\"http:\/\/behavenet.com\/privacy-policy\">Privacy<\/a>&nbsp;|&nbsp;<a href=\"http:\/\/behavenet.com\/Advertise\">Advertise<\/a><\/p>\r\n",
+            "format": "full_html",
+            "summary": "",
+            "lang": "en"
+        }
+    ]
+}

@@ -1,0 +1,8 @@
+<?php
+
+/*
+ * Implements hook_toolbar_alter()
+ */
+function extricons_toolbar_alter(&$items) {
+  $items['administration']['#attached']['library'][] = 'extricons/toolbar-icon';
+}

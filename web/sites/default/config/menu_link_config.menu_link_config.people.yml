@@ -1,0 +1,16 @@
+uuid: 8c23a9c0-37b4-4b3b-a0a6-0fa195e8f838
+langcode: en
+status: true
+dependencies: {  }
+id: people
+title: People
+route_name: entity.node.canonical
+route_parameters:
+  node: 27646
+options: {  }
+expanded: false
+menu_name: behavenet-main-menu
+enabled: true
+parent: ''
+weight: -48
+description: ''

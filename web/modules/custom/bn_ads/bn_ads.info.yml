@@ -1,0 +1,15 @@
+name: Behavenet Ads
+type: module
+description: Provides blocks needed to render Behavenet Ads.
+core: 8.x
+package: Behavenet
+dependencies:
+  - hal
+
+default_content:
+  block_content:
+    - 98cd9599-fefd-434c-94f8-f816b67c5af5
+    - 8dade177-bf21-4170-8de8-e38be142f64d
+    - 19886a02-2254-47c8-94b9-fa2055ef3768
+    - 4730396b-4beb-48b7-b913-936cb29fdd16
+    - 28ce3be5-d452-4e66-a140-6e1d41205ed3

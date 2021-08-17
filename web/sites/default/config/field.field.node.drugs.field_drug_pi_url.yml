@@ -1,0 +1,23 @@
+uuid: 706b738f-9241-4d45-8b03-b6a8c5d92291
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_drug_pi_url
+    - node.type.drugs
+  module:
+    - link
+id: node.drugs.field_drug_pi_url
+field_name: field_drug_pi_url
+entity_type: node
+bundle: drugs
+label: 'PI URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 1
+field_type: link

@@ -1,0 +1,24 @@
+uuid: 9470094e-9219-4f91-82fc-a04239ca75db
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_people_credit
+    - node.type.people
+  module:
+    - text
+id: node.people.field_people_credit
+field_name: field_people_credit
+entity_type: node
+bundle: people
+label: Credit
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: ' '
+    format: full_html
+default_value_callback: ''
+settings: {  }
+field_type: text_long

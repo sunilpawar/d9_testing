@@ -1,0 +1,97 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/block\/21?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/basic"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/revision_user": [
+            {
+                "href": "http:\/\/default\/users\/admin?_format=hal_json"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": "21"
+        }
+    ],
+    "uuid": [
+        {
+            "value": "05985a3b-c694-40c1-9eca-7c018efdff6c"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": "33"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "basic"
+        }
+    ],
+    "info": [
+        {
+            "value": "Daily Tweets and Tweetchats",
+            "lang": "en"
+        }
+    ],
+    "changed": [
+        {
+            "value": "1489682753",
+            "lang": "en"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "1489682753"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/revision_user": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/users\/admin?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "f08c85ed-4e81-4fbd-9c67-ae9698ba1ea1"
+                    }
+                ]
+            }
+        ]
+    },
+    "revision_translation_affected": [
+        {
+            "value": "1",
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": "1",
+            "lang": "en"
+        }
+    ],
+    "body": [
+        {
+            "value": "<h2>Daily Tweets<\/h2>\r\n\r\n<p><a href=\"http:\/\/behavenet.com\/drug\">CNS Drug<\/a>:&nbsp;<a href=\"http:\/\/www.tchat.io\/rooms\/CNSDOD\">#CNSDOD<\/a><br \/>\r\n<a href=\"http:\/\/behavenet.com\/people\">Notable Person<\/a>:&nbsp;<a href=\"http:\/\/www.tchat.io\/rooms\/BHCPOD\">#BHCPOD<\/a><br \/>\r\n<a href=\"http:\/\/behavenet.com\/phobia\">Phobia<\/a>:&nbsp;<a href=\"http:\/\/www.tchat.io\/rooms\/BNphobia\">#BNphobia<\/a><br \/>\r\n<a href=\"http:\/\/behavenet.com\/terms\">Term<\/a>:&nbsp;<a href=\"http:\/\/www.tchat.io\/rooms\/BHCTOD\">#BHCTOD<\/a><\/p>\r\n\r\n<h2>National Conference Tweetchats<\/h2>\r\n\r\n<p>3\/16-19:&nbsp;<a href=\"https:\/\/www.counseling.org\/conference\/sanfrancisco2017\">ACA<\/a><br \/>\r\n<a href=\"http:\/\/www.tchat.io\/rooms\/ACASanFrancisco2017\">#ACASanFrancisco2017<\/a><\/p>\r\n",
+            "format": "full_html",
+            "summary": "",
+            "lang": "en"
+        }
+    ]
+}

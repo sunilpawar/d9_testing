@@ -1,0 +1,49 @@
+migrate_behavenet.fix_source:
+  path: /migrate_behavenet/fix_source
+  defaults:
+    _controller: '\Drupal\migrate_behavenet\Controller\MigrateBehavenet::FixSource'
+    _title: 'Fixing Source content types'
+  requirements:
+    _permission: 'administer nodes'
+migrate_behavenet.fix_directory:
+  path: '/migrate_behavenet/fix_directories/{offset}/{range}'
+  defaults:
+    _controller: '\Drupal\migrate_behavenet\Controller\MigrateBehavenet::FixDirectories'
+    _title: 'Fixing Directory content types'
+  requirements:
+    _permission: 'administer nodes'
+migrate_behavenet.fix_urls:
+  path: '/migrate_behavenet/fix_urls'
+  defaults:
+    _controller: '\Drupal\migrate_behavenet\Controller\MigrateBehavenet::FixUrls'
+    _title: 'Fixing bogus URLs'
+  requirements:
+    _permission: 'administer nodes'
+migrate_behavenet.fix_credits:
+  path: '/migrate_behavenet/fix_credits/{offset}/{range}'
+  defaults:
+    _controller: '\Drupal\migrate_behavenet\Controller\MigrateBehavenet::FixCredits'
+    _title: 'Fix missing term credits'
+  requirements:
+    _permission: 'administer nodes'
+migrate_behavenet.fix_aliases:
+  path: '/migrate_behavenet/fix_aliases'
+  defaults:
+    _controller: '\Drupal\migrate_behavenet\Controller\MigrateBehavenet::FixAliases'
+    _title: 'Fix URL aliases'
+  requirements:
+    _permission: 'administer nodes'
+migrate_behavenet.find_self_ref:
+  path: '/migrate_behavenet/find-self-references'
+  defaults:
+    _controller: '\Drupal\migrate_behavenet\Controller\MigrateBehavenet::FindSelfReferences'
+    _title: ''
+  requirements:
+    _permission: 'administer nodes'
+migrate_behavenet.fix_video_terms:
+  path: '/migrate_behavenet/fix-video-terms/{offset}/{range}'
+  defaults:
+    _controller: '\Drupal\migrate_behavenet\Controller\MigrateBehavenet::FixVideoTerms'
+    _title: ''
+  requirements:
+    _permission: 'administer nodes'

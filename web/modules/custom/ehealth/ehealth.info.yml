@@ -1,0 +1,9 @@
+name: 'ehealth'
+type: module
+description: 'E-health registration'
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: 'Custom'
+configure: ehealth.settings
+dependencies:
+  - first_time_login

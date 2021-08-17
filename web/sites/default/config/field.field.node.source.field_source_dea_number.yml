@@ -1,0 +1,19 @@
+uuid: a6e1907e-7854-4269-99db-fa45fe830ef5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_source_dea_number
+    - node.type.source
+id: node.source.field_source_dea_number
+field_name: field_source_dea_number
+entity_type: node
+bundle: source
+label: 'DEA Number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

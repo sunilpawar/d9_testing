@@ -1,0 +1,38 @@
+uuid: 0d63de07-fc47-439c-b5be-1c409fb341fc
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.compound.field_credit
+    - field.field.node.compound.field_description
+    - field.field.node.compound.field_drug_combo
+    - field.field.node.compound.field_generic
+    - field.field.node.compound.field_graphic
+    - field.field.node.compound.field_outside_media
+    - field.field.node.compound.field_related_content
+    - field.field.node.compound.field_related_terms
+    - field.field.node.compound.field_slang
+    - node.type.compound
+  module:
+    - user
+id: node.compound.teaser
+targetEntityType: node
+bundle: compound
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_credit: true
+  field_description: true
+  field_drug_combo: true
+  field_generic: true
+  field_graphic: true
+  field_outside_media: true
+  field_related_content: true
+  field_related_terms: true
+  field_slang: true

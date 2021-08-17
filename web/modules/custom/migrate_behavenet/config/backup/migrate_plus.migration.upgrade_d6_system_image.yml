@@ -1,0 +1,21 @@
+uuid: 8b325f4a-7aaf-433b-a643-b2918050bbe4
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d6_system_image
+migration_tags:
+  - 'Drupal 6'
+migration_group: migrate_drupal_6
+label: 'Image toolkit configuration'
+source:
+  plugin: variable
+  variables:
+    - image_toolkit
+process:
+  toolkit: image_toolkit
+destination:
+  plugin: config
+  config_name: system.image
+migration_dependencies:
+  required: {  }
+  optional: {  }

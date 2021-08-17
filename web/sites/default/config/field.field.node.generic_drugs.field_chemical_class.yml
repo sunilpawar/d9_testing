@@ -1,0 +1,27 @@
+uuid: 2b72d1c3-10e4-4be6-a626-385ffb1cfabd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_chemical_class
+    - node.type.generic_drugs
+    - taxonomy.vocabulary.chemical_classes
+id: node.generic_drugs.field_chemical_class
+field_name: field_chemical_class
+entity_type: node
+bundle: generic_drugs
+label: 'Chemical Class'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      chemical_classes: chemical_classes
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

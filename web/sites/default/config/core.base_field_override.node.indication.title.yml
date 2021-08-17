@@ -1,0 +1,18 @@
+uuid: 31d210bf-843b-4fc9-a402-8c1c426559bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.indication
+id: node.indication.title
+field_name: title
+entity_type: node
+bundle: indication
+label: 'Admin title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

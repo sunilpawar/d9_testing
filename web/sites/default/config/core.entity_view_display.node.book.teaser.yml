@@ -1,0 +1,32 @@
+uuid: fc418f75-5d08-453b-a4fa-a3d759473e3a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.book.field_amazon_asin
+    - field.field.node.book.field_book_author_firstname
+    - field.field.node.book.field_book_author_lastname
+    - field.field.node.book.field_book_publication_date
+    - field.field.node.book.field_related_content
+    - field.field.node.book.field_related_terms
+    - node.type.book
+  module:
+    - user
+id: node.book.teaser
+targetEntityType: node
+bundle: book
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_amazon_asin: true
+  field_book_author_firstname: true
+  field_book_author_lastname: true
+  field_book_publication_date: true
+  field_related_content: true
+  field_related_terms: true

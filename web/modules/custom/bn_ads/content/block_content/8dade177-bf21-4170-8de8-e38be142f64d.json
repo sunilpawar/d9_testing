@@ -1,0 +1,71 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/block\/17?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/ad_block"
+        }
+    },
+    "id": [
+        {
+            "value": "17"
+        }
+    ],
+    "uuid": [
+        {
+            "value": "8dade177-bf21-4170-8de8-e38be142f64d"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": "25"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "info": [
+        {
+            "value": "Social media links",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "ad_block"
+        }
+    ],
+    "revision_log": [
+        {
+            "value": "Copied from D6 site."
+        }
+    ],
+    "changed": [
+        {
+            "value": "1476219919",
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": "1",
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": "1",
+            "lang": "en"
+        }
+    ],
+    "field_block_html": [
+        {
+            "value": "<div class=\"social-media-links\">\r\n<div class=\"social-media-links-row\">\r\n  <a href=\"https:\/\/google.com\/+Behavenet\"><span class=\"social-media-icon social-media-icon-gplus\"><\/span><\/a>Follow us on <span class=\"line-break\"><a href=\"http:\/\/google.com\/+Behavenet\">Google+<\/a><\/span>\r\n<\/div>\r\n<div class=\"social-media-links-row\">\r\n  <a href=\"http:\/\/www.facebook.com\/pages\/BehaveNet\/121151723906\"><span class=\"social-media-icon social-media-icon-facebook\"><\/span><\/a>Become a fan on <span class=\"line-break\"><a href=\"http:\/\/www.facebook.com\/pages\/BehaveNet\/121151723906\">Facebook<\/a><\/span>\r\n<\/div>\r\n<div class=\"social-media-links-row\">\r\n  <a href=\"http:\/\/twitter.com\/behavenet\"><span class=\"social-media-icon social-media-icon-twitter\"><\/span><\/a>Follow us on <span class=\"line-break\"><a href=\"http:\/\/twitter.com\/behavenet\">Twitter<\/a><\/span>\r\n<\/div>\r\n<div class=\"social-media-links-row\">\r\n  <a href=\"http:\/\/visitor.r20.constantcontact.com\/d.jsp?llr=eiiozalab&amp;p=oi&amp;m=1111349469444\"><span class=\"social-media-icon social-media-icon-email\"><\/span><\/a>Subscribe (<a href=\"http:\/\/conta.cc\/1UFVSnl\">sample<\/a>) <span class=\"line-break\">to our <a href=\"http:\/\/visitor.r20.constantcontact.com\/d.jsp?llr=eiiozalab&amp;p=oi&amp;m=1111349469444\">Newletter<\/a><\/span>\r\n<\/div>\r\n<div class=\"social-media-links-row\">\r\n  <a href=\"http:\/\/behavenet.com\/opinion\/rss.xml\"><span class=\"social-media-icon social-media-icon-rss\"><\/span><\/a>Subscribe to our <span class=\"line-break\"><a href=\"http:\/\/behavenet.com\/opinion\/rss.xml\">Opinion blog<\/a><\/span>\r\n<\/div>\r\n<div class=\"social-media-links-row\">\r\n  <a href=\"http:\/\/behavenet.com\/movies\/rss.xml\"><span class=\"social-media-icon social-media-icon-rss\"><\/span><\/a>Subscribe to our <span class=\"line-break\"><a href=\"http:\/\/behavenet.com\/movies\/rss.xml\">Movie posts<\/a><\/span>\r\n<\/div>\r\n<\/div>",
+            "format": "full_html_no_editor"
+        }
+    ]
+}

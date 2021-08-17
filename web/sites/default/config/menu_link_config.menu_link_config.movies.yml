@@ -1,0 +1,16 @@
+uuid: 4e3db6dd-3dbe-4b83-b5ca-0424898b5ec2
+langcode: en
+status: true
+dependencies: {  }
+id: movies
+title: Movies
+route_name: entity.node.canonical
+route_parameters:
+  node: 28597
+options: {  }
+expanded: false
+menu_name: behavenet-main-menu
+enabled: true
+parent: ''
+weight: -45
+description: ''

@@ -1,0 +1,33 @@
+uuid: 2eb22d22-6cf2-4df6-b7d2-21446643fab1
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.drugs_landing_page
+  content:
+    - 'block_content:basic:3c4ae154-62b1-42b8-99ba-341ddee49ed0'
+  module:
+    - block_content
+    - block_visibility_groups
+  theme:
+    - behave
+id: molecularentitiesbyclass
+theme: behave
+region: content
+weight: -18
+provider: null
+plugin: 'block_content:3c4ae154-62b1-42b8-99ba-341ddee49ed0'
+settings:
+  id: 'block_content:3c4ae154-62b1-42b8-99ba-341ddee49ed0'
+  label: 'Molecular Entities by Class'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: drugs_landing_page
+    context_mapping: {  }

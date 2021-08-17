@@ -1,0 +1,28 @@
+uuid: 21068bda-5583-4136-bff7-87a62eef5061
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_drug_combo
+    - node.type.combination
+    - node.type.generic_drugs
+id: node.generic_drugs.field_drug_combo
+field_name: field_drug_combo
+entity_type: node
+bundle: generic_drugs
+label: Combinations
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      combination: combination
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

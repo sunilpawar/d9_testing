@@ -1,0 +1,21 @@
+uuid: f69c247b-02c9-4d5a-a24f-3e965123f46d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_schedule
+    - node.type.combination
+  module:
+    - options
+id: node.combination.field_schedule
+field_name: field_schedule
+entity_type: node
+bundle: combination
+label: Schedule
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

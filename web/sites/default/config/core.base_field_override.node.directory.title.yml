@@ -1,0 +1,18 @@
+uuid: cc86a891-b2f0-4fca-b0f4-6c5a0e5c4458
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.directory
+id: node.directory.title
+field_name: title
+entity_type: node
+bundle: directory
+label: 'Administrative title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

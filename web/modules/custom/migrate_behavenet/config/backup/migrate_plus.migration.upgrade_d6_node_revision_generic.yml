@@ -1,0 +1,164 @@
+uuid: b7966008-0cf8-47b2-aa88-8732a5288266
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d6_node_revision_generic
+migration_tags:
+  - 'Drupal 6'
+migration_group: migrate_drupal_6
+label: 'Node revisions (generic)'
+source:
+  plugin: d6_node_revision
+  node_type: generic
+process:
+  nid: nid
+  vid: vid
+  type: type
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: und
+  title: title
+  uid: node_uid
+  status: status
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
+  body/format:
+    plugin: migration
+    migration: upgrade_d6_filter_format
+    source: format
+  body/value: body
+  body/summary: teaser
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  field_actions: field_actions
+  field_chemical_class: field_chemical_class
+  field_clinical_class: field_clinical_class
+  field_compound: field_compound
+  field_drug_combo: field_drug_combo
+  field_effect_class: field_effect_class
+  field_general_terms: field_general_terms
+  field_generic_acronyms:
+    plugin: iterator
+    source: field_generic_acronyms
+    process:
+      value: value
+      format:
+        -
+          plugin: static_map
+          bypass: true
+          source: format
+          map:
+            - null
+        -
+          plugin: skip_on_empty
+          method: process
+        -
+          plugin: migration
+          migration:
+            - d6_filter_format
+            - d7_filter_format
+          source: format
+  field_generic_active_metabolite: field_generic_active_metabolite
+  field_generic_alt_name:
+    plugin: iterator
+    source: field_generic_alt_name
+    process:
+      value: value
+      format:
+        -
+          plugin: static_map
+          bypass: true
+          source: format
+          map:
+            - null
+        -
+          plugin: skip_on_empty
+          method: process
+        -
+          plugin: migration
+          migration:
+            - d6_filter_format
+            - d7_filter_format
+          source: format
+  field_generic_dea:
+    plugin: iterator
+    source: field_generic_dea
+    process:
+      value: value
+      format:
+        -
+          plugin: static_map
+          bypass: true
+          source: format
+          map:
+            - null
+        -
+          plugin: skip_on_empty
+          method: process
+        -
+          plugin: migration
+          migration:
+            - d6_filter_format
+            - d7_filter_format
+          source: format
+  field_generic_graphic:
+    plugin: d6_cck_file
+    source: field_generic_graphic
+  field_generic_medline_url:
+    plugin: iterator
+    source: field_generic_medline_url
+    process:
+      value: value
+      format:
+        -
+          plugin: static_map
+          bypass: true
+          source: format
+          map:
+            - null
+        -
+          plugin: skip_on_empty
+          method: process
+        -
+          plugin: migration
+          migration:
+            - d6_filter_format
+            - d7_filter_format
+          source: format
+  field_generic_precursor: field_generic_precursor
+  field_generic_schedule: field_generic_schedule
+  field_generic_sources: field_generic_sources
+  field_gen_slang_terms:
+    plugin: iterator
+    source: field_gen_slang_terms
+    process:
+      value: value
+      format:
+        -
+          plugin: static_map
+          bypass: true
+          source: format
+          map:
+            - null
+        -
+          plugin: skip_on_empty
+          method: process
+        -
+          plugin: migration
+          migration:
+            - d6_filter_format
+            - d7_filter_format
+          source: format
+  field_isomer: field_isomer
+  field_outside_video: field_outside_video
+  field_tt_extras_credit: field_tt_extras_credit
+destination:
+  plugin: 'entity_revision:node'
+migration_dependencies:
+  required:
+    - upgrade_d6_node_generic
+  optional: {  }

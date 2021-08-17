@@ -1,0 +1,23 @@
+uuid: 27264090-3fd6-4d81-bf4b-b398379e4109
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_drug_url
+    - node.type.drugs
+  module:
+    - link
+id: node.drugs.field_drug_url
+field_name: field_drug_url
+entity_type: node
+bundle: drugs
+label: URL
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 1
+field_type: link

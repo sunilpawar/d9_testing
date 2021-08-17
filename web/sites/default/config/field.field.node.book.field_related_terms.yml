@@ -1,0 +1,25 @@
+uuid: 7613986f-b5cf-44ae-b783-37e79e14684d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_terms
+    - node.type.book
+id: node.book.field_related_terms
+field_name: field_related_terms
+entity_type: node
+bundle: book
+label: 'Related Terms'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: related_terms
+      display_name: entity_reference_1
+      arguments: {  }
+field_type: entity_reference

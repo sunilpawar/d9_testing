@@ -1,0 +1,71 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/block\/16?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/ad_block"
+        }
+    },
+    "id": [
+        {
+            "value": "16"
+        }
+    ],
+    "uuid": [
+        {
+            "value": "98cd9599-fefd-434c-94f8-f816b67c5af5"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": "24"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "info": [
+        {
+            "value": "Amazon health banner ad",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "ad_block"
+        }
+    ],
+    "revision_log": [
+        {
+            "value": "Copied from D6 site."
+        }
+    ],
+    "changed": [
+        {
+            "value": "1476219681",
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": "1",
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": "1",
+            "lang": "en"
+        }
+    ],
+    "field_block_html": [
+        {
+            "value": "<iframe src=\"http:\/\/rcm-na.amazon-adsystem.com\/e\/cm?t=behavenetrinc&o=1&p=21&l=ur1&category=health&banner=0PE7YFGPS51S8D4NFP82&f=ifr\" width=\"160\" height=\"160\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"><\/iframe>",
+            "format": "full_html_no_editor"
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+uuid: 45764394-2706-451e-905d-95652ed0efad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_indication_approval
+    - node.type.indication
+  module:
+    - datetime
+id: node.indication.field_indication_approval
+field_name: field_indication_approval
+entity_type: node
+bundle: indication
+label: 'Approval date'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

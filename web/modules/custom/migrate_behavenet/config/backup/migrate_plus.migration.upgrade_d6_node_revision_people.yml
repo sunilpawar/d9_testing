@@ -1,0 +1,134 @@
+uuid: e0baf764-6c3e-467a-a318-b2c9ed4f31a2
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d6_node_revision_people
+migration_tags:
+  - 'Drupal 6'
+migration_group: migrate_drupal_6
+label: 'Node revisions (people)'
+source:
+  plugin: d6_node_revision
+  node_type: people
+process:
+  nid: nid
+  vid: vid
+  type: type
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: und
+  title: title
+  uid: node_uid
+  status: status
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
+  body/format:
+    plugin: migration
+    migration: upgrade_d6_filter_format
+    source: format
+  body/value: body
+  body/summary: teaser
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  field_general_related_content: field_general_related_content
+  field_outside_video: field_outside_video
+  field_people_alt_names:
+    plugin: iterator
+    source: field_people_alt_names
+    process:
+      value: value
+      format:
+        -
+          plugin: static_map
+          bypass: true
+          source: format
+          map:
+            - null
+        -
+          plugin: skip_on_empty
+          method: process
+        -
+          plugin: migration
+          migration:
+            - d6_filter_format
+            - d7_filter_format
+          source: format
+  field_people_credit:
+    plugin: iterator
+    source: field_people_credit
+    process:
+      value: value
+      format:
+        -
+          plugin: static_map
+          bypass: true
+          source: format
+          map:
+            - null
+        -
+          plugin: skip_on_empty
+          method: process
+        -
+          plugin: migration
+          migration:
+            - d6_filter_format
+            - d7_filter_format
+          source: format
+  field_people_dob: field_people_dob
+  field_people_dod: field_people_dod
+  field_people_firstname:
+    plugin: iterator
+    source: field_people_firstname
+    process:
+      value: value
+      format:
+        -
+          plugin: static_map
+          bypass: true
+          source: format
+          map:
+            - null
+        -
+          plugin: skip_on_empty
+          method: process
+        -
+          plugin: migration
+          migration:
+            - d6_filter_format
+            - d7_filter_format
+          source: format
+  field_people_image:
+    plugin: d6_cck_file
+    source: field_people_image
+  field_people_lastname:
+    plugin: iterator
+    source: field_people_lastname
+    process:
+      value: value
+      format:
+        -
+          plugin: static_map
+          bypass: true
+          source: format
+          map:
+            - null
+        -
+          plugin: skip_on_empty
+          method: process
+        -
+          plugin: migration
+          migration:
+            - d6_filter_format
+            - d7_filter_format
+          source: format
+  field_terms: field_terms
+destination:
+  plugin: 'entity_revision:node'
+migration_dependencies:
+  required:
+    - upgrade_d6_node_people
+  optional: {  }

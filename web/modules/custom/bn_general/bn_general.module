@@ -1,0 +1,195 @@
+<?php
+
+/**
+ * @file
+ * Contains bn_general.module..
+ */
+
+use Drupal\Core\Database\Query\AlterableInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Url;
+use Drupal\node\Entity\Node;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\Component\Utility\DiffArray;
+
+/**
+ * Implements hook_help().
+ */
+function bn_general_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the bn_general module.
+    case 'help.page.bn_general':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('General settings and tweaks for the Behavenet.com site.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_presave().
+ */
+function bn_general_taxonomy_term_presave(EntityInterface $entity) {
+  // Check if we added any parents, if so associate those cache tags with this
+  // entity and invalidate the cache of those terms as well.
+  $parents = [];
+  $new_parents = [];
+  foreach ($entity->get('parent')->getValue() as $value) {
+    if (!empty($value['target_id'])) {
+      $new_parents[] = $value['target_id'];
+    }
+  }
+
+  if ($entity->isNew()) {
+    $parents = $new_parents;
+  }
+  else {
+    // Only invalidate if the list of parents has changed.
+    $old_parents = array_keys(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadParents($entity->id()));
+    if (array_diff($old_parents, $new_parents)) {
+       $parents = $old_parents;
+    }
+    else if (array_diff($new_parents, $old_parents)) {
+      $parents = $new_parents;
+    }
+  }
+
+  if (!empty($parents)) {
+    $tags = [];
+    foreach ($parents as $parent_tid) {
+      $cid = "taxonomy_term:$parent_tid";
+      $tags[] = $cid;
+      \Drupal::cache()->invalidate($cid);
+    }
+    $entity->addCacheTags($tags);
+  }
+}
+
+/**
+ * Implements hook_entity_presave().
+ */
+function bn_general_entity_presave(EntityInterface $entity) {
+  // If this is a change to a term in the behavenet_terms vocabulary, invalidate
+  // the cache for the AllTermsBlock block.
+  if ($entity->bundle() == 'behavenet_terms') {
+    $cid = 'bn_general:AllTermsBlock';
+
+    // Clear the cache for additions to the vocabulary.
+    if ($entity->isNew()) {
+      \Drupal::cache()->invalidate($cid);
+    }
+    else {
+      // Check for changes to the name-- other changes not affect the jumpmenu
+      // rendering. Changes to the path will be handled by PathAuto and the
+      // Redirect modules.
+      $old = Term::load($entity->id());
+      if ($old->getName() != $entity->getName()) {
+        \Drupal::cache()->invalidate($cid);
+      }
+    }
+  }
+
+  if ($entity->getEntityTypeId() == 'node') {
+    // There are two caches used for generic drugs, one for the node and one
+    // for the acronym field. In some situations, we can get away with only
+    // clearing one of them.
+    $cidBase = 'bn_general:AllContentBlock:';
+
+    if ($entity->isNew()) {
+      \Drupal::cache()->invalidate($cidBase . $entity->bundle());
+      if ($entity->bundle() == 'generic_drugs') {
+        \Drupal::cache()->invalidate($cidBase . 'field_acronyms');
+      }
+    }
+    else {
+      // Check if the title has changed and, for generics, if the acronym field
+      // has changed. If so, invalidate those caches.
+      $old = Node::load($entity->id());
+      $diff = DiffArray::diffAssocRecursive($old->get('title')->getValue(), $entity->get('title')->getValue());
+      if (!empty($diff)) {
+        \Drupal::cache()->invalidate($cidBase . $entity->bundle());
+      }
+      if ($old->hasField('field_generic_acronyms')) {
+        // Diff checks for values in the first array that are not present in the
+        // second array. If we are adding an acronym to a node that didn't have
+        // one previously, we need to reverse the order of arrays passed to
+        // Diff.
+        $old_acronym = $old->get('field_generic_acronyms')->getValue();
+        $new_acronym = $entity->get('field_generic_acronyms')->getValue();
+        if (empty($old_acronym)) {
+          $diff = DiffArray::diffAssocRecursive($new_acronym, $old_acronym);
+        }
+        else {
+          $diff = DiffArray::diffAssocRecursive($old_acronym, $new_acronym);
+        }
+        if (!empty($diff)) {
+          \Drupal::cache()->invalidate($cidBase . 'field_acronyms');
+        }
+      }
+    }
+  }
+}
+
+function bn_general_query_linkit_entity_autocomplete_alter(AlterableInterface $query) {
+  $conditions = &$query->conditions();
+  if ($conditions[0]['field'] == 'taxonomy_term_field_data.name') {
+    // Remove wildcard from the start of the string for better matches.
+    $conditions[0]['value'] = substr($conditions[0]['value'], 1);
+  }
+}
+
+/**
+ * Prepares variables for the JumpMenu style handler.
+ *
+ * @param $variables
+ *   And array of variables to pass to the Twig template.
+ *
+ * @see templates/views-view-jumpmenu.html.twig.
+ */
+function template_preprocess_views_view_jumpmenu(&$variables) {
+  /** @var  $handler \Drupal\views\Plugin\views\style\StylePluginBase */
+  $handler  = $variables['view']->style_plugin;
+  $items = [];
+
+  foreach ($variables['view']->result as $index => $row) {
+    $items[] = [
+      'content' => $handler->getField($index, $handler->options['text_field']),
+      'path' => Url::fromUri('entity:' . $row->_entity->getEntityTypeId() . '/' . $row->_entity->id()),
+    ];
+  }
+  $variables['items'] = $items;
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function bn_general_form_taxonomy_term_behavenet_terms_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  // Provide some form of differentiation for terms with the same text.
+  $all_terms = $form['relations']['parent']['#options'];
+  $dup_terms = array_unique(array_diff_assoc($all_terms, array_unique($all_terms)));
+  foreach ($dup_terms as $dup) {
+    $terms = Term::loadMultiple(array_keys($all_terms, $dup));
+    foreach ($terms as $term) {
+      $form['relations']['parent']['#options'][$term->id()] .= t(' (@url)', ['@url' => $term->url()]);
+    }
+  }
+
+  // Make the default text format "Full HTML".
+  if (isset($form['description']['widget'][0])) {
+    $form['description']['widget'][0]['#format'] = 'full_html';
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function bn_general_theme($existing, $type, $theme, $path) {
+  return[
+    'term_search' => [
+      'variables' => ['items' => NULL],
+    ],
+  ];
+}

@@ -1,0 +1,21 @@
+uuid: b3cdcb00-c2b1-4dc8-9532-a4fe84ae9c1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_indication_description
+    - node.type.indication
+  module:
+    - text
+id: node.indication.field_indication_description
+field_name: field_indication_description
+entity_type: node
+bundle: indication
+label: 'Indication description'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,8 @@
+uuid: 0122df0d-e57e-4fae-9a10-1687ad219d21
+langcode: en
+status: true
+dependencies: {  }
+name: 'Effect Class'
+vid: effect_classes
+description: ''
+weight: 0

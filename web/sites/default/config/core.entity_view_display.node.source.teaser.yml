@@ -1,0 +1,36 @@
+uuid: c23bc8cd-c7bd-4d2a-bdae-c4d372f2f1f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.source.field_graphic
+    - field.field.node.source.field_outside_media
+    - field.field.node.source.field_related_content
+    - field.field.node.source.field_schedule
+    - field.field.node.source.field_slang
+    - field.field.node.source.field_source_dea_number
+    - field.field.node.source.field_source_description
+    - field.field.node.source.field_source_sci_name
+    - node.type.source
+  module:
+    - user
+id: node.source.teaser
+targetEntityType: node
+bundle: source
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_graphic: true
+  field_outside_media: true
+  field_related_content: true
+  field_schedule: true
+  field_slang: true
+  field_source_dea_number: true
+  field_source_description: true
+  field_source_sci_name: true

@@ -1,0 +1,31 @@
+uuid: f74318ab-17de-41fa-b83a-2a0c75bc8f96
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:05985a3b-c694-40c1-9eca-7c018efdff6c'
+  module:
+    - block_content
+    - block_visibility_groups
+  theme:
+    - behave
+id: dailytweetsandtweetchats
+theme: behave
+region: sidebar_second
+weight: -14
+provider: null
+plugin: 'block_content:05985a3b-c694-40c1-9eca-7c018efdff6c'
+settings:
+  id: 'block_content:05985a3b-c694-40c1-9eca-7c018efdff6c'
+  label: 'Daily Tweets and Tweetchats'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }

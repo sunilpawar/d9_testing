@@ -1,0 +1,36 @@
+uuid: 68d86a2d-f0dc-4ad9-8898-5b0ad4d07b28
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: default_node_path
+label: 'Default node path'
+type: 'canonical_entities:node'
+pattern: '[node:title]'
+selection_criteria:
+  e9933855-37aa-4973-9768-76dc0cc653ea:
+    id: node_type
+    bundles:
+      book: book
+      combination: combination
+      company: company
+      compound: compound
+      device: device
+      directory: directory
+      drugs: drugs
+      dsm: dsm
+      generic_drugs: generic_drugs
+      movie: movie
+      opinion: opinion
+      page: page
+      people: people
+      preparation: preparation
+      source: source
+    negate: false
+    context_mapping:
+      node: node
+    uuid: e9933855-37aa-4973-9768-76dc0cc653ea
+selection_logic: and
+weight: 0
+relationships: {  }

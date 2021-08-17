@@ -1,0 +1,21 @@
+uuid: 75ef7347-e7bd-44d6-a7a2-d4970ea77e12
+langcode: en
+status: true
+dependencies:
+  module:
+    - bn_ads
+  theme:
+    - zen
+id: zen_adblock_3
+theme: zen
+region: sidebar_second
+weight: -10
+provider: null
+plugin: ad_block
+settings:
+  id: ad_block
+  label: 'DFP Rectangle Ad'
+  provider: bn_ads
+  label_display: '0'
+  type: rectangle
+visibility: {  }

@@ -1,0 +1,58 @@
+uuid: fca77bb3-d085-4e5d-b91b-8c5580d34210
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d6_term_node_revision_13
+migration_tags:
+  - 'Drupal 6'
+migration_group: migrate_drupal_6
+label: 'Term/node relationship revisions'
+source:
+  plugin: d6_term_node_revision
+  vid: '13'
+process:
+  vid:
+    -
+      plugin: migration
+      migration: d6_node
+      source: vid
+    -
+      plugin: skip_on_empty
+      method: row
+  type: type
+  location: tid
+destination:
+  plugin: 'entity_revision:node'
+migration_dependencies:
+  required:
+    159: upgrade_d6_term_node_2
+    160: upgrade_d6_term_node_3
+    161: upgrade_d6_term_node_5
+    162: upgrade_d6_term_node_9
+    163: upgrade_d6_term_node_10
+    164: upgrade_d6_term_node_11
+    165: upgrade_d6_term_node_12
+    166: upgrade_d6_term_node_13
+    167: upgrade_d6_term_node_14
+    168: upgrade_d6_term_node_15
+    68: upgrade_d6_node_revision_book
+    69: upgrade_d6_node_revision_combinations
+    70: upgrade_d6_node_revision_company
+    71: upgrade_d6_node_revision_compound
+    72: upgrade_d6_node_revision_credit
+    73: upgrade_d6_node_revision_device
+    74: upgrade_d6_node_revision_directory
+    75: upgrade_d6_node_revision_drug
+    76: upgrade_d6_node_revision_dsm
+    77: upgrade_d6_node_revision_dsm_caution
+    78: upgrade_d6_node_revision_generic
+    79: upgrade_d6_node_revision_indication
+    80: upgrade_d6_node_revision_movie
+    81: upgrade_d6_node_revision_opinion
+    82: upgrade_d6_node_revision_page
+    83: upgrade_d6_node_revision_panel
+    84: upgrade_d6_node_revision_people
+    85: upgrade_d6_node_revision_preparation
+    86: upgrade_d6_node_revision_sources
+    87: upgrade_d6_node_revision_tax_tweaks_extras
+  optional: {  }

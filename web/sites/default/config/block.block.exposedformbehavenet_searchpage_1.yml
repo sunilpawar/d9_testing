@@ -1,0 +1,29 @@
+uuid: 43563b85-1f9f-402f-b7c7-2c4141ef70bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.behavenet_search
+  module:
+    - block_visibility_groups
+    - views
+  theme:
+    - behave
+id: exposedformbehavenet_searchpage_1
+theme: behave
+region: header
+weight: -20
+provider: null
+plugin: 'views_exposed_filter_block:behavenet_search-page_1'
+settings:
+  id: 'views_exposed_filter_block:behavenet_search-page_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }

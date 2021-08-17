@@ -1,0 +1,23 @@
+uuid: a9f96e17-8b2b-477f-8d03-8becdf51fb34
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_movie_facebook
+    - node.type.movie
+  module:
+    - link
+id: node.movie.field_movie_facebook
+field_name: field_movie_facebook
+entity_type: node
+bundle: movie
+label: 'Facebook page URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

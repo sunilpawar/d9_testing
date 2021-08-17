@@ -1,0 +1,27 @@
+uuid: 73a8bd6d-9b0a-4a14-aa3a-f5fe07086f6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_upload_file
+    - node.type.page
+  module:
+    - file
+id: node.page.field_upload_file
+field_name: field_upload_file
+entity_type: node
+bundle: page
+label: 'Uploaded file'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: ''
+  file_extensions: 'pdf txt jpg jpeg png gif'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

@@ -1,0 +1,20 @@
+uuid: e8553537-627c-4779-a5f0-18bcc2d97be7
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - node
+id: node.field_people_dod
+field_name: field_people_dod
+entity_type: node
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

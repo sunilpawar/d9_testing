@@ -1,0 +1,23 @@
+uuid: cd620db3-38b7-49d0-8f31-1895703dcdfe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_directory_url
+    - node.type.directory
+  module:
+    - link
+id: node.directory.field_directory_url
+field_name: field_directory_url
+entity_type: node
+bundle: directory
+label: 'Directory URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 1
+field_type: link

@@ -1,0 +1,9 @@
+# The value of the term ID needs to be a string for this plugin
+
+views.filter.taxonomy_index_tid_options:
+  type: views.filter.taxonomy_index_tid_depth
+  label: 'Taxonomy term ID (with options)'
+  mapping:
+    value:
+      sequence:
+        type: string

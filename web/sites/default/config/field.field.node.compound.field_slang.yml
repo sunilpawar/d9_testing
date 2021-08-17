@@ -1,0 +1,19 @@
+uuid: dd5f578e-7c4d-46b3-a946-c8214e3cf79a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_slang
+    - node.type.compound
+id: node.compound.field_slang
+field_name: field_slang
+entity_type: node
+bundle: compound
+label: 'Slang terms'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,101 @@
+uuid: 02005865-c3dc-4612-b600-c6045ed0202e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.behavenet_terms.field_credit
+    - field.field.taxonomy_term.behavenet_terms.field_image
+    - field.field.taxonomy_term.behavenet_terms.field_is_acronym
+    - field.field.taxonomy_term.behavenet_terms.field_is_list
+    - field.field.taxonomy_term.behavenet_terms.field_outside_media
+    - field.field.taxonomy_term.behavenet_terms.field_related_terms
+    - field.field.taxonomy_term.behavenet_terms.field_term_synonyms
+    - image.style.thumbnail
+    - taxonomy.vocabulary.behavenet_terms
+  module:
+    - image
+    - path
+    - text
+    - video_embed_field
+id: taxonomy_term.behavenet_terms.default
+targetEntityType: taxonomy_term
+bundle: behavenet_terms
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 1
+    settings:
+      placeholder: ''
+      rows: 5
+    third_party_settings: {  }
+    region: content
+  field_credit:
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_image:
+    weight: 3
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_is_acronym:
+    weight: 9
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_is_list:
+    weight: 8
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_outside_media:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: video_embed_field_textfield
+    region: content
+  field_related_terms:
+    weight: 7
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_term_synonyms:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  path:
+    type: path
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

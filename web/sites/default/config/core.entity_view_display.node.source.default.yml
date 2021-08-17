@@ -1,0 +1,84 @@
+uuid: 129a9d3c-afd6-448e-880c-6a1d17fd5bc2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.source.field_graphic
+    - field.field.node.source.field_outside_media
+    - field.field.node.source.field_related_content
+    - field.field.node.source.field_schedule
+    - field.field.node.source.field_slang
+    - field.field.node.source.field_source_dea_number
+    - field.field.node.source.field_source_description
+    - field.field.node.source.field_source_sci_name
+    - node.type.source
+  module:
+    - options
+    - text
+    - user
+    - video_embed_field
+id: node.source.default
+targetEntityType: node
+bundle: source
+mode: default
+content:
+  field_outside_media:
+    weight: 5
+    label: visually_hidden
+    settings:
+      responsive: true
+      width: 854
+      height: 480
+      autoplay: false
+    third_party_settings: {  }
+    type: video_embed_field_video
+    region: content
+  field_related_content:
+    type: entity_reference_label
+    weight: 6
+    label: visually_hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+  field_schedule:
+    weight: 3
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_slang:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_source_dea_number:
+    weight: 1
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_source_description:
+    weight: 4
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_source_sci_name:
+    weight: 0
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  field_graphic: true
+  links: true

@@ -1,0 +1,22 @@
+uuid: 78ba4cf3-c730-47cf-b14d-84d09564f752
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - behave
+_core:
+  default_config_hash: qleYsjkqxdNvWkvDJnG8H6P0n8QRmWecPy34dhUIuQU
+id: behave_content
+theme: behave
+region: content
+weight: -19
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

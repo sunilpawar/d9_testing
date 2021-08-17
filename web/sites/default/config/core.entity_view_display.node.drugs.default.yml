@@ -1,0 +1,101 @@
+uuid: c2c22a4a-7b5e-44cf-b0d2-2e283f1e7d46
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.drugs.field_company
+    - field.field.node.drugs.field_drug_combo
+    - field.field.node.drugs.field_drug_pi_url
+    - field.field.node.drugs.field_drug_url
+    - field.field.node.drugs.field_generic
+    - field.field.node.drugs.field_graphic
+    - field.field.node.drugs.field_indication
+    - field.field.node.drugs.field_outside_media
+    - field.field.node.drugs.field_related_content
+    - node.type.drugs
+  module:
+    - bn_general
+    - user
+    - video_embed_field
+id: node.drugs.default
+targetEntityType: node
+bundle: drugs
+mode: default
+content:
+  field_company:
+    weight: 1
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_drug_combo:
+    weight: 5
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_drug_pi_url:
+    weight: 3
+    label: visually_hidden
+    settings:
+      link_text: 'FDA Label'
+      rel: 0
+      target: 0
+      trim_length: ''
+    third_party_settings: {  }
+    type: link_text_field_formatter
+    region: content
+  field_drug_url:
+    weight: 2
+    label: visually_hidden
+    settings:
+      link_text: 'Product Web site'
+      rel: 0
+      target: 0
+      trim_length: ''
+    third_party_settings: {  }
+    type: link_text_field_formatter
+    region: content
+  field_generic:
+    weight: 0
+    label: visually_hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_indication:
+    weight: 4
+    label: visually_hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_outside_media:
+    weight: 7
+    label: visually_hidden
+    settings:
+      responsive: true
+      width: 854
+      height: 480
+      autoplay: false
+    third_party_settings: {  }
+    type: video_embed_field_video
+    region: content
+  field_related_content:
+    weight: 6
+    label: visually_hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  field_graphic: true
+  links: true

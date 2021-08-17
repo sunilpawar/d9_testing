@@ -1,0 +1,62 @@
+uuid: 2f8fbf9a-1fec-49b3-a408-08907fb28c01
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.generic_drugs.field_actions
+    - field.field.node.generic_drugs.field_chemical_class
+    - field.field.node.generic_drugs.field_clinical_class
+    - field.field.node.generic_drugs.field_compound
+    - field.field.node.generic_drugs.field_credit
+    - field.field.node.generic_drugs.field_dea_number
+    - field.field.node.generic_drugs.field_drug_combo
+    - field.field.node.generic_drugs.field_effect_class
+    - field.field.node.generic_drugs.field_generic
+    - field.field.node.generic_drugs.field_generic_acronyms
+    - field.field.node.generic_drugs.field_generic_alt_spellings
+    - field.field.node.generic_drugs.field_generic_precursor
+    - field.field.node.generic_drugs.field_graphic
+    - field.field.node.generic_drugs.field_isomer
+    - field.field.node.generic_drugs.field_medline_url
+    - field.field.node.generic_drugs.field_outside_media
+    - field.field.node.generic_drugs.field_related_content
+    - field.field.node.generic_drugs.field_related_terms
+    - field.field.node.generic_drugs.field_schedule
+    - field.field.node.generic_drugs.field_slang_terms
+    - field.field.node.generic_drugs.field_source
+    - node.type.generic_drugs
+  module:
+    - user
+id: node.generic_drugs.teaser
+targetEntityType: node
+bundle: generic_drugs
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_actions: true
+  field_chemical_class: true
+  field_clinical_class: true
+  field_compound: true
+  field_credit: true
+  field_dea_number: true
+  field_drug_combo: true
+  field_effect_class: true
+  field_generic: true
+  field_generic_acronyms: true
+  field_generic_alt_spellings: true
+  field_generic_precursor: true
+  field_graphic: true
+  field_isomer: true
+  field_medline_url: true
+  field_outside_media: true
+  field_related_content: true
+  field_related_terms: true
+  field_schedule: true
+  field_slang_terms: true
+  field_source: true

@@ -1,0 +1,19 @@
+uuid: 63af4cf9-ff69-47f4-8043-5bbccad71a09
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_people_credit
+field_name: field_people_credit
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

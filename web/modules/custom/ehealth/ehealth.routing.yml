@@ -1,0 +1,7 @@
+ehealth.settings:
+  path: 'admin/config/people/ehealth/settings'
+  defaults:
+    _form: '\Drupal\ehealth\Form\SettingForm'
+    _title: 'SettingForm'
+  requirements:
+    _permission: 'administer users'

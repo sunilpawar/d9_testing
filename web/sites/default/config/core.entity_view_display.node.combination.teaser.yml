@@ -1,0 +1,46 @@
+uuid: e719261e-fcf4-41fc-b314-63916e9d919e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.combination.field_combo_dea_number
+    - field.field.node.combination.field_combo_description
+    - field.field.node.combination.field_combo_items
+    - field.field.node.combination.field_combo_medline_url
+    - field.field.node.combination.field_credit
+    - field.field.node.combination.field_drugs
+    - field.field.node.combination.field_graphic
+    - field.field.node.combination.field_outside_media
+    - field.field.node.combination.field_related_content
+    - field.field.node.combination.field_related_terms
+    - field.field.node.combination.field_schedule
+    - field.field.node.combination.field_slang
+    - field.field.node.combination.field_source
+    - node.type.combination
+  module:
+    - user
+id: node.combination.teaser
+targetEntityType: node
+bundle: combination
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_combo_dea_number: true
+  field_combo_description: true
+  field_combo_items: true
+  field_combo_medline_url: true
+  field_credit: true
+  field_drugs: true
+  field_graphic: true
+  field_outside_media: true
+  field_related_content: true
+  field_related_terms: true
+  field_schedule: true
+  field_slang: true
+  field_source: true

@@ -1,0 +1,14 @@
+uuid: 30b93ba6-4f36-49fe-8b83-5e52a661a0c4
+langcode: en
+status: true
+dependencies: {  }
+name: 'Full HTML, no editor'
+format: full_html_no_editor
+weight: -7
+filters:
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: true
+    weight: 10
+    settings: {  }

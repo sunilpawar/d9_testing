@@ -1,0 +1,25 @@
+uuid: 5368b9fb-a2fc-4c60-bc36-20602e1f6c75
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:ad_block:19886a02-2254-47c8-94b9-fa2055ef3768'
+  module:
+    - block_content
+  theme:
+    - bartik
+id: therapysitesad
+theme: bartik
+region: sidebar_second
+weight: -8
+provider: null
+plugin: 'block_content:19886a02-2254-47c8-94b9-fa2055ef3768'
+settings:
+  id: 'block_content:19886a02-2254-47c8-94b9-fa2055ef3768'
+  label: 'TherapySites Ad'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

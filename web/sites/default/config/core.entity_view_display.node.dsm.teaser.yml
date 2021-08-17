@@ -1,0 +1,24 @@
+uuid: 490bfdf4-37b0-4a46-9301-02a9eab06d26
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.dsm.field_dsm_criteria_fc
+    - field.field.node.dsm.field_related_terms
+    - node.type.dsm
+  module:
+    - user
+id: node.dsm.teaser
+targetEntityType: node
+bundle: dsm
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_dsm_criteria_fc: true
+  field_related_terms: true

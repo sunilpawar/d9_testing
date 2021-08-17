@@ -1,0 +1,114 @@
+<?php
+
+/**
+ * @file
+ * Contains bn_ads.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function bn_ads_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the bn_ads module.
+    case 'help.page.bn_ads':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Provides blocks needed to render DFP Behavenet ads.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function bn_ads_theme($existing, $type, $theme, $path) {
+  return [
+    'bn_ad' => [
+      'variables' => ['content' => NULL],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_install().
+ */
+function bn_ads_update_8001() {
+  // Imports default content for ads. See also bn_ads.info.yml.
+  bn_ads_import_default_content('block_content/8dade177-bf21-4170-8de8-e38be142f64d.json');
+  bn_ads_import_default_content('block_content/98cd9599-fefd-434c-94f8-f816b67c5af5.json');
+  bn_ads_import_default_content('block_content/19886a02-2254-47c8-94b9-fa2055ef3768.json');
+  bn_ads_import_default_content('block_content/4730396b-4beb-48b7-b913-936cb29fdd16.json');
+  bn_ads_import_default_content('block_content/28ce3be5-d452-4e66-a140-6e1d41205ed3.json');
+
+  drupal_set_message('Successfully generated default content for Behavenet Ads.');
+}
+
+/**
+ * Adds default content for the Drugs landing page custom block.
+ */
+function bn_ads_update_8002(&$sandbox) {
+  bn_ads_import_default_content('block_content/3c4ae154-62b1-42b8-99ba-341ddee49ed0.json');
+}
+
+/**
+ * Adds default content for the GoodTherapy search custom block.
+ */
+function bn_ads_update_8201(&$sandbox) {
+  bn_ads_import_default_content('block_content/f08c85ed-4e81-4fbd-9c67-ae9698ba1ea1.json');
+}
+
+/**
+ * Adds default content for the Daily Tweets custom block.
+ */
+function bn_ads_update_8202(&$sandbox) {
+  bn_ads_import_default_content('block_content/05985a3b-c694-40c1-9eca-7c018efdff6c.json');
+}
+
+/**
+ * Adds default content for the footer copyright custom block.
+ */
+function bn_ads_update_8203(&$sandbox) {
+  bn_ads_import_default_content('block_content/45450ff6-a359-4445-9de0-e0d30cebe37d.json');
+}
+
+/**
+ * Adds default content for the phobias and manias custom blocks.
+ */
+function bn_ads_update_8204(&$sandbox) {
+  bn_ads_import_default_content('block_content/0c0e080a-cf31-44bd-9f9f-d573f7b13921.json');
+  bn_ads_import_default_content('block_content/4f975fe9-bc7e-4c60-b402-474b6c8d136e.json');
+  bn_ads_import_default_content('block_content/5f323d2d-cd94-474a-83ae-83d540133105.json');
+}
+
+/**
+ * Import a piece of content exported by default content module.
+ */
+function bn_ads_import_default_content($path_to_content_json) {
+  list($entity_type_id, $filename) = explode('/', $path_to_content_json);
+  $p = drupal_get_path('module', 'bn_ads');
+  $encoded_content = file_get_contents($p . '/content/' . $path_to_content_json);
+  $serializer = \Drupal::service('serializer');
+  $content = $serializer->decode($encoded_content, 'hal_json');
+  global $base_url;
+  $url = $base_url . base_path();
+  $content['_links']['type']['href'] = str_replace('http://drupal.org/', $url, $content['_links']['type']['href']);
+  $contents = $serializer->encode($content, 'hal_json');
+  $class = 'Drupal\\' . $entity_type_id . '\Entity\\' . str_replace(' ', '', ucwords(str_replace('_', ' ', $entity_type_id)));
+  $entity = $serializer->deserialize($contents, $class, 'hal_json', array('request_method' => 'POST'));
+
+  // Try loading the entity to see if it already exists.
+  $storage = \Drupal::entityTypeManager()->getStorage($entity_type_id);
+  if ($storage->load($entity->id())) {
+    drupal_set_message(t('An entity with the UID %uid already exists. Using existing content for that entity.', ['%uid' => $entity->uuid()]));
+  }
+  else {
+    $entity->enforceIsNew(TRUE);
+    $entity->save();
+    drupal_set_message('Set default content for the entity %uid', ['%uid' => $entity->uuid()]);
+  }
+}

@@ -1,0 +1,36 @@
+uuid: ddededc5-d475-47cf-ba55-9972a69755c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_combo_items
+    - node.type.combination
+    - node.type.compound
+    - node.type.drugs
+    - node.type.generic_drugs
+    - node.type.preparation
+    - node.type.source
+id: node.combination.field_combo_items
+field_name: field_combo_items
+entity_type: node
+bundle: combination
+label: 'Combination of what'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      compound: compound
+      generic_drugs: generic_drugs
+      preparation: preparation
+      source: source
+      drugs: drugs
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: compound
+field_type: entity_reference

@@ -1,0 +1,46 @@
+uuid: f15ecc38-5e2e-4e6e-9b95-583f8676e8b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.disorders_landing_page
+    - views.view.child_terms
+  module:
+    - block_visibility_groups
+    - system
+    - views
+  theme:
+    - behave
+id: views_block__child_terms_oveo_block_1
+theme: behave
+region: content
+weight: -23
+provider: null
+plugin: 'views_block:child_terms-oveo_block_1'
+settings:
+  id: 'views_block:child_terms-oveo_block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  exposed_filter:
+    parent_target_id:
+      enabled: true
+      value: '7358'
+  contextual_filter:
+    parent:
+      enabled: true
+      value: '7358'
+  context_mapping: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: /node/27648
+    negate: false
+    context_mapping: {  }
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: disorders_landing_page
+    context_mapping: {  }

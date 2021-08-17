@@ -1,0 +1,21 @@
+uuid: 288b489e-f44c-47a0-8ea3-4c56dedb64e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_amazon_asin
+    - node.type.device
+  module:
+    - amazon_field
+id: node.device.field_amazon_asin
+field_name: field_amazon_asin
+entity_type: node
+bundle: device
+label: 'Amazon ASIN'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: amazon_asin_field

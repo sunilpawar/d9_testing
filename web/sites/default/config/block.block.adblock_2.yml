@@ -1,0 +1,21 @@
+uuid: 5071b693-20ac-4fe5-a74e-e9880e6c9711
+langcode: en
+status: true
+dependencies:
+  module:
+    - bn_ads
+  theme:
+    - bartik
+id: adblock_2
+theme: bartik
+region: sidebar_first
+weight: -10
+provider: null
+plugin: ad_block
+settings:
+  id: ad_block
+  label: 'DFP Skyscraper Ad'
+  provider: bn_ads
+  label_display: '0'
+  type: skyscraper
+visibility: {  }

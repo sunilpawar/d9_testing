@@ -1,0 +1,42 @@
+uuid: ac6b2c21-946a-4ed2-9f55-cd4495ec695f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.people.field_first_name
+    - field.field.node.people.field_last_name
+    - field.field.node.people.field_outside_media
+    - field.field.node.people.field_people_alt_names
+    - field.field.node.people.field_people_bio
+    - field.field.node.people.field_people_credit
+    - field.field.node.people.field_people_dob
+    - field.field.node.people.field_people_dod
+    - field.field.node.people.field_people_image
+    - field.field.node.people.field_related_content
+    - field.field.node.people.field_related_terms
+    - node.type.people
+  module:
+    - user
+id: node.people.teaser
+targetEntityType: node
+bundle: people
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_first_name: true
+  field_last_name: true
+  field_outside_media: true
+  field_people_alt_names: true
+  field_people_bio: true
+  field_people_credit: true
+  field_people_dob: true
+  field_people_dod: true
+  field_people_image: true
+  field_related_content: true
+  field_related_terms: true

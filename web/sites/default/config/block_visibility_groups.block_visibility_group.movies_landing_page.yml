@@ -1,0 +1,17 @@
+uuid: 0f7dcf61-1622-4b41-9657-a70f293dad78
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: movies_landing_page
+label: 'Movies landing page'
+logic: and
+conditions:
+  3adab949-f718-4abc-ab7d-64aedf5bb741:
+    id: request_path
+    pages: /node/28597
+    negate: false
+    context_mapping: {  }
+    uuid: 3adab949-f718-4abc-ab7d-64aedf5bb741
+allow_other_conditions: false

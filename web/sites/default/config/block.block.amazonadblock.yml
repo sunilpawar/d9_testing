@@ -1,0 +1,28 @@
+uuid: 09966a08-af6a-46ff-9599-c35d3424a5d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.movies_landing_page
+  module:
+    - block_visibility_groups
+    - bn_ads
+  theme:
+    - behave
+id: amazonadblock
+theme: behave
+region: content
+weight: -14
+provider: null
+plugin: amazon_ad_block
+settings:
+  id: amazon_ad_block
+  label: 'Amazon ad block'
+  provider: bn_ads
+  label_display: '0'
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: movies_landing_page
+    context_mapping: {  }

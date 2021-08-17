@@ -1,0 +1,10 @@
+ehealth.settings:
+  type: config_object
+  label: 'Ehealth Settings'
+  mapping:
+    ehealth_token:
+      type: text
+      label: 'E-health Token'
+    ehealth_publisher_id:
+      type: text
+      label: 'E-health Publisher ID'

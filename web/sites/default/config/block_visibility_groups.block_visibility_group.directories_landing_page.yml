@@ -1,0 +1,17 @@
+uuid: 7a7d206b-8499-407f-abd8-e92acc62d5ff
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: directories_landing_page
+label: 'Directories landing page'
+logic: and
+conditions:
+  91a7537d-5f8e-4975-b35b-1fc125bec8d8:
+    id: request_path
+    pages: /node/27647
+    negate: false
+    context_mapping: {  }
+    uuid: 91a7537d-5f8e-4975-b35b-1fc125bec8d8
+allow_other_conditions: false

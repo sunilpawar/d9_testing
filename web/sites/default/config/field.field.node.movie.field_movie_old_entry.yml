@@ -1,0 +1,23 @@
+uuid: 4311282f-5a67-4f6d-aa5e-ff5e86a4e0d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_movie_old_entry
+    - node.type.movie
+  module:
+    - link
+id: node.movie.field_movie_old_entry
+field_name: field_movie_old_entry
+entity_type: node
+bundle: movie
+label: 'Old (Blogger.com) blog entry'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 1
+field_type: link

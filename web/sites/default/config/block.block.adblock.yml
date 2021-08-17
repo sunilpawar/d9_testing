@@ -1,0 +1,21 @@
+uuid: 39815123-6657-434c-8045-3ecc98522e2c
+langcode: en
+status: true
+dependencies:
+  module:
+    - bn_ads
+  theme:
+    - bartik
+id: adblock
+theme: bartik
+region: header
+weight: -11
+provider: null
+plugin: ad_block
+settings:
+  id: ad_block
+  label: 'Leaderboard Desktop Ad'
+  provider: bn_ads
+  label_display: '0'
+  type: leader
+visibility: {  }

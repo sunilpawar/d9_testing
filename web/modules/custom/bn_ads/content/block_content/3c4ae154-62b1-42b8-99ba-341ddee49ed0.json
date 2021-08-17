@@ -1,0 +1,97 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/block\/19?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/basic"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/revision_user": [
+            {
+                "href": "http:\/\/default\/users\/admin?_format=hal_json"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": "19"
+        }
+    ],
+    "uuid": [
+        {
+            "value": "3c4ae154-62b1-42b8-99ba-341ddee49ed0"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": "31"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "basic"
+        }
+    ],
+    "info": [
+        {
+            "value": "Molecular Entities by Class",
+            "lang": "en"
+        }
+    ],
+    "changed": [
+        {
+            "value": "1487616967",
+            "lang": "en"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "1487616967"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/revision_user": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/users\/admin?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "f08c85ed-4e81-4fbd-9c67-ae9698ba1ea1"
+                    }
+                ]
+            }
+        ]
+    },
+    "revision_translation_affected": [
+        {
+            "value": "1",
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": "1",
+            "lang": "en"
+        }
+    ],
+    "body": [
+        {
+            "value": "<ul>\r\n\t<li><a href=\"\/taxonomy\/term\/10665\">Action class<\/a><\/li>\r\n\t<li><a href=\"\/taxonomy\/term\/10677\">Chemical class<\/a><\/li>\r\n\t<li><a href=\"\/taxonomy\/term\/10663\">Clinical class<\/a><\/li>\r\n\t<li><a href=\"\/taxonomy\/term\/11106\">Effect class<\/a><\/li>\r\n<\/ul>\r\n\r\n<p><a href=\"\/taxonomy\/term\/11872\">Drug compounds<\/a><br \/>\r\n<a href=\"\/taxonomy\/term\/10599\">Drug preparations<\/a><br \/>\r\n<a href=\"\/taxonomy\/term\/8125\">Drug combinations<\/a><br \/>\r\n<a href=\"\/taxonomy\/term\/11873\">Drug sources<\/a><\/p>\r\n",
+            "format": "full_html",
+            "summary": "",
+            "lang": "en"
+        }
+    ]
+}

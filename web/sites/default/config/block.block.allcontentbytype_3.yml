@@ -1,0 +1,52 @@
+uuid: 08058a51-d781-4812-b4a0-5cba7ac9d179
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_visibility_groups
+    - bn_general
+    - system
+  theme:
+    - behave
+id: allcontentbytype_3
+theme: behave
+region: content
+weight: -15
+provider: null
+plugin: all_content_block
+settings:
+  id: all_content_block
+  label: 'Drug Acronyms'
+  provider: bn_general
+  label_display: '0'
+  node_types:
+    field_acronyms: field_acronyms
+    book: 0
+    combination: 0
+    company: 0
+    compound: 0
+    credit: 0
+    device: 0
+    directory: 0
+    drugs: 0
+    dsm: 0
+    generic_drugs: 0
+    indication: 0
+    movie: 0
+    opinion: 0
+    page: 0
+    people: 0
+    preparation: 0
+    source: 0
+  split_by_type: 0
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: /node/38632
+    negate: false
+    context_mapping: {  }

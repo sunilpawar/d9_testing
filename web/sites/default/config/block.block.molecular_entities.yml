@@ -1,0 +1,52 @@
+uuid: 16ab50c4-7a8f-4e29-89fe-f34c94729fa0
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_visibility_groups
+    - bn_general
+    - system
+  theme:
+    - behave
+id: molecular_entities
+theme: behave
+region: content
+weight: -16
+provider: null
+plugin: all_content_block
+settings:
+  id: all_content_block
+  label: 'Molecular Entities'
+  provider: bn_general
+  label_display: '0'
+  node_types:
+    generic_drugs: generic_drugs
+    book: 0
+    combination: 0
+    company: 0
+    compound: 0
+    credit: 0
+    device: 0
+    directory: 0
+    drugs: 0
+    dsm: 0
+    indication: 0
+    movie: 0
+    opinion: 0
+    page: 0
+    people: 0
+    preparation: 0
+    source: 0
+    field_acronyms: 0
+  split_by_type: 0
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: /node/38622
+    negate: false
+    context_mapping: {  }

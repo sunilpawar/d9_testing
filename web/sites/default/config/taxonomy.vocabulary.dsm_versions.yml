@@ -1,0 +1,8 @@
+uuid: 5b26ad32-28e4-4abe-b745-696ce52d579e
+langcode: en
+status: true
+dependencies: {  }
+name: 'DSM Version'
+vid: dsm_versions
+description: ''
+weight: 0

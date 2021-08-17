@@ -1,0 +1,26 @@
+uuid: 79e03cf8-f976-4f5f-9ec4-1ee3c9794d0a
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_visibility_groups
+    - easy_social
+  theme:
+    - behave
+id: easysocial
+theme: behave
+region: sidebar_second
+weight: -19
+provider: null
+plugin: easy_social_block
+settings:
+  id: easy_social_block
+  label: 'Easy Social'
+  provider: easy_social
+  label_display: '0'
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }

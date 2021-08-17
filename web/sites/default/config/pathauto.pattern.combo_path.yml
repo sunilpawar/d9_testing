@@ -1,0 +1,22 @@
+uuid: 9a975b45-e825-4b3c-ac23-a82238b0a89f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: combo_path
+label: 'Combo path'
+type: 'canonical_entities:node'
+pattern: 'combination/[node:title]'
+selection_criteria:
+  35296599-ac4c-45a1-9092-3c4d8a5c6677:
+    id: node_type
+    bundles:
+      combination: combination
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 35296599-ac4c-45a1-9092-3c4d8a5c6677
+selection_logic: and
+weight: -5
+relationships: {  }

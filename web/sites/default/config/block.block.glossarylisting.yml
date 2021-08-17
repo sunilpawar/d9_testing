@@ -1,0 +1,25 @@
+uuid: f91f0096-e313-4c21-b6b7-8037afc81aa2
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:28ce3be5-d452-4e66-a140-6e1d41205ed3'
+  module:
+    - block_content
+  theme:
+    - bartik
+id: glossarylisting
+theme: bartik
+region: sidebar_first
+weight: -11
+provider: null
+plugin: 'block_content:28ce3be5-d452-4e66-a140-6e1d41205ed3'
+settings:
+  id: 'block_content:28ce3be5-d452-4e66-a140-6e1d41205ed3'
+  label: 'Glossary listing'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

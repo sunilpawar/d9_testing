@@ -1,0 +1,17 @@
+uuid: 2f132e80-67fc-4c74-b647-f020f0b30afd
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: drugs_landing_page
+label: 'Drugs landing page'
+logic: and
+conditions:
+  5caecb60-5b4a-40ab-817e-1e38e899d524:
+    id: request_path
+    pages: /node/27644
+    negate: false
+    context_mapping: {  }
+    uuid: 5caecb60-5b4a-40ab-817e-1e38e899d524
+allow_other_conditions: false

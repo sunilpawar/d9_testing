@@ -1,0 +1,31 @@
+uuid: 19d7192f-f93e-4f96-afb7-233b493ae8e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.blog_landing_page
+    - views.view.opinion
+  module:
+    - block_visibility_groups
+    - views
+  theme:
+    - behave
+id: views_block__opinion_block_2
+theme: behave
+region: content
+weight: -8
+provider: null
+plugin: 'views_block:opinion-block_2'
+settings:
+  id: 'views_block:opinion-block_2'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: blog_landing_page
+    context_mapping: {  }

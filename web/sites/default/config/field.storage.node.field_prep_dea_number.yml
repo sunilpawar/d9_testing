@@ -1,0 +1,21 @@
+uuid: d7b24f48-54f0-47d4-bf1c-1ef09b5b5881
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_prep_dea_number
+field_name: field_prep_dea_number
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

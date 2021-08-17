@@ -1,0 +1,46 @@
+uuid: dfd0085f-e91d-49f2-84f0-c1cb2d0cc5cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_amazon_asin
+  module:
+    - amazon_field
+    - ctools
+    - fieldblock
+  theme:
+    - behave
+id: contentfield
+theme: behave
+region: sidebar_second
+weight: -20
+provider: null
+plugin: 'fieldblock:node'
+settings:
+  id: 'fieldblock:node'
+  label: 'Book/Movie image'
+  provider: fieldblock
+  label_display: '0'
+  label_from_field: 0
+  field_name: field_amazon_asin
+  formatter_id: amazon_field_formatter
+  formatter_settings:
+    provider: fieldblock
+    admin_label: ''
+    label: 'Book/Movie image'
+    label_display: 0
+    label_from_field: 0
+    field_name: field_amazon_asin
+    formatter:
+      id: amazon_field_formatter
+    max_age: ''
+    template: image_large
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      book: book
+      movie: movie
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

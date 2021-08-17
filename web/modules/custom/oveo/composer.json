@@ -1,0 +1,14 @@
+{
+  "name": "drupal/oveo",
+  "type": "drupal-module",
+  "description": "Allows block displays to override exposed filters and sorts via the block configuration.",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/oveo",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/oveo",
+    "source": "http://cgit.drupalcode.org/oveo"
+  },
+  "require": { }
+}

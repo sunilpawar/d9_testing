@@ -1,0 +1,16 @@
+uuid: 6fd2c1ee-bb43-499c-b00b-d76246acbf1c
+langcode: en
+status: true
+dependencies: {  }
+id: disorders
+title: Disorders
+route_name: entity.node.canonical
+route_parameters:
+  node: 27648
+options: {  }
+expanded: false
+menu_name: behavenet-main-menu
+enabled: true
+parent: ''
+weight: -50
+description: ''

@@ -1,0 +1,27 @@
+uuid: 882c0950-643f-4ec2-831a-26c9086db5ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_clinical_class
+    - node.type.generic_drugs
+    - taxonomy.vocabulary.clinical_classes
+id: node.generic_drugs.field_clinical_class
+field_name: field_clinical_class
+entity_type: node
+bundle: generic_drugs
+label: 'Clinical Class'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      clinical_classes: clinical_classes
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

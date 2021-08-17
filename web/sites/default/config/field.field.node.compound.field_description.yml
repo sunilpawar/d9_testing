@@ -1,0 +1,21 @@
+uuid: 660e6df2-d5ac-48a9-a546-96a66592ce62
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description
+    - node.type.compound
+  module:
+    - text
+id: node.compound.field_description
+field_name: field_description
+entity_type: node
+bundle: compound
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

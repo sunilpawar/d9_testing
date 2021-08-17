@@ -1,0 +1,27 @@
+uuid: 6edc006b-b781-4881-983b-57268924e157
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_visibility_groups
+    - bn_ads
+  theme:
+    - behave
+id: adblock_9
+theme: behave
+region: bottom
+weight: 0
+provider: null
+plugin: ad_block
+settings:
+  id: ad_block
+  label: 'Interstitial ad'
+  provider: bn_ads
+  label_display: '0'
+  type: interstitial
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }

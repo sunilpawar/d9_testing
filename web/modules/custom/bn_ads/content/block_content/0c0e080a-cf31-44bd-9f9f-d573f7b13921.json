@@ -1,0 +1,97 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/block\/25?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/basic"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/revision_user": [
+            {
+                "href": "http:\/\/default\/users\/admin?_format=hal_json"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": "25"
+        }
+    ],
+    "uuid": [
+        {
+            "value": "0c0e080a-cf31-44bd-9f9f-d573f7b13921"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": "37"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "basic"
+        }
+    ],
+    "info": [
+        {
+            "value": "Manias by Object",
+            "lang": "en"
+        }
+    ],
+    "changed": [
+        {
+            "value": "1490117312",
+            "lang": "en"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "1490117312"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/revision_user": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/users\/admin?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "f08c85ed-4e81-4fbd-9c67-ae9698ba1ea1"
+                    }
+                ]
+            }
+        ]
+    },
+    "revision_translation_affected": [
+        {
+            "value": "1",
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": "1",
+            "lang": "en"
+        }
+    ],
+    "body": [
+        {
+            "value": "<select class=\"js-jumpmenu\"><option selected>- Choose -<\/option>\r\n<option value=\"\/acronymania\">acronyms<\/option>\r\n<option value=\"\/dipsomania\">alcohol, drinking<\/option>\r\n<option value=\"\/zoomania\">animals<\/option>\r\n<option value=\"\/balletomania\">ballet<\/option>\r\n<option value=\"\/Beatlemania\">Beatles, the<\/option>\r\n<option value=\"\/clinomania\">bed, lying in <\/option>\r\n<option value=\"\/apimania\">bees or beekeeping<\/option>\r\n<option value=\"\/agromania\">being in open spaces<\/option>\r\n<option value=\"\/morsusmania\">biting<\/option>\r\n<option value=\"\/phaneromania\">biting one\u2019s fingernails<\/option>\r\n<option value=\"\/erythomania\">blushing<\/option>\r\n<option value=\"\/bibliomania\">books<\/option>\r\n<option value=\"\/bibliokleptomania\">books, stealing<\/option>\r\n<option value=\"\/bracteomania\">bracts, excessive production of<\/option>\r\n<option value=\"\/brycomania\">bruxomania, severe <\/option>\r\n<option value=\"\/ailuromania\">cats<\/option>\r\n<option value=\"\/Chinamania\">China and all things Chinese<\/option>\r\n<option value=\"\/chloralomania\">chloral hydrate, alone or mixed with alcohol<\/option>\r\n<option value=\"\/parousiamania\">Christ, the second coming of<\/option>\r\n\ufeff<option value=\"\/ablutomania\">cleaning oneself<\/option>\r\n<option value=\"\/cremnomania\">cliffs, climbing <\/option>\r\n<option value=\"\/cremnomania\">climbing cliffs<\/option>\r\n<option value=\"\/phytomania\">collecting plants<\/option>\r\n<option value=\"\/stampomania\">collecting stamps<\/option>\r\n<option value=\"\/paramania\">complaining<\/option>\r\n<option value=\"\/necromania\">corpses, sexual acitivity with <\/option>\r\n<option value=\"\/arithmomania\">counting<\/option>\r\n<option value=\"\/pseudomania\">crime, falsely alleging responsibility for a <\/option>\r\n<option value=\"\/choreomania\">dancing<\/option>\r\n<option value=\"\/polkamania\">dancing the polka <\/option>\r\n<option value=\"\/decalcomania\">decals or decaling<\/option>\r\n<option value=\"\/decidomania\">decisions<\/option>\r\n<option value=\"\/dinomania\">dinosaurs<\/option>\r\n<option value=\"\/discomania\">disco music or dancing<\/option>\r\n<option value=\"\/uranomania\">divinity<\/option>\r\n<option value=\"\/cynomania\">dogs<\/option>\r\n<option value=\"\/ecomania\">dominance of own family, submission to others<\/option>\r\n<option value=\"\/dipsomania\">drinking alcohol<\/option>\r\n<option value=\"\/pharmacomania\">drugs, experimenting with <\/option>\r\n<option value=\"\/phagomania\">eating<\/option>\r\n<option value=\"\/sitiomania\">eating<\/option>\r\n<option value=\"\/opsomania\">eating only one kind of food<\/option>\r\n<option value=\"\/Anglomania\">England and the English<\/option>\r\n<option value=\"\/epomania\">epics, writing <\/option>\r\n<option value=\"\/drapetomania\">escape from slavery<\/option>\r\n<option value=\"\/etheromania\">ether<\/option>\r\n<option value=\"\/eulogomania\">eulogies<\/option>\r\n<option value=\"\/habromania\">euphoria<\/option>\r\n<option value=\"\/phyllomania\">excessive or abnormal leaf production by plants<\/option>\r\n<option value=\"\/bracteomania\">excessive production of bracts<\/option>\r\n<option value=\"\/pharmacomania\">experimenting with drugs<\/option>\r\n<option value=\"\/pseudomania\">falsely alleging responsibility for a crime<\/option>\r\n<option value=\"\/copromania\">feces<\/option>\r\n<option value=\"\/pteridomania\">ferns<\/option>\r\n<option value=\"\/phaneromania\">fingernails, biting one\u2019s <\/option>\r\n<option value=\"\/pyromania\">fire<\/option>\r\n<option value=\"\/flagellomania\">flogging<\/option>\r\n<option value=\"\/florimania\">flowers<\/option>\r\n<option value=\"\/phagomania\">food<\/option>\r\n<option value=\"\/sitiomania\">food<\/option>\r\n<option value=\"\/opsomania\">food, eating only one kind of <\/option>\r\n<option value=\"\/xenomania\">foreign things<\/option>\r\n<option value=\"\/dendromania\">forest, the<\/option>\r\n<option value=\"\/hylomania\">forests<\/option>\r\n<option value=\"\/Francomania\">France and all things French<\/option>\r\n<option value=\"\/Lisztomania\">Franz Liszt<\/option>\r\n<option value=\"\/eleutheromania\">freedom<\/option>\r\n<option value=\"\/doramania\">fur<\/option>\r\n<option value=\"\/cheromania\">gaiety<\/option>\r\n<option value=\"\/habromania\">gaiety<\/option>\r\n<option value=\"\/edeomania\">genitals<\/option>\r\n<option value=\"\/Teutomania\">Germany and all things German<\/option>\r\n<option value=\"\/doromania\">giving<\/option>\r\n<option value=\"\/Graecomania\">Greece and all things Greek<\/option>\r\n<option value=\"\/bruxomania\">grinding teeth<\/option>\r\n<option value=\"\/brycomania\">grinding teeth, severe<\/option>\r\n<option value=\"\/trichotillomania\">hair, removing one's own <\/option>\r\n<option value=\"\/Pottermania\">Harry Potter<\/option>\r\n<option value=\"\/misomania\">hatred of everything or of something in particular<\/option>\r\n<option value=\"\/hexametromania\">hexameter<\/option>\r\n<option value=\"\/catapedamania\">high places, jumping down from <\/option>\r\n<option value=\"\/empleomania\">holding public office.<\/option>\r\n<option value=\"\/hippomania\">horses<\/option>\r\n<option value=\"\/iconomania\">icons<\/option>\r\n<option value=\"\/idolomania\">idols<\/option>\r\n<option value=\"\/nosomania\">illness, suffering from one's own <\/option>\r\n<option value=\"\/potichomania\">imitating Oriental porcelain<\/option>\r\n<option value=\"\/aboulomania\">indecisiveness<\/option>\r\n<option value=\"\/infomania\">information<\/option>\r\n<option value=\"\/entomomania\">insects<\/option>\r\n<option value=\"\/aidoiomania\">intercourse, sexual <\/option>\r\n<option value=\"\/islomania\">islands<\/option>\r\n<option value=\"\/Italomania\">Italy and all things Italian<\/option>\r\n<option value=\"\/poriomania\">journeying away from home<\/option>\r\n<option value=\"\/catapedamania\">jumping down from high places<\/option>\r\n<option value=\"\/litigious-mania\">justice for persecution<\/option>\r\n<option value=\"\/dacnomania\">killing<\/option>\r\n<option value=\"\/macromania\">larger than life objects<\/option>\r\n<option value=\"\/phyllomania\">leaf production by plants, excessive or abnormal <\/option>\r\n<option value=\"\/photomania\">light<\/option>\r\n<option value=\"\/Lisztomania\">Liszt, Franz<\/option>\r\n<option value=\"\/hippopotomonstrosesquippedaliomania\">long words<\/option>\r\n<option value=\"\/erotomania\">love<\/option>\r\n<option value=\"\/mythomania\">lying<\/option>\r\n<option value=\"\/pseudomania\">lying<\/option>\r\n<option value=\"\/decubomania\">lying down<\/option>\r\n<option value=\"\/clinomania\">lying in bed<\/option>\r\n<option value=\"\/maniamania\">manias<\/option>\r\n<option value=\"\/chiromania\">masturbation (in males only)<\/option>\r\n<option value=\"\/hylomania\">material things<\/option>\r\n<option value=\"\/lypemania\">melancholy<\/option>\r\n<option value=\"\/plutomania\">money<\/option>\r\n<option value=\"\/morphinomania\">morphine<\/option>\r\n<option value=\"\/lypemania\">mourning<\/option>\r\n<option value=\"\/phonomania\">murdering people<\/option>\r\n<option value=\"\/melomania\">music<\/option>\r\n<option value=\"\/onomamania\">names<\/option>\r\n<option value=\"\/narcomania\">narcotics<\/option>\r\n<option value=\"\/rhinotillexomania\">nose picking<\/option>\r\n<option value=\"\/arithmomania\">numbers<\/option>\r\n<option value=\"\/ethnomania\">one's own people<\/option>\r\n<option value=\"\/egomania\">oneself<\/option>\r\n<option value=\"\/agromania\">open spaces, being in<\/option>\r\n<option value=\"\/opiomania\">opium<\/option>\r\n<option value=\"\/orchidomania\">orchids<\/option>\r\n<option value=\"\/potichomania\">Oriental porcelain, imitating <\/option>\r\n<option value=\"\/paramania\">paragliding<\/option>\r\n<option value=\"\/theatromania\">performing plays<\/option>\r\n<option value=\"\/tomomania\">performing surgery<\/option>\r\n<option value=\"\/onychotillomania\">picking at the fingernails<\/option>\r\n<option value=\"\/dermatillomania\">picking at the skin<\/option>\r\n<option value=\"\/phytomania\">plants, collecting <\/option>\r\n<option value=\"\/theatromania\">plays, performing <\/option>\r\n<option value=\"\/metromania\">poetry<\/option>\r\n<option value=\"\/toxicomania\">poisons<\/option>\r\n<option value=\"\/politicomania\">politics<\/option>\r\n<option value=\"\/polkamania\">polka dancing<\/option>\r\n<option value=\"\/potichomania\">porcelain, imitating Oriental <\/option>\r\n<option value=\"\/pornomania\">pornography<\/option>\r\n<option value=\"\/iconomania\">portraits<\/option>\r\n<option value=\"\/Pottermania\">Potter, Harry <\/option>\r\n<option value=\"\/megalomania\">power and wealth<\/option>\r\n<option value=\"\/pseudomania\">prevarication<\/option>\r\n<option value=\"\/typomania\">printing one\u2019s works<\/option>\r\n<option value=\"\/gamomania\">proposing marriage in unusual or extravagant ways<\/option>\r\n<option value=\"\/empleomania\">public office, holding<\/option>\r\n<option value=\"\/bibliomania\">reading<\/option>\r\n<option value=\"\/hieromania\">religious visions<\/option>\r\n<option value=\"\/trichotillomania\">removing one's own hair<\/option>\r\n<option value=\"\/cacospectomania\">repulsive things, staring at <\/option>\r\n<option value=\"\/hagiomania\">sainthood<\/option>\r\n<option value=\"\/titillomania\">scratching<\/option>\r\n<option value=\"\/scribbleomania\">scribbling<\/option>\r\n<option value=\"\/parousiamania\">second coming of Christ, the <\/option>\r\n<option value=\"\/egomania\">self<\/option>\r\n<option value=\"\/micromania\">self-deprecation<\/option>\r\n<option value=\"\/oligomania\">several ideas or objects<\/option>\r\n<option value=\"\/erotomania\">sex<\/option>\r\n<option value=\"\/nymphomania\">sex with men, on the part of a woman<\/option>\r\n<option value=\"\/gynaecomania\">sex with women<\/option>\r\n<option value=\"\/necromania\">sexual acitivity with corpses<\/option>\r\n<option value=\"\/aphrodisiomania\">sexual craving<\/option>\r\n<option value=\"\/satyromania\">sexual desire in males<\/option>\r\n<option value=\"\/aidoiomania\">sexual intercourse<\/option>\r\n<option value=\"\/oniomania\">shopping<\/option>\r\n<option value=\"\/monomania\">single object, thought or idea<\/option>\r\n<option value=\"\/enosimania\">sins, belief that one has committed unforgivable<\/option>\r\n<option value=\"\/rinkomania\">skating<\/option>\r\n<option value=\"\/drapetomania\">slavery, escape from<\/option>\r\n<option value=\"\/fumomania\">smoking<\/option>\r\n<option value=\"\/capnomania\">smoking tobacco products<\/option>\r\n<option value=\"\/chiomomania\">snow<\/option>\r\n<option value=\"\/eremiomania\">solitude<\/option>\r\n<option value=\"\/squandermania\">spending wastefully<\/option>\r\n<option value=\"\/erotomania\">stalking<\/option>\r\n<option value=\"\/timbromania\">stamp collecting<\/option>\r\n<option value=\"\/cacospectomania\">staring at repulsive things<\/option>\r\n<option value=\"\/pyromania\">starting fires<\/option>\r\n<option value=\"\/kleptomania\">stealing<\/option>\r\n<option value=\"\/bibliokleptomania\">stealing books<\/option>\r\n<option value=\"\/eremiomania\">stillness<\/option>\r\n<option value=\"\/nosomania\">suffering from one's own illness<\/option>\r\n<option value=\"\/tomomania\">surgery, performing <\/option>\r\n<option value=\"\/tomomania\">surgery, unnecessary <\/option>\r\n<option value=\"\/logomania\">talking<\/option>\r\n<option value=\"\/technomania\">technology<\/option>\r\n<option value=\"\/bruxomania\">teeth, grinding<\/option>\r\n<option value=\"\/brycomania\">teeth, grinding, severe<\/option>\r\n<option value=\"\/capnomania\">tobacco products, smoking <\/option>\r\n<option value=\"\/dromomania\">travel<\/option>\r\n<option value=\"\/dendromania\">trees<\/option>\r\n<option value=\"\/tulipomania\">tulips<\/option>\r\n<option value=\"\/enosimania\">unforgivable sins, belief that one has committed <\/option>\r\n<option value=\"\/tomomania\">unnecessary surgery<\/option>\r\n<option value=\"\/planomania\">unrestrained wandering<\/option>\r\n<option value=\"\/emetomania\">vomiting<\/option>\r\n<option value=\"\/ecdemomania\">wandering<\/option>\r\n<option value=\"\/poriomania\">wandering away from home<\/option>\r\n<option value=\"\/planomania\">wandering, unrestrained <\/option>\r\n<option value=\"\/polemomania\">war<\/option>\r\n\ufeff<option value=\"\/ablutomania\">washing oneself<\/option>\r\n<option value=\"\/squandermania\">wasteful spending <\/option>\r\n<option value=\"\/hydromania\">water<\/option>\r\n<option value=\"\/cresomania\">wealth<\/option>\r\n<option value=\"\/plutomania\">wealth<\/option>\r\n<option value=\"\/megalomania\">wealth and power<\/option>\r\n<option value=\"\/oenomania\">wine<\/option>\r\n<option value=\"\/hylomania\">wood<\/option>\r\n<option value=\"\/onomatomania\">word repetition<\/option>\r\n<option value=\"\/verbomania\">words<\/option>\r\n<option value=\"\/ergomania\">work<\/option>\r\n<option value=\"\/graphomania\">writing<\/option>\r\n<option value=\"\/epomania\"writing epics<\/option>\r\n<\/select>",
+            "format": "full_html_no_editor",
+            "summary": "",
+            "lang": "en"
+        }
+    ]
+}

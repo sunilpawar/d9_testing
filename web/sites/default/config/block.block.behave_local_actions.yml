@@ -1,0 +1,20 @@
+uuid: e61102f5-184e-4957-9c98-0d4993c9bbbf
+langcode: en
+status: true
+dependencies:
+  theme:
+    - behave
+_core:
+  default_config_hash: K-dBlm53YOyKPtlTK8L5SpGba0dK35lrGu5JxkXTcA4
+id: behave_local_actions
+theme: behave
+region: content
+weight: -21
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

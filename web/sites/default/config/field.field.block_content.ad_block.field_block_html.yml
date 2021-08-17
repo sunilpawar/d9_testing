@@ -1,0 +1,21 @@
+uuid: ea21dd5c-7b18-4751-bf60-8d8cbcafc2fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.ad_block
+    - field.storage.block_content.field_block_html
+  module:
+    - text
+id: block_content.ad_block.field_block_html
+field_name: field_block_html
+entity_type: block_content
+bundle: ad_block
+label: HTML
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

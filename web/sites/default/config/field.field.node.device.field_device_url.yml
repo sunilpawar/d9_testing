@@ -1,0 +1,23 @@
+uuid: 5c1f2966-0c80-4b41-aeb8-af8967ab94f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_device_url
+    - node.type.device
+  module:
+    - link
+id: node.device.field_device_url
+field_name: field_device_url
+entity_type: node
+bundle: device
+label: 'Device URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 1
+field_type: link

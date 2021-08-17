@@ -1,0 +1,19 @@
+uuid: 8bb7850f-4944-485f-9c57-f32d049c5ceb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_slang
+    - node.type.combination
+id: node.combination.field_slang
+field_name: field_slang
+entity_type: node
+bundle: combination
+label: 'Slang terms or alternate titles'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

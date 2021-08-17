@@ -1,0 +1,79 @@
+uuid: 9bb47882-fe57-4bae-bae2-765d2957a48a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.directory.field_description
+    - field.field.node.directory.field_directory_url
+    - field.field.node.directory.field_location
+    - field.field.node.directory.field_related_terms
+    - node.type.directory
+  module:
+    - field_group
+    - link
+    - text
+    - user
+third_party_settings:
+  field_group:
+    group_highlighted:
+      children:
+        - field_directory_url
+        - field_location
+        - field_description
+      parent_name: ''
+      weight: 0
+      label: 'Highlighted content'
+      format_type: html_element
+      format_settings:
+        label: 'Highlighted content'
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: behavenet-highlighted-content
+      region: content
+id: node.directory.default
+targetEntityType: node
+bundle: directory
+mode: default
+content:
+  field_description:
+    weight: 4
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_directory_url:
+    weight: 2
+    label: visually_hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_location:
+    weight: 3
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_related_terms:
+    weight: 1
+    label: visually_hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  links: true

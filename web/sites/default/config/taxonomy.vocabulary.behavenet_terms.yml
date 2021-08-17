@@ -1,0 +1,8 @@
+uuid: 30c216d4-6c23-4a04-a800-de0beed79020
+langcode: en
+status: true
+dependencies: {  }
+name: 'Behavenet Terms'
+vid: behavenet_terms
+description: ''
+weight: 0

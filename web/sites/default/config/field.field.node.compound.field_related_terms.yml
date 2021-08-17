@@ -1,0 +1,25 @@
+uuid: 30391e3c-00ef-4886-bb34-065c32e9da41
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_terms
+    - node.type.compound
+id: node.compound.field_related_terms
+field_name: field_related_terms
+entity_type: node
+bundle: compound
+label: 'Related Terms'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: related_terms
+      display_name: entity_reference_1
+      arguments: {  }
+field_type: entity_reference

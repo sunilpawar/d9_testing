@@ -1,0 +1,23 @@
+uuid: 652a592c-9101-408a-8129-6ae6f5bfd6a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_movie_url
+    - node.type.movie
+  module:
+    - link
+id: node.movie.field_movie_url
+field_name: field_movie_url
+entity_type: node
+bundle: movie
+label: 'Official movie web site'
+description: 'Enter the full URL for this movie, including the leading <i>http://</i>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

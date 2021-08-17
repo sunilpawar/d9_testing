@@ -1,0 +1,28 @@
+uuid: 7fdb0aa4-18f5-4ad8-83af-f51a12c4bd99
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.dsm.field_dsm_criteria_fc
+    - field.field.node.dsm.field_related_terms
+    - node.type.dsm
+  module:
+    - field_collection
+    - user
+id: node.dsm.default
+targetEntityType: node
+bundle: dsm
+mode: default
+content:
+  field_dsm_criteria_fc:
+    weight: 0
+    label: visually_hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    type: field_collection_items
+    region: content
+hidden:
+  field_related_terms: true
+  links: true

@@ -1,0 +1,25 @@
+uuid: c5c5222d-14ba-481d-ab0f-4e66d4b12c3a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_terms
+    - node.type.people
+id: node.people.field_related_terms
+field_name: field_related_terms
+entity_type: node
+bundle: people
+label: 'Related Terms'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: related_terms
+      display_name: entity_reference_1
+      arguments: {  }
+field_type: entity_reference

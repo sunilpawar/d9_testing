@@ -1,0 +1,27 @@
+uuid: bdbc509e-7d00-4c5a-9854-844eedfbe3d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_effect_class
+    - node.type.generic_drugs
+    - taxonomy.vocabulary.effect_classes
+id: node.generic_drugs.field_effect_class
+field_name: field_effect_class
+entity_type: node
+bundle: generic_drugs
+label: 'Effect Class'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      effect_classes: effect_classes
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

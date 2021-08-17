@@ -1,0 +1,28 @@
+uuid: d4769e67-c050-477c-9cfe-b617c3458985
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.opinion.body
+    - field.field.node.opinion.field_related_terms
+    - node.type.opinion
+  module:
+    - text
+    - user
+id: node.opinion.teaser
+targetEntityType: node
+bundle: opinion
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 0
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_related_terms: true
+  links: true

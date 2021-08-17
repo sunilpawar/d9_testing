@@ -1,0 +1,20 @@
+uuid: b37ce007-63f6-4780-80ed-5f9af39c8320
+langcode: en
+status: true
+dependencies:
+  theme:
+    - behave
+_core:
+  default_config_hash: '-5IdCitMXMJol01JBitnHCbQcDWmpoIa4vL2GyzYb1c'
+id: behave_page_title
+theme: behave
+region: title
+weight: -8
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

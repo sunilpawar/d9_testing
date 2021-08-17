@@ -1,0 +1,29 @@
+uuid: 051621be-62d1-4daf-8782-fa7ac9a837ad
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_visibility_groups
+  theme:
+    - behave
+_core:
+  default_config_hash: Dvl2IjySFJYNXF4E7h7w8IqWFx199E_nX3hTpWH2hqI
+id: behave_local_tasks
+theme: behave
+region: content
+weight: -20
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }

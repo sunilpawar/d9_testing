@@ -1,0 +1,32 @@
+uuid: 26a49556-497a-49d8-b7f6-e95a65592210
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.terms_by_vocab
+  module:
+    - views
+  theme:
+    - bartik
+id: views_block__terms_by_vocab_oveo_block_1_2
+theme: bartik
+region: content
+weight: -7
+provider: null
+plugin: 'views_block:terms_by_vocab-oveo_block_1'
+settings:
+  id: 'views_block:terms_by_vocab-oveo_block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  exposed_filter:
+    vid:
+      enabled: false
+      value: ''
+  exposed_filters:
+    vid:
+      enabled: false
+      value: ''
+visibility: {  }

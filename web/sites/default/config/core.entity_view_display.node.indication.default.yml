@@ -1,0 +1,37 @@
+uuid: af1927fb-65d9-432d-be13-1bdff3c587e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.indication.field_drug
+    - field.field.node.indication.field_indication_approval
+    - field.field.node.indication.field_indication_description
+    - node.type.indication
+  module:
+    - datetime
+    - text
+    - user
+id: node.indication.default
+targetEntityType: node
+bundle: indication
+mode: default
+content:
+  field_indication_approval:
+    weight: 0
+    label: visually_hidden
+    settings:
+      timezone_override: ''
+      format_type: date_only
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_indication_description:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  field_drug: true
+  links: true

@@ -1,0 +1,158 @@
+uuid: 798c8741-1ac4-4540-8d7e-eef3d4a5b04d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.people.field_first_name
+    - field.field.node.people.field_last_name
+    - field.field.node.people.field_outside_media
+    - field.field.node.people.field_people_alt_names
+    - field.field.node.people.field_people_bio
+    - field.field.node.people.field_people_credit
+    - field.field.node.people.field_people_dob
+    - field.field.node.people.field_people_dod
+    - field.field.node.people.field_people_image
+    - field.field.node.people.field_related_content
+    - field.field.node.people.field_related_terms
+    - node.type.people
+  module:
+    - datetime
+    - field_group
+    - text
+    - user
+    - video_embed_field
+third_party_settings:
+  field_group:
+    group_highlighted:
+      children:
+        - field_people_bio
+        - field_related_terms
+        - field_people_credit
+      parent_name: ''
+      weight: 5
+      label: 'Highlighted content'
+      format_type: html_element
+      format_settings:
+        label: 'Highlighted content'
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: behavenet-highlighted-content
+      region: content
+    group_full_name:
+      children:
+        - field_first_name
+        - field_last_name
+      parent_name: ''
+      weight: 1
+      label: 'Full name'
+      format_type: html_element
+      format_settings:
+        element: div
+        show_label: false
+        label_element: h3
+        effect: none
+        speed: fast
+        attributes: ''
+        classes: ''
+        id: ''
+      region: content
+id: node.people.default
+targetEntityType: node
+bundle: people
+mode: default
+content:
+  field_first_name:
+    type: string
+    weight: 2
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_last_name:
+    type: string
+    weight: 3
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_outside_media:
+    weight: 7
+    label: visually_hidden
+    settings:
+      responsive: true
+      width: 854
+      height: 480
+      autoplay: false
+    third_party_settings: {  }
+    type: video_embed_field_video
+    region: content
+  field_people_alt_names:
+    weight: 2
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_people_bio:
+    weight: 5
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_people_credit:
+    weight: 7
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_people_dob:
+    weight: 3
+    label: visually_hidden
+    settings:
+      timezone_override: ''
+      date_format: 'F d, Y'
+    third_party_settings: {  }
+    type: datetime_custom
+    region: content
+  field_people_dod:
+    weight: 4
+    label: visually_hidden
+    settings:
+      timezone_override: ''
+      date_format: 'F d, Y'
+    third_party_settings: {  }
+    type: datetime_custom
+    region: content
+  field_related_content:
+    weight: 6
+    label: visually_hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_related_terms:
+    weight: 6
+    label: visually_hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_people_image: true

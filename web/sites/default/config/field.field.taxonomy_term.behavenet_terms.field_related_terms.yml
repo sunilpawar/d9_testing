@@ -1,0 +1,29 @@
+uuid: 4bf1cfb0-fa60-4058-b490-0012ac728b54
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_related_terms
+    - taxonomy.vocabulary.behavenet_terms
+    - taxonomy.vocabulary.isomers
+id: taxonomy_term.behavenet_terms.field_related_terms
+field_name: field_related_terms
+entity_type: taxonomy_term
+bundle: behavenet_terms
+label: 'Related terms'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      behavenet_terms: behavenet_terms
+      isomers: isomers
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: behavenet_terms
+field_type: entity_reference

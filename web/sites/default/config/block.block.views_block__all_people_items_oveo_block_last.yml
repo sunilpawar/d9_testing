@@ -1,0 +1,32 @@
+uuid: 67788140-03e8-41c6-b580-3eaf4150c314
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.people_landing_page
+    - views.view.all_people_items
+  module:
+    - block_visibility_groups
+    - views
+  theme:
+    - behave
+id: views_block__all_people_items_oveo_block_last
+theme: behave
+region: content
+weight: -12
+provider: null
+plugin: 'views_block:all_people_items-oveo_block_last'
+settings:
+  id: 'views_block:all_people_items-oveo_block_last'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  exposed_filter: {  }
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: people_landing_page
+    context_mapping: {  }

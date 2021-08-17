@@ -1,0 +1,48 @@
+uuid: 07f5bccd-0075-4d90-8d24-a456dc2a6ad9
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.movies_landing_page
+  module:
+    - block_visibility_groups
+    - bn_general
+  theme:
+    - behave
+id: allcontentbytype_2
+theme: behave
+region: content
+weight: -25
+provider: null
+plugin: all_content_block
+settings:
+  id: all_content_block
+  label: 'All movies listing'
+  provider: bn_general
+  label_display: '0'
+  node_types:
+    movie: movie
+    book: 0
+    combination: 0
+    company: 0
+    compound: 0
+    credit: 0
+    device: 0
+    directory: 0
+    drugs: 0
+    dsm: 0
+    generic_drugs: 0
+    indication: 0
+    opinion: 0
+    page: 0
+    people: 0
+    preparation: 0
+    source: 0
+    field_acronyms: 0
+  split_by_type: 0
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: movies_landing_page
+    context_mapping: {  }

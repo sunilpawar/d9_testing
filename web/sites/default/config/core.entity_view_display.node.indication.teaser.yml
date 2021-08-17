@@ -1,0 +1,38 @@
+uuid: 1d39cdf2-7d28-4418-9e1f-65676e05737e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.indication.field_drug
+    - field.field.node.indication.field_indication_approval
+    - field.field.node.indication.field_indication_description
+    - node.type.indication
+  module:
+    - datetime
+    - text
+    - user
+id: node.indication.teaser
+targetEntityType: node
+bundle: indication
+mode: teaser
+content:
+  field_indication_approval:
+    type: datetime_custom
+    weight: 0
+    label: visually_hidden
+    settings:
+      timezone_override: ''
+      date_format: m/d/Y
+    third_party_settings: {  }
+    region: content
+  field_indication_description:
+    type: text_default
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_drug: true
+  links: true

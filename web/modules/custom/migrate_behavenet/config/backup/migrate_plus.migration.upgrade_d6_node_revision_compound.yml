@@ -1,0 +1,91 @@
+uuid: dec8867b-719a-4220-b6e0-246b66986305
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d6_node_revision_compound
+migration_tags:
+  - 'Drupal 6'
+migration_group: migrate_drupal_6
+label: 'Node revisions (compound)'
+source:
+  plugin: d6_node_revision
+  node_type: compound
+process:
+  nid: nid
+  vid: vid
+  type: type
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: und
+  title: title
+  uid: node_uid
+  status: status
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
+  body/format:
+    plugin: migration
+    migration: upgrade_d6_filter_format
+    source: format
+  body/value: body
+  body/summary: teaser
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  field_compound_drug: field_compound_drug
+  field_general_description:
+    plugin: iterator
+    source: field_general_description
+    process:
+      value: value
+      format:
+        -
+          plugin: static_map
+          bypass: true
+          source: format
+          map:
+            - null
+        -
+          plugin: skip_on_empty
+          method: process
+        -
+          plugin: migration
+          migration:
+            - d6_filter_format
+            - d7_filter_format
+          source: format
+  field_general_terms: field_general_terms
+  field_generic_graphic:
+    plugin: d6_cck_file
+    source: field_generic_graphic
+  field_gen_slang_terms:
+    plugin: iterator
+    source: field_gen_slang_terms
+    process:
+      value: value
+      format:
+        -
+          plugin: static_map
+          bypass: true
+          source: format
+          map:
+            - null
+        -
+          plugin: skip_on_empty
+          method: process
+        -
+          plugin: migration
+          migration:
+            - d6_filter_format
+            - d7_filter_format
+          source: format
+  field_outside_video: field_outside_video
+  field_tt_extras_credit: field_tt_extras_credit
+destination:
+  plugin: 'entity_revision:node'
+migration_dependencies:
+  required:
+    - upgrade_d6_node_compound
+  optional: {  }

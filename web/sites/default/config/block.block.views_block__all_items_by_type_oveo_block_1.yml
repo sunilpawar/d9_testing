@@ -1,0 +1,40 @@
+uuid: 7dff1a6e-c8f6-4a57-8607-c1405fa0a542
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.people_landing_page
+    - views.view.all_items_by_type
+  module:
+    - block_visibility_groups
+    - views
+  theme:
+    - behave
+id: views_block__all_items_by_type_oveo_block_1
+theme: behave
+region: content
+weight: -13
+provider: null
+plugin: 'views_block:all_items_by_type-oveo_block_1'
+settings:
+  id: 'views_block:all_items_by_type-oveo_block_1'
+  label: 'Popular Name'
+  provider: views
+  label_display: visible
+  views_label: 'Popular Name'
+  items_per_page: none
+  exposed_filter:
+    type:
+      enabled: true
+      value: people
+  contextual_filter:
+    type:
+      enabled: true
+      value: people
+  context_mapping: {  }
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: people_landing_page
+    context_mapping: {  }

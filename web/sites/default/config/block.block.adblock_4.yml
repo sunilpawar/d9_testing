@@ -1,0 +1,21 @@
+uuid: ebb7a6d1-081c-40a6-a602-3b194f6e1a03
+langcode: en
+status: true
+dependencies:
+  module:
+    - bn_ads
+  theme:
+    - bartik
+id: adblock_4
+theme: bartik
+region: footer_fifth
+weight: -11
+provider: null
+plugin: ad_block
+settings:
+  id: ad_block
+  label: 'DFP Footer Ad'
+  provider: bn_ads
+  label_display: '0'
+  type: footer
+visibility: {  }

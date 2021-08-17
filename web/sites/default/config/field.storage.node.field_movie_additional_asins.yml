@@ -1,0 +1,22 @@
+uuid: a34ee63f-41e1-4ce4-81c3-2e5237b16991
+langcode: en
+status: true
+dependencies:
+  module:
+    - amazon_field
+    - node
+id: node.field_movie_additional_asins
+field_name: field_movie_additional_asins
+entity_type: node
+type: amazon_asin_field
+settings:
+  max_length: 10
+  is_ascii: false
+  case_sensitive: false
+module: amazon_field
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

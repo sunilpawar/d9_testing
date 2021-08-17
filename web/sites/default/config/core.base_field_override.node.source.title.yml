@@ -1,0 +1,18 @@
+uuid: c7712702-4773-4572-9a74-2d438b01ffa1
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.source
+id: node.source.title
+field_name: title
+entity_type: node
+bundle: source
+label: 'Common name'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,25 @@
+uuid: b187bb8f-aa2e-4936-be94-ef6fbc1e3b03
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_terms
+    - node.type.opinion
+id: node.opinion.field_related_terms
+field_name: field_related_terms
+entity_type: node
+bundle: opinion
+label: 'Related Terms'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: related_terms
+      display_name: entity_reference_1
+      arguments: {  }
+field_type: entity_reference

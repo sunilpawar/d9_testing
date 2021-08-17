@@ -1,0 +1,29 @@
+uuid: 8535bda9-b113-4f34-86b8-399c0028bcc1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_source
+    - node.type.combination
+    - node.type.source
+id: node.combination.field_source
+field_name: field_source
+entity_type: node
+bundle: combination
+label: Source
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      source: source
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

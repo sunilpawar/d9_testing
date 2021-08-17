@@ -1,0 +1,19 @@
+uuid: 64e0f2f4-8068-4d98-bbde-35849345e4c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dea_number
+    - node.type.generic_drugs
+id: node.generic_drugs.field_dea_number
+field_name: field_dea_number
+entity_type: node
+bundle: generic_drugs
+label: 'DEA Number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

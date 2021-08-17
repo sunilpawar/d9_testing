@@ -1,0 +1,26 @@
+uuid: d23a15eb-99cb-4b2b-9655-14658d58927c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.opinion
+  module:
+    - text
+id: node.opinion.body
+field_name: body
+entity_type: node
+bundle: opinion
+label: Body
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    summary: ''
+    value: ' '
+    format: full_html
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

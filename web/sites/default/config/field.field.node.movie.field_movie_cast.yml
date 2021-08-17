@@ -1,0 +1,19 @@
+uuid: b04a1755-cad2-432b-a7eb-feba7aa28115
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_movie_cast
+    - node.type.movie
+id: node.movie.field_movie_cast
+field_name: field_movie_cast
+entity_type: node
+bundle: movie
+label: Cast
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

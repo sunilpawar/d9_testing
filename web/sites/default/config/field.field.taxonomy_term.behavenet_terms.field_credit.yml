@@ -1,0 +1,28 @@
+uuid: 7f578a72-1360-4ff8-9bdc-f5cbf86230ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_credit
+    - node.type.credit
+    - taxonomy.vocabulary.behavenet_terms
+id: taxonomy_term.behavenet_terms.field_credit
+field_name: field_credit
+entity_type: taxonomy_term
+bundle: behavenet_terms
+label: Credit
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      credit: credit
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

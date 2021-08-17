@@ -1,0 +1,21 @@
+uuid: 6597921e-dfdb-4a0f-bfec-3c0fd466ba52
+langcode: en
+status: true
+dependencies:
+  module:
+    - bn_ads
+  theme:
+    - zen
+id: zen_adblock
+theme: zen
+region: header
+weight: -11
+provider: null
+plugin: ad_block
+settings:
+  id: ad_block
+  label: 'Leaderboard Desktop Ad'
+  provider: bn_ads
+  label_display: '0'
+  type: leader
+visibility: {  }

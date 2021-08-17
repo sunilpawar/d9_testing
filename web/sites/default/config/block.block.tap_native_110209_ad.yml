@@ -1,0 +1,27 @@
+uuid: fcfa363f-a94e-4a14-959c-8f25e09e61fa
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_visibility_groups
+    - bn_ads
+  theme:
+    - behave
+id: tap_native_110209_ad
+theme: behave
+region: sidebar_second
+weight: 0
+provider: null
+plugin: tap_native_ad_block
+settings:
+  id: tap_native_ad_block
+  label: 'Tap Native 110209 ad'
+  provider: bn_ads
+  label_display: '0'
+  number: '110209'
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }

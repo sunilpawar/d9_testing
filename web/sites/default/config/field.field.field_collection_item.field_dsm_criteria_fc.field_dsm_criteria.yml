@@ -1,0 +1,21 @@
+uuid: cae587e4-2ff9-4fde-8786-f3dd7254a885
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.field_collection_item.field_dsm_criteria
+    - field_collection.field_collection.field_dsm_criteria_fc
+  module:
+    - text
+id: field_collection_item.field_dsm_criteria_fc.field_dsm_criteria
+field_name: field_dsm_criteria
+entity_type: field_collection_item
+bundle: field_dsm_criteria_fc
+label: 'DSM Criteria'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

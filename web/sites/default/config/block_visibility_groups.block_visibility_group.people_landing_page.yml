@@ -1,0 +1,17 @@
+uuid: f64b65c4-0b7d-44be-ba76-2f336f00438e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: people_landing_page
+label: 'People landing page'
+logic: and
+conditions:
+  1685802b-c0ba-433f-8c5f-42ee31ccaa2e:
+    id: request_path
+    pages: /node/27646
+    negate: false
+    context_mapping: {  }
+    uuid: 1685802b-c0ba-433f-8c5f-42ee31ccaa2e
+allow_other_conditions: false

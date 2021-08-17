@@ -1,0 +1,17 @@
+uuid: ac2188e1-8106-4312-bee3-f718830e9850
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: terms_landing_page
+label: 'Terms landing page'
+logic: and
+conditions:
+  bbcfdf23-47a6-4ab8-b1fe-1ac182568e07:
+    id: request_path
+    pages: /node/27645
+    negate: false
+    context_mapping: {  }
+    uuid: bbcfdf23-47a6-4ab8-b1fe-1ac182568e07
+allow_other_conditions: false

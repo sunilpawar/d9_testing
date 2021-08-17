@@ -1,0 +1,6 @@
+ehealth.list:
+  title: 'Ehealth Pixel Authentication'
+  description: 'Configure Pixed Authentication tokens.'
+  route_name: ehealth.settings
+  weight: 11
+  parent: user.admin_index

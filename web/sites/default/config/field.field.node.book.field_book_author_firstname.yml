@@ -1,0 +1,24 @@
+uuid: 90a817c4-63c7-45ed-bea1-c030f62de616
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_book_author_firstname
+    - node.type.book
+  module:
+    - field_display_label
+third_party_settings:
+  field_display_label:
+    display_label: Author
+id: node.book.field_book_author_firstname
+field_name: field_book_author_firstname
+entity_type: node
+bundle: book
+label: 'Author''s First Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

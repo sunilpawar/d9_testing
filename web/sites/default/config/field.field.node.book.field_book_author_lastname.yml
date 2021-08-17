@@ -1,0 +1,19 @@
+uuid: 068d21f2-37e3-4836-8d17-34646a963a51
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_book_author_lastname
+    - node.type.book
+id: node.book.field_book_author_lastname
+field_name: field_book_author_lastname
+entity_type: node
+bundle: book
+label: 'Author''s Last Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,16 @@
+uuid: 0a39523e-a577-4c61-8582-5c5f72f1c79f
+langcode: en
+status: true
+dependencies: {  }
+id: terms
+title: Terms
+route_name: entity.node.canonical
+route_parameters:
+  node: 27645
+options: {  }
+expanded: false
+menu_name: behavenet-main-menu
+enabled: true
+parent: ''
+weight: -46
+description: ''

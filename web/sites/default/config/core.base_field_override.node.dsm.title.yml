@@ -1,0 +1,18 @@
+uuid: 40f754d9-3d4a-4d2f-a6a0-5e01fdb8aa0f
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.dsm
+id: node.dsm.title
+field_name: title
+entity_type: node
+bundle: dsm
+label: 'DSM Criteria Title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

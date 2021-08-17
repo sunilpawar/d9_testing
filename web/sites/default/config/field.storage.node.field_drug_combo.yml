@@ -1,0 +1,19 @@
+uuid: 5b7a9822-dc06-4bb7-8d98-29cfaf89d49a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_drug_combo
+field_name: field_drug_combo
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

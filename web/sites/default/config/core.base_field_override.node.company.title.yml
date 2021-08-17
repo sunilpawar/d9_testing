@@ -1,0 +1,18 @@
+uuid: c6a414ca-4a32-4148-9b6f-c17ff79e3c7c
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.company
+id: node.company.title
+field_name: title
+entity_type: node
+bundle: company
+label: 'Company name'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

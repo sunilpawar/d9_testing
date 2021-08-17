@@ -1,0 +1,22 @@
+uuid: c4f10910-9e90-49f0-ae08-8b6b0693b584
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.credit
+id: node.credit.promote
+field_name: promote
+entity_type: node
+bundle: credit
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

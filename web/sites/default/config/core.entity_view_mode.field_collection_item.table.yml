@@ -1,0 +1,12 @@
+uuid: 992f7cf0-1330-491a-a086-79f6c7607f0f
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_collection
+_core:
+  default_config_hash: GjB-2azlwXEmCJKjhmQcNT18024vLTiUXreqt3-_yGY
+id: field_collection_item.table
+label: Table
+targetEntityType: field_collection_item
+cache: true

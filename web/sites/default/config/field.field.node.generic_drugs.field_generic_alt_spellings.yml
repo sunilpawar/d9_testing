@@ -1,0 +1,19 @@
+uuid: 125caceb-10fb-45ed-8b00-d24976706530
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_generic_alt_spellings
+    - node.type.generic_drugs
+id: node.generic_drugs.field_generic_alt_spellings
+field_name: field_generic_alt_spellings
+entity_type: node
+bundle: generic_drugs
+label: 'Alternate spellings'
+description: 'Alternate spellings of this generic drug name, one items per line. They will be sorted alphabetically when displayed.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,21 @@
+uuid: a0ca78eb-f52e-49ab-84ed-7a30258f2898
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_people_dod
+    - node.type.people
+  module:
+    - datetime
+id: node.people.field_people_dod
+field_name: field_people_dod
+entity_type: node
+bundle: people
+label: 'Date of death'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

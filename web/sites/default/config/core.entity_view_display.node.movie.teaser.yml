@@ -1,0 +1,48 @@
+uuid: 04c0ee59-1704-4516-b920-b978a166a841
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.movie.field_amazon_asin
+    - field.field.node.movie.field_movie_additional_asins
+    - field.field.node.movie.field_movie_blog_entry
+    - field.field.node.movie.field_movie_cast
+    - field.field.node.movie.field_movie_facebook
+    - field.field.node.movie.field_movie_old_entry
+    - field.field.node.movie.field_movie_spoiler
+    - field.field.node.movie.field_movie_twitter
+    - field.field.node.movie.field_movie_url
+    - field.field.node.movie.field_movie_year_released
+    - field.field.node.movie.field_related_content
+    - field.field.node.movie.field_related_terms
+    - node.type.movie
+  module:
+    - text
+    - user
+id: node.movie.teaser
+targetEntityType: node
+bundle: movie
+mode: teaser
+content:
+  field_movie_blog_entry:
+    type: text_summary_or_trimmed
+    weight: 0
+    label: visually_hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_amazon_asin: true
+  field_movie_additional_asins: true
+  field_movie_cast: true
+  field_movie_facebook: true
+  field_movie_old_entry: true
+  field_movie_spoiler: true
+  field_movie_twitter: true
+  field_movie_url: true
+  field_movie_year_released: true
+  field_related_content: true
+  field_related_terms: true
+  links: true

@@ -1,0 +1,22 @@
+uuid: debb840d-f085-4a6d-ae28-4047a0b88869
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.credit
+  module:
+    - text
+id: node.credit.body
+field_name: body
+entity_type: node
+bundle: credit
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

@@ -1,0 +1,43 @@
+uuid: 92f75691-64e6-4bc4-b682-f936395c24f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.drugs_landing_page
+    - views.view.related_content_by_term
+  module:
+    - block_visibility_groups
+    - views
+  theme:
+    - behave
+id: views_block__related_content_by_term_oveo_block_1
+theme: behave
+region: content
+weight: -10
+provider: null
+plugin: 'views_block:related_content_by_term-oveo_block_1'
+settings:
+  id: 'views_block:related_content_by_term-oveo_block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  exposed_filter:
+    type_1:
+      enabled: true
+      value: directory
+    tid_raw:
+      enabled: true
+      value: '8673'
+  contextual_filter:
+    field_related_terms_target_id:
+      enabled: true
+      value: '8673'
+  context_mapping: {  }
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: drugs_landing_page
+    context_mapping: {  }

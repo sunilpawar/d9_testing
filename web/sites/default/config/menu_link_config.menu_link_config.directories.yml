@@ -1,0 +1,16 @@
+uuid: 3d77c4c6-11b5-4759-9c4f-e33ac7f6806e
+langcode: en
+status: true
+dependencies: {  }
+id: directories
+title: Resources
+route_name: entity.node.canonical
+route_parameters:
+  node: 27647
+options: {  }
+expanded: false
+menu_name: behavenet-main-menu
+enabled: true
+parent: ''
+weight: -47
+description: ''

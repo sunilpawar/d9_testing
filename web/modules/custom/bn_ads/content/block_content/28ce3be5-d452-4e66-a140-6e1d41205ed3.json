@@ -1,0 +1,73 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/block\/15?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/basic"
+        }
+    },
+    "id": [
+        {
+            "value": "15"
+        }
+    ],
+    "uuid": [
+        {
+            "value": "28ce3be5-d452-4e66-a140-6e1d41205ed3"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": "23"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "info": [
+        {
+            "value": "Glossary listing",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "basic"
+        }
+    ],
+    "revision_log": [
+        {
+            "value": "Copied from D6 site."
+        }
+    ],
+    "changed": [
+        {
+            "value": "1475881037",
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": "1",
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": "1",
+            "lang": "en"
+        }
+    ],
+    "body": [
+        {
+            "value": "<h2 class=\"pane-title\">Glossaries<\/h2>\r\n\r\n<ul>\r\n\t<li><a href=\"\/addiction\">Addiction<\/a>\r\n\r\n\t<ul>\r\n\t\t<li><a href=\"\/addiction\/recovery\">Recovery<\/a>\r\n\r\n\t\t<ul>\r\n\t\t\t<li><a href=\"\/12-step-talk\">12 Step talk<\/a><\/li>\r\n\t\t<\/ul>\r\n\t\t<\/li>\r\n\t<\/ul>\r\n\t<\/li>\r\n\t<li><a href=\"\/autistic-disorder\">Autism<\/a><\/li>\r\n\t<li><a href=\"\/disability\">Disability<\/a><\/li>\r\n\t<li><a href=\"\/electroconvulsive-therapy\">ECT<\/a><\/li>\r\n\t<li><a href=\"\/forensic\">Forensic<\/a><\/li>\r\n\t<li><a href=\"\/health-care-information-portability-and-accountability-act-1996\">HIPAA<\/a><\/li>\r\n\t<li><a href=\"\/memory\">Memory<\/a><\/li>\r\n\t<li><a href=\"\/obsessive-compulsive-disorder\">OCD<\/a><\/li>\r\n\t<li><a href=\"\/pharmacology\">Pharmacology<\/a>\r\n\t<ul>\r\n\t\t<li><a href=\"\/psychopharmacology\">Psychopharmacology<\/a><\/li>\r\n\t<\/ul>\r\n\t<\/li>\r\n\t<li><a href=\"\/psychopathology\">Psychopathology<\/a><\/li>\r\n\t<li><a href=\"\/psychotherapy\">Psychotherapy<\/a>\r\n\t<ul>\r\n\t\t<li><a href=\"\/applied-behavior-analysis\">ABA<\/a><\/li>\r\n\t\t<li><a href=\"\/adlerian-psychology\">Adlerian<\/a><\/li>\r\n\t\t<li><a href=\"\/cognitive-behavior-therapy\">CBT<\/a><\/li>\r\n\t\t<li><a href=\"\/eye-movement-desensitization-and-reprocessing\">EMDR<\/a><\/li>\r\n\t\t<li><a href=\"\/family-psychotherapy\">Family<\/a><\/li>\r\n\t\t<li><a href=\"\/gestalt-therapy\">Gestalt<\/a><\/li>\r\n\t\t<li><a href=\"\/internal-family-systems-psychotherapy\">IFS<\/a><\/li>\r\n\t\t<li><a href=\"\/jungian-psychoanalysis\">Jungian<\/a><\/li>\r\n\t\t<li><a href=\"\/motivational-interviewing\">MI<\/a><\/li>\r\n\t\t<li><a href=\"\/narrative-psychotherapy\">Narrative<\/a><\/li>\r\n\t\t<li><a href=\"\/neurolinguistic-programming\">NLP<\/a><\/li>\r\n\t\t<li><a href=\"\/person-centered-therapy\">PCT<\/a><\/li>\r\n\t\t<li><a href=\"\/psychoanalysis\">Psychoanalytic<\/a><\/li>\r\n\t\t<li><a href=\"\/psychodynamic-psychotherapy\">Psychodynamic<\/a><\/li>\r\n\t\t<li><a href=\"\/transactional-analysis\">TA<\/a><\/li>\r\n\t\t<li><a href=\"\/unified-psychotherapy\">Unified Psychotherapy<\/a><\/li>\r\n\t<\/ul>\r\n\t<\/li>\r\n\t<li><a href=\"\/third-party-reimbursement\">Reimbursement<\/a><\/li>\r\n\t<li><a href=\"\/sleep-disorders-medicine\">Sleep Medicine<\/a>\r\n\t<ul>\r\n\t\t<li><a href=\"\/chronobiology\">Chronobiology<\/a><\/li>\r\n\t\t<li><a href=\"\/electroencephalogram\">EEG<\/a><\/li>\r\n\t\t<li><a href=\"\/polysomnography\">Polysomnography<\/a><\/li>\r\n\t<\/ul>\r\n\t<\/li>\r\n\t<li><a href=\"\/stuttering\">Stuttering<\/a><\/li>\r\n\t<li><a href=\"\/transcranial-magnetic-stimulation\">TMS<\/a><\/li>\r\n\t<li><a href=\"\/vagus-nerve-stimulation\">VNS<\/a><\/li>\r\n<\/ul>\r\n",
+            "format": "full_html",
+            "summary": "",
+            "lang": "en"
+        }
+    ]
+}

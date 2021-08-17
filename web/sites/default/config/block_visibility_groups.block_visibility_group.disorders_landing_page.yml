@@ -1,0 +1,17 @@
+uuid: d6a1ca28-fab4-475d-a357-93ca067f26c4
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: disorders_landing_page
+label: 'Disorders landing page'
+logic: and
+conditions:
+  8e8045fe-ee77-48ef-abe4-e17d6fc58cc2:
+    id: request_path
+    pages: /node/27648
+    negate: false
+    context_mapping: {  }
+    uuid: 8e8045fe-ee77-48ef-abe4-e17d6fc58cc2
+allow_other_conditions: false

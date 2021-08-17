@@ -1,0 +1,23 @@
+uuid: 6e298038-21de-4952-8bc4-1f2b79dd6a81
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_device_manual_url
+    - node.type.device
+  module:
+    - link
+id: node.device.field_device_manual_url
+field_name: field_device_manual_url
+entity_type: node
+bundle: device
+label: 'Manual URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

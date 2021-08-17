@@ -1,0 +1,25 @@
+uuid: 7321f931-6e2a-47c6-9484-892709b47003
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_outside_media
+    - taxonomy.vocabulary.behavenet_terms
+  module:
+    - video_embed_field
+id: taxonomy_term.behavenet_terms.field_outside_media
+field_name: field_outside_media
+entity_type: taxonomy_term
+bundle: behavenet_terms
+label: 'Outside media'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_providers:
+    vimeo: vimeo
+    youtube: youtube
+    youtube_playlist: '0'
+field_type: video_embed_field

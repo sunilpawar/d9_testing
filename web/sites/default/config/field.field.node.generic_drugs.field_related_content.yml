@@ -1,0 +1,25 @@
+uuid: aaf524e4-c3e3-4278-ba28-6ff75cc6d4ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_content
+    - node.type.generic_drugs
+id: node.generic_drugs.field_related_content
+field_name: field_related_content
+entity_type: node
+bundle: generic_drugs
+label: 'Related content'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: related_content
+      display_name: entity_reference_1
+      arguments: {  }
+field_type: entity_reference

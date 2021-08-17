@@ -1,0 +1,23 @@
+uuid: 4c711a3b-37c6-4040-a50e-3f783eddaa70
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_movie_spoiler
+    - node.type.movie
+id: node.movie.field_movie_spoiler
+field_name: field_movie_spoiler
+entity_type: node
+bundle: movie
+label: 'Spoiler alert'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

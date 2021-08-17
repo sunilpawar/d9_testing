@@ -1,0 +1,21 @@
+uuid: 78158fb6-1324-4112-bd67-53ec7d04fab6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_schedule
+    - node.type.preparation
+  module:
+    - options
+id: node.preparation.field_schedule
+field_name: field_schedule
+entity_type: node
+bundle: preparation
+label: Schedule
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

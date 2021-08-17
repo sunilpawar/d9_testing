@@ -1,0 +1,6 @@
+uuid: eca8d1fc-3600-4507-ba17-66426486eca0
+langcode: en
+status: true
+dependencies: {  }
+id: field_dsm_criteria_fc
+label: field_dsm_criteria_fc

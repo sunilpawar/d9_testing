@@ -1,0 +1,28 @@
+uuid: 9ccc1e31-ab9c-48ae-bc14-32306e88fece
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.field_collection_item.field_dsm_version
+    - field_collection.field_collection.field_dsm_criteria_fc
+    - taxonomy.vocabulary.dsm_versions
+id: field_collection_item.field_dsm_criteria_fc.field_dsm_version
+field_name: field_dsm_version
+entity_type: field_collection_item
+bundle: field_dsm_criteria_fc
+label: 'DSM Version'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      dsm_versions: dsm_versions
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

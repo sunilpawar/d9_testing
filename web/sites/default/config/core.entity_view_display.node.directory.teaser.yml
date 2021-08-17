@@ -1,0 +1,29 @@
+uuid: 18bb93d1-c30f-47ec-800c-e5fb2d18c519
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.directory.field_description
+    - field.field.node.directory.field_directory_url
+    - field.field.node.directory.field_location
+    - field.field.node.directory.field_related_terms
+    - node.type.directory
+  module:
+    - user
+id: node.directory.teaser
+targetEntityType: node
+bundle: directory
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_comments: true
+  field_description: true
+  field_directory_url: true
+  field_location: true
+  field_related_terms: true

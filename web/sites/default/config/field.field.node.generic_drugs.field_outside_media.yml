@@ -1,0 +1,25 @@
+uuid: d1f40dd3-557c-4ab6-a587-098d881f0c6c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_outside_media
+    - node.type.generic_drugs
+  module:
+    - video_embed_field
+id: node.generic_drugs.field_outside_media
+field_name: field_outside_media
+entity_type: node
+bundle: generic_drugs
+label: 'Outside media'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_providers:
+    vimeo: '0'
+    youtube: '0'
+    youtube_playlist: '0'
+field_type: video_embed_field

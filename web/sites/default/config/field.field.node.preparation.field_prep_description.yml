@@ -1,0 +1,21 @@
+uuid: 1f814656-3f63-4173-9bbe-9da49a333420
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_prep_description
+    - node.type.preparation
+  module:
+    - text
+id: node.preparation.field_prep_description
+field_name: field_prep_description
+entity_type: node
+bundle: preparation
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

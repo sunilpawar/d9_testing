@@ -1,0 +1,16 @@
+uuid: 5683ab40-4aa5-45ac-8697-d845b990da7b
+langcode: en
+status: true
+dependencies: {  }
+id: drugs
+title: Drugs
+route_name: entity.node.canonical
+route_parameters:
+  node: 27644
+options: {  }
+expanded: false
+menu_name: behavenet-main-menu
+enabled: true
+parent: ''
+weight: -49
+description: ''

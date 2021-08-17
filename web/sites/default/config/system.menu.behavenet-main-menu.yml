@@ -1,0 +1,8 @@
+uuid: 88bed2cb-e4bd-4d5f-957d-96c236c01582
+langcode: en
+status: true
+dependencies: {  }
+id: behavenet-main-menu
+label: 'Behavenet main menu'
+description: 'Main navigation "tabs"'
+locked: false

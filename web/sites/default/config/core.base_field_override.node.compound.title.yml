@@ -1,0 +1,18 @@
+uuid: 54760a01-0de7-4ba9-bb63-6698475ec296
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.compound
+id: node.compound.title
+field_name: title
+entity_type: node
+bundle: compound
+label: 'Compound name'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

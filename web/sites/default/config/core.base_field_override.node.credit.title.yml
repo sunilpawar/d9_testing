@@ -1,0 +1,18 @@
+uuid: 65a215ab-27f1-4419-ac00-e7656c0c33c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.credit
+id: node.credit.title
+field_name: title
+entity_type: node
+bundle: credit
+label: 'Admin Title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

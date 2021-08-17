@@ -1,0 +1,8 @@
+## Javascript and CSS for showing DFP ads on Behavenet.
+#behavenet.dfp:
+#  js:
+#    js/bn_ads.js: {}
+#  dependencies:
+#    - core/drupal
+#    - core/jquery
+#    - core/jquery.once

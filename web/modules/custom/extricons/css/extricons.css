@@ -1,0 +1,42 @@
+.toolbar-tray a[href$='/organization/certifications']::before {
+  position: absolute;
+  top: 0;
+  left: .6667em;
+  display: block;
+  width: 20px;
+  height: 100%;
+  content: "";
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: 100% auto;
+  background-image: url(../certification-icon-light.svg);
+}
+.toolbar-tray a[href$='/organization/certifications']:active:before, .toolbar-tray a.is-active[href$='/organization/certifications']:before {
+    background-image: url(../certification-icon.svg);
+}
+.toolbar-tray a[href$='/user/locations']::before {
+    background-image: url(../location-icon-light.svg);
+}
+.toolbar-tray a[href$='/user/locations']:active:before, .toolbar-tray a.is-active[href$='/user/locations']:before {
+    background-image: url(../location-icon.svg);
+}
+.toolbar-tray a[href$='/admin/structure/taxonomy_manager/voc']::before {
+    background-image: url(../taxonomy-icon-light.svg);
+}
+.toolbar-tray a[href$='/admin/structure/taxonomy_manager/voc']:active:before, .toolbar-tray a.is-active[href$='/admin/structure/taxonomy_manager/voc']:before {
+    background-image: url(../taxonomy.svg);
+}
+.toolbar-tray a[href*='/tickets']::before {
+    background-image: url(../ticket-icon-light.svg);
+}
+.toolbar-tray a[href*='/tickets']:active:before, .toolbar-tray a.is-active[href*='/tickets']:before {
+    background-image: url(../ticket-icon.svg);
+}
+.toolbar-tray a[href$='/admin/structure/webform/submissions/manage']::before {
+    background-image: url(../webform-icon-light.svg);
+}
+.toolbar-tray a[href$='/admin/structure/webform/submissions/manage']:active:before, .toolbar-tray a.is-active[href$='/admin/structure/webform/submissions/manage']:before {
+    background-image: url(../webform-icon.svg);
+}

@@ -1,0 +1,21 @@
+uuid: 405ca713-70d6-463c-842a-3fe259248a3d
+langcode: en
+status: true
+dependencies:
+  module:
+    - bn_ads
+  theme:
+    - behave
+id: adblock_6
+theme: behave
+region: sidebar_first
+weight: -11
+provider: null
+plugin: ad_block
+settings:
+  id: ad_block
+  label: 'Skyscraper ad'
+  provider: bn_ads
+  label_display: '0'
+  type: skyscraper
+visibility: {  }

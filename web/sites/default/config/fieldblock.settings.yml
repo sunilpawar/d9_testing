@@ -1,0 +1,11 @@
+enabled_entity_types:
+  node: node
+  taxonomy_term: taxonomy_term
+  block_content: 0
+  comment: 0
+  contact_message: 0
+  field_collection_item: 0
+  file: 0
+  shortcut: 0
+  user: 0
+  menu_link_content: 0

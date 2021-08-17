@@ -1,0 +1,21 @@
+uuid: a592fb6b-ec78-4f46-8403-3b174c8b2431
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_schedule
+    - node.type.generic_drugs
+  module:
+    - options
+id: node.generic_drugs.field_schedule
+field_name: field_schedule
+entity_type: node
+bundle: generic_drugs
+label: Schedule
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

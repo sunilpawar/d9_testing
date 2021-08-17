@@ -1,0 +1,30 @@
+uuid: 7fbb033a-ecaa-4d38-b4ee-7f847307fa46
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dsm_criteria_fc
+    - field_collection.field_collection.field_dsm_criteria_fc
+    - node.type.dsm
+  module:
+    - field_collection
+id: node.dsm.field_dsm_criteria_fc
+field_name: field_dsm_criteria_fc
+entity_type: node
+bundle: dsm
+label: 'DSM Criteria'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:field_collection_item'
+  handler_settings:
+    target_bundles:
+      field_dsm_criteria_fc: field_dsm_criteria_fc
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: field_collection

@@ -1,0 +1,19 @@
+uuid: 9f0c5e8e-983d-47e4-aea2-0a0cea92b776
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_movie_twitter
+    - node.type.movie
+id: node.movie.field_movie_twitter
+field_name: field_movie_twitter
+entity_type: node
+bundle: movie
+label: Twitter
+description: 'Enter a TweetChat hashtag (eg: <i>#movie-name</i>, including the ''#'' character) or a Twitter user (eg: <i>@movie-name</i>, including the ''@'' character).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

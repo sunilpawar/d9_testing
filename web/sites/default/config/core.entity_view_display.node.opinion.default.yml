@@ -1,0 +1,33 @@
+uuid: 71dd6325-6c7c-4cec-bbc4-9ad831b3e686
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.opinion.body
+    - field.field.node.opinion.field_related_terms
+    - node.type.opinion
+  module:
+    - text
+    - user
+id: node.opinion.default
+targetEntityType: node
+bundle: opinion
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_related_terms:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  links: true

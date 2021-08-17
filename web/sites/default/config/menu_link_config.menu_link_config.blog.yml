@@ -1,0 +1,16 @@
+uuid: 1f8017b1-eb06-4c17-855c-ff3c49a8cb8f
+langcode: en
+status: true
+dependencies: {  }
+id: blog
+title: Blog
+route_name: entity.node.canonical
+route_parameters:
+  node: 30481
+options: {  }
+expanded: false
+menu_name: behavenet-main-menu
+enabled: true
+parent: ''
+weight: -44
+description: ''

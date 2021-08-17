@@ -1,0 +1,27 @@
+uuid: 844da5b9-4f54-4c2c-bfea-04d39b006dce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_generic_precursor
+    - node.type.generic_drugs
+id: node.generic_drugs.field_generic_precursor
+field_name: field_generic_precursor
+entity_type: node
+bundle: generic_drugs
+label: 'Generic precursor'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      generic_drugs: generic_drugs
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,25 @@
+uuid: faf93a96-ff9d-4cb9-84b6-4aa9e161fc4e
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:ad_block:4730396b-4beb-48b7-b913-936cb29fdd16'
+  module:
+    - block_content
+  theme:
+    - zen
+id: zen_goodtherapyad
+theme: zen
+region: sidebar_second
+weight: -9
+provider: null
+plugin: 'block_content:4730396b-4beb-48b7-b913-936cb29fdd16'
+settings:
+  id: 'block_content:4730396b-4beb-48b7-b913-936cb29fdd16'
+  label: 'GoodTherapy Ad'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

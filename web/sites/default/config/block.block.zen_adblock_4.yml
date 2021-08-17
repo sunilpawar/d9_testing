@@ -1,0 +1,21 @@
+uuid: d1454d23-cf46-4f9f-9feb-9100cf8b60b5
+langcode: en
+status: true
+dependencies:
+  module:
+    - bn_ads
+  theme:
+    - zen
+id: zen_adblock_4
+theme: zen
+region: sidebar_first
+weight: -11
+provider: null
+plugin: ad_block
+settings:
+  id: ad_block
+  label: 'DFP Footer Ad'
+  provider: bn_ads
+  label_display: '0'
+  type: footer
+visibility: {  }

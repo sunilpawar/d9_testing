@@ -1,0 +1,38 @@
+uuid: 417ccce1-d19a-41a2-a82e-7e8d4194bf93
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view.all_items_by_type
+  module:
+    - system
+    - views
+  theme:
+    - behave
+id: views_block__all_items_by_type_oveo_block_1_2
+theme: behave
+region: header
+weight: -23
+provider: null
+plugin: 'views_block:all_items_by_type-oveo_block_1'
+settings:
+  id: 'views_block:all_items_by_type-oveo_block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  exposed_filter:
+    type:
+      enabled: false
+      value: ''
+  contextual_filter:
+    type:
+      enabled: true
+      value: movie
+visibility:
+  request_path:
+    id: request_path
+    pages: /movies
+    negate: false
+    context_mapping: {  }

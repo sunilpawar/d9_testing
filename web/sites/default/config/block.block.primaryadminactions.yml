@@ -1,0 +1,25 @@
+uuid: 1c46d6b4-7ef9-4313-8cc0-089e3c7d79c6
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_visibility_groups
+  theme:
+    - behavenet_admin
+id: primaryadminactions
+theme: behavenet_admin
+region: content
+weight: -3
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }

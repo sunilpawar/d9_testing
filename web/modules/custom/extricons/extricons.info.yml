@@ -1,0 +1,9 @@
+name: 'Extricons toolbar icons'
+type: module
+description: 'Extricons toolbar icons module adds several icons to admin toolbar menu items.'
+configure: admin_icons_settings
+package: 'User interface'
+# version: 1.0
+core_version_requirement: ^8.8 || ^9
+libraries:
+  - extricons/toolbar-icon

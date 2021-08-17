@@ -1,0 +1,66 @@
+uuid: e6c9a6cc-6434-42ed-b200-cd185ca9f394
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.behavenet_terms.field_credit
+    - field.field.taxonomy_term.behavenet_terms.field_image
+    - field.field.taxonomy_term.behavenet_terms.field_is_acronym
+    - field.field.taxonomy_term.behavenet_terms.field_is_list
+    - field.field.taxonomy_term.behavenet_terms.field_outside_media
+    - field.field.taxonomy_term.behavenet_terms.field_related_terms
+    - field.field.taxonomy_term.behavenet_terms.field_term_synonyms
+    - taxonomy.vocabulary.behavenet_terms
+  module:
+    - image
+    - text
+id: taxonomy_term.behavenet_terms.default
+targetEntityType: taxonomy_term
+bundle: behavenet_terms
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_credit:
+    weight: 2
+    label: visually_hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_image:
+    weight: 3
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_related_terms:
+    weight: 4
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_term_synonyms:
+    weight: 0
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  field_is_acronym: true
+  field_is_list: true
+  field_outside_media: true

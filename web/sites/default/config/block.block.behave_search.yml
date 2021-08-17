@@ -1,0 +1,22 @@
+uuid: b58be42f-94e7-47cd-b344-c9e018fdacff
+langcode: en
+status: false
+dependencies:
+  module:
+    - search
+  theme:
+    - behave
+_core:
+  default_config_hash: AVuU-OCrZmSr4mxaJrNL0Ipii1sog0U87F9IQAohckM
+id: behave_search
+theme: behave
+region: header
+weight: -18
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  provider: search
+  label_display: '0'
+visibility: {  }

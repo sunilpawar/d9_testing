@@ -1,0 +1,27 @@
+uuid: e7fc59a2-d5eb-49b3-b983-1df060ac4657
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_visibility_groups
+    - bn_ads
+  theme:
+    - behave
+id: adblock_10
+theme: behave
+region: content
+weight: -4
+provider: null
+plugin: ad_block
+settings:
+  id: ad_block
+  label: 'Content footer ad'
+  provider: bn_ads
+  label_display: '0'
+  type: content_footer
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }

@@ -1,0 +1,26 @@
+uuid: 24324908-9954-444b-a05d-028b2d0cd9bf
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_visibility_groups
+    - help
+  theme:
+    - behavenet_admin
+id: help
+theme: behavenet_admin
+region: help
+weight: 0
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }

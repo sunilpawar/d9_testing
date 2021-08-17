@@ -1,0 +1,19 @@
+uuid: c289a6db-a77c-44bb-bfe4-5d13c88cad94
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_people_alt_names
+    - node.type.people
+id: node.people.field_people_alt_names
+field_name: field_people_alt_names
+entity_type: node
+bundle: people
+label: 'Alternate names'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

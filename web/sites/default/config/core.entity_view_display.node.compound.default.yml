@@ -1,0 +1,93 @@
+uuid: 4e43117a-acc4-44a5-af80-174d0487ab01
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.compound.field_credit
+    - field.field.node.compound.field_description
+    - field.field.node.compound.field_drug_combo
+    - field.field.node.compound.field_generic
+    - field.field.node.compound.field_graphic
+    - field.field.node.compound.field_outside_media
+    - field.field.node.compound.field_related_content
+    - field.field.node.compound.field_related_terms
+    - field.field.node.compound.field_slang
+    - node.type.compound
+  module:
+    - text
+    - user
+    - video_embed_field
+id: node.compound.default
+targetEntityType: node
+bundle: compound
+mode: default
+content:
+  field_credit:
+    weight: 4
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_description:
+    weight: 6
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_drug_combo:
+    weight: 2
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_generic:
+    weight: 1
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_outside_media:
+    weight: 5
+    label: visually_hidden
+    settings:
+      responsive: true
+      width: 854
+      height: 480
+      autoplay: false
+    third_party_settings: {  }
+    type: video_embed_field_video
+    region: content
+  field_related_content:
+    weight: 7
+    label: visually_hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_related_terms:
+    weight: 3
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_slang:
+    weight: 0
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  field_graphic: true
+  links: true

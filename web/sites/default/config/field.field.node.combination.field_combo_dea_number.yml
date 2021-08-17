@@ -1,0 +1,19 @@
+uuid: 5f6782bb-936c-4262-84a9-f1f5f2496b7c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_combo_dea_number
+    - node.type.combination
+id: node.combination.field_combo_dea_number
+field_name: field_combo_dea_number
+entity_type: node
+bundle: combination
+label: 'DEA Number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

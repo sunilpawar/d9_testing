@@ -1,0 +1,42 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - migrate_behavenet
+id: upgrade_d6_node_dsm_fc
+migration_tags:
+  - 'Drupal 6'
+migration_group: migrate_drupal_6
+label: 'Nodes (dsm)'
+source:
+  plugin: behavenet_dsm_fc
+  node_type: dsm
+process:
+  # The field name of the Field Collection in the host entity.
+  field_name:
+    plugin: default_value
+    default_value: field_dsm_criteria_fc
+
+  # Tells the destination plugin the host entity type and ID.
+  host_type:
+    plugin: default_value
+    default_value: node
+  host_entity_id:
+    plugin: migration
+    migration: upgrade_d6_node_dsm
+    source: host_entity_id
+  host_delta: delta
+
+  # Fields to migrate.
+  field_dsm_version: field_dsm_version
+  field_dsm_criteria/value: field_dsm_body
+  field_dsm_criteria/format:
+    plugin: default_value
+    default_value: full_html
+
+destination:
+  plugin: 'entity:field_collection_item'
+migration_dependencies:
+  required: { }
+  optional: { }

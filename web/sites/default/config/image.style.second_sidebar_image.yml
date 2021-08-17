@@ -1,0 +1,15 @@
+uuid: 4e07b5c0-c3c7-4e44-8fc0-6b34e9bc5b44
+langcode: en
+status: true
+dependencies: {  }
+name: second_sidebar_image
+label: 'Second sidebar image'
+effects:
+  1f0d0288-64c9-4802-a232-abb00f07b4c4:
+    uuid: 1f0d0288-64c9-4802-a232-abb00f07b4c4
+    id: image_scale
+    weight: 1
+    data:
+      width: 300
+      height: null
+      upscale: true

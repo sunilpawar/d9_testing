@@ -1,0 +1,21 @@
+uuid: 7bf84441-10c1-47d2-8413-adaddc7f91ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_amazon_asin
+    - node.type.book
+  module:
+    - amazon_field
+id: node.book.field_amazon_asin
+field_name: field_amazon_asin
+entity_type: node
+bundle: book
+label: 'Amazon ASIN'
+description: 'The Amazon ASIN or ISBN for this book.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: amazon_asin_field

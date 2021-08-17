@@ -1,0 +1,19 @@
+uuid: 32ae5097-8d55-49b1-add3-8061aa79bdeb
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_movie_blog_entry
+field_name: field_movie_blog_entry
+entity_type: node
+type: text_with_summary
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

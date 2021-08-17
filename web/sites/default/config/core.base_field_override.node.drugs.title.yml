@@ -1,0 +1,18 @@
+uuid: ae0c8235-e01d-4ac1-ac3f-dd4e894bb0c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.drugs
+id: node.drugs.title
+field_name: title
+entity_type: node
+bundle: drugs
+label: 'Drug name'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

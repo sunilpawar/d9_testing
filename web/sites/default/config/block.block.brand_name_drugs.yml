@@ -1,0 +1,52 @@
+uuid: b35d885b-15ce-42d1-8bf6-0adacd4620e9
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_visibility_groups
+    - bn_general
+    - system
+  theme:
+    - behave
+id: brand_name_drugs
+theme: behave
+region: content
+weight: -17
+provider: null
+plugin: all_content_block
+settings:
+  id: all_content_block
+  label: 'Brand Name Drugs'
+  provider: bn_general
+  label_display: '0'
+  node_types:
+    drugs: drugs
+    book: 0
+    combination: 0
+    company: 0
+    compound: 0
+    credit: 0
+    device: 0
+    directory: 0
+    dsm: 0
+    generic_drugs: 0
+    indication: 0
+    movie: 0
+    opinion: 0
+    page: 0
+    people: 0
+    preparation: 0
+    source: 0
+    field_acronyms: 0
+  split_by_type: 0
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: /node/38623
+    negate: false
+    context_mapping: {  }

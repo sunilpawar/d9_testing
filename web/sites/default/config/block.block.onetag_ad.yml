@@ -1,0 +1,26 @@
+uuid: ac528902-558b-4683-b97a-767841293782
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_visibility_groups
+    - bn_ads
+  theme:
+    - behave
+id: onetag_ad
+theme: behave
+region: footer
+weight: -25
+provider: null
+plugin: onetag_ad_block
+settings:
+  id: onetag_ad_block
+  label: 'OneTag ad'
+  provider: bn_ads
+  label_display: '0'
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }

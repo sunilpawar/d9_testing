@@ -1,0 +1,18 @@
+uuid: 81df51cf-852e-4f6a-8126-38ffa8e9f0c5
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Credit
+type: credit
+description: 'Reusable credit that can be appended to images, quoted text, etc.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

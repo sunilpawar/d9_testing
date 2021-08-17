@@ -1,0 +1,4 @@
+trendmd_journals:
+  version: 1.x
+  js:
+    //js.trendmd.com/trendmd.min.js: {type: external, attributes: { data-trendmdconfig: '{"journal_id":"62774","element":"#trendmd-suggestions"}' } }

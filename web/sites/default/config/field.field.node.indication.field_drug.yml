@@ -1,0 +1,28 @@
+uuid: 59df707f-6049-4e63-a1af-ab8cb3dd8969
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_drug
+    - node.type.drugs
+    - node.type.indication
+id: node.indication.field_drug
+field_name: field_drug
+entity_type: node
+bundle: indication
+label: 'Trade name drug'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      drugs: drugs
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

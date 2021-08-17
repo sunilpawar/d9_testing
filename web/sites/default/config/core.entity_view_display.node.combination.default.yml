@@ -1,0 +1,133 @@
+uuid: a357d941-1d68-45b8-acfe-fc33a4ecc349
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.combination.field_combo_dea_number
+    - field.field.node.combination.field_combo_description
+    - field.field.node.combination.field_combo_items
+    - field.field.node.combination.field_combo_medline_url
+    - field.field.node.combination.field_credit
+    - field.field.node.combination.field_drugs
+    - field.field.node.combination.field_graphic
+    - field.field.node.combination.field_outside_media
+    - field.field.node.combination.field_related_content
+    - field.field.node.combination.field_related_terms
+    - field.field.node.combination.field_schedule
+    - field.field.node.combination.field_slang
+    - field.field.node.combination.field_source
+    - node.type.combination
+  module:
+    - bn_general
+    - options
+    - text
+    - user
+    - video_embed_field
+id: node.combination.default
+targetEntityType: node
+bundle: combination
+mode: default
+content:
+  field_combo_dea_number:
+    weight: 2
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_combo_description:
+    weight: 7
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_combo_items:
+    weight: 1
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_combo_medline_url:
+    weight: 6
+    label: visually_hidden
+    settings:
+      link_text: 'Medline website'
+      rel: 0
+      target: 0
+      trim_length: ''
+    third_party_settings: {  }
+    type: link_text_field_formatter
+    region: content
+  field_credit:
+    weight: 9
+    label: visually_hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_drugs:
+    weight: 3
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_outside_media:
+    weight: 8
+    label: hidden
+    settings:
+      responsive: true
+      width: 854
+      height: 480
+      autoplay: true
+    third_party_settings: {  }
+    type: video_embed_field_video
+    region: content
+  field_related_content:
+    weight: 10
+    label: visually_hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_related_terms:
+    weight: 11
+    label: visually_hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_schedule:
+    weight: 4
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_slang:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_source:
+    type: entity_reference_label
+    weight: 5
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_graphic: true
+  links: true

@@ -1,0 +1,25 @@
+uuid: db9d48a7-6098-4e14-887e-65908cda232e
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:ad_block:8dade177-bf21-4170-8de8-e38be142f64d'
+  module:
+    - block_content
+  theme:
+    - behave
+id: socialmedialinks_2
+theme: behave
+region: sidebar_first
+weight: -9
+provider: null
+plugin: 'block_content:8dade177-bf21-4170-8de8-e38be142f64d'
+settings:
+  id: 'block_content:8dade177-bf21-4170-8de8-e38be142f64d'
+  label: 'Connect with us'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

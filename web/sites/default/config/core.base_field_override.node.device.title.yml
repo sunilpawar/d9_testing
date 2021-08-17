@@ -1,0 +1,18 @@
+uuid: f53e9a89-7d65-41e4-aec5-4b5a1ff5c040
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.device
+id: node.device.title
+field_name: title
+entity_type: node
+bundle: device
+label: 'Device name'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

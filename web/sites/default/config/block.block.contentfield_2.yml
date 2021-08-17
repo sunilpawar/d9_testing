@@ -1,0 +1,37 @@
+uuid: e9657163-6cda-489e-8660-e9717754dde0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_people_image
+  module:
+    - ctools
+    - fieldblock
+    - image
+  theme:
+    - behave
+id: contentfield_2
+theme: behave
+region: sidebar_second
+weight: -21
+provider: null
+plugin: 'fieldblock:node'
+settings:
+  id: 'fieldblock:node'
+  label: 'People - image field'
+  provider: fieldblock
+  label_display: '0'
+  label_from_field: 0
+  field_name: field_people_image
+  formatter_id: image
+  formatter_settings:
+    image_style: second_sidebar_image
+    image_link: ''
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      people: people
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

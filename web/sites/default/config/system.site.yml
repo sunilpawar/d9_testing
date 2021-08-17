@@ -1,0 +1,15 @@
+uuid: d3ba0a14-1c02-4611-9807-7e5ca3e2a1a1
+name: Behavenet
+mail: behavenet@example.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node/27648
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
+mail_notification: ''

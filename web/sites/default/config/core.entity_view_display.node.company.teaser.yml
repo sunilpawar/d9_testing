@@ -1,0 +1,31 @@
+uuid: 1668ac57-c759-47a2-aeda-6a8e6df489a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.company.field_company_url
+    - field.field.node.company.field_related_content
+    - node.type.company
+  module:
+    - bn_general
+    - user
+id: node.company.teaser
+targetEntityType: node
+bundle: company
+mode: teaser
+content:
+  field_company_url:
+    type: link_text_field_formatter
+    weight: 0
+    label: hidden
+    settings:
+      link_text: 'Company Web site'
+      rel: 0
+      target: 0
+      trim_length: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_related_content: true
+  links: true

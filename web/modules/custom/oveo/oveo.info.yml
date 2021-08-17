@@ -1,0 +1,7 @@
+name: Override Views Exposed Options
+type: module
+description: Allows block displays to override exposed filters and sorts via the block configuration.
+core: 8.x
+package: Views
+dependencies:
+  - views

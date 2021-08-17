@@ -1,0 +1,25 @@
+uuid: 39731270-ead2-436c-9f58-65970d87acd4
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:ad_block:4730396b-4beb-48b7-b913-936cb29fdd16'
+  module:
+    - block_content
+  theme:
+    - bartik
+id: goodtherapyad
+theme: bartik
+region: sidebar_second
+weight: -9
+provider: null
+plugin: 'block_content:4730396b-4beb-48b7-b913-936cb29fdd16'
+settings:
+  id: 'block_content:4730396b-4beb-48b7-b913-936cb29fdd16'
+  label: 'GoodTherapy Ad'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

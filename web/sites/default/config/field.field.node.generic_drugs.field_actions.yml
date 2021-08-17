@@ -1,0 +1,27 @@
+uuid: e0791f57-5314-47a7-ba04-4e04e054109e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_actions
+    - node.type.generic_drugs
+    - taxonomy.vocabulary.actions
+id: node.generic_drugs.field_actions
+field_name: field_actions
+entity_type: node
+bundle: generic_drugs
+label: Actions
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      actions: actions
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

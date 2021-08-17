@@ -1,0 +1,25 @@
+uuid: 8e1a4370-68fa-4794-b1df-d6031eb9e37b
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:ad_block:98cd9599-fefd-434c-94f8-f816b67c5af5'
+  module:
+    - block_content
+  theme:
+    - bartik
+id: amazonhealthbannerad
+theme: bartik
+region: sidebar_first
+weight: -8
+provider: null
+plugin: 'block_content:98cd9599-fefd-434c-94f8-f816b67c5af5'
+settings:
+  id: 'block_content:98cd9599-fefd-434c-94f8-f816b67c5af5'
+  label: 'Amazon health banner ad'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

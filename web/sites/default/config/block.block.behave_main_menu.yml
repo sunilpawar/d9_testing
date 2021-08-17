@@ -1,0 +1,27 @@
+uuid: f94fd0b1-aa1a-4c1f-95ec-66bf663ac408
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - behave
+_core:
+  default_config_hash: h4t7Dal9M-0lIBeR95owi61-a4GFQcqnQaO0pEf0Jzc
+id: behave_main_menu
+theme: behave
+region: header
+weight: -20
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

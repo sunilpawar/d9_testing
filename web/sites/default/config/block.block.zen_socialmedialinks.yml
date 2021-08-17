@@ -1,0 +1,25 @@
+uuid: 4519ff0b-9edc-4b1a-8b99-21d3001da4d9
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:ad_block:8dade177-bf21-4170-8de8-e38be142f64d'
+  module:
+    - block_content
+  theme:
+    - zen
+id: zen_socialmedialinks
+theme: zen
+region: sidebar_first
+weight: -9
+provider: null
+plugin: 'block_content:8dade177-bf21-4170-8de8-e38be142f64d'
+settings:
+  id: 'block_content:8dade177-bf21-4170-8de8-e38be142f64d'
+  label: 'Connect with us'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

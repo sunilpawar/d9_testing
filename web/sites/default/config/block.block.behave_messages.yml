@@ -1,0 +1,22 @@
+uuid: 00745656-7e12-424f-be2a-5740074829bf
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - behave
+_core:
+  default_config_hash: fYJFSzGRUId0vaVsL5YuCjRwbKcK2eMtYYB5M7GMncY
+id: behave_messages
+theme: behave
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

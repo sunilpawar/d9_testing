@@ -1,0 +1,17 @@
+uuid: 02875a85-cd25-40c4-84a6-9f663eb500ea
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: blog_landing_page
+label: 'Blog landing page'
+logic: and
+conditions:
+  3d72213b-d7cc-43a1-9029-050724e33d07:
+    id: request_path
+    pages: /node/30481
+    negate: false
+    context_mapping: {  }
+    uuid: 3d72213b-d7cc-43a1-9029-050724e33d07
+allow_other_conditions: false

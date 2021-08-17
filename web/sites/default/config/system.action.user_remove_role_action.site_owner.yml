@@ -1,0 +1,14 @@
+uuid: 38867120-4366-4d63-99af-05137ce095c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.site_owner
+  module:
+    - user
+id: user_remove_role_action.site_owner
+label: 'Remove the Site owner role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: site_owner

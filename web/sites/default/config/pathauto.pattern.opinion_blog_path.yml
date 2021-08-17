@@ -1,0 +1,22 @@
+uuid: a27d331d-d306-45b7-a180-5fdb131b9d11
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: opinion_blog_path
+label: 'Opinion blog path'
+type: 'canonical_entities:node'
+pattern: 'blog/[node:title]'
+selection_criteria:
+  e1bb6105-b97f-4b51-a7b5-3d88f6a7aa23:
+    id: node_type
+    bundles:
+      opinion: opinion
+    negate: false
+    context_mapping:
+      node: node
+    uuid: e1bb6105-b97f-4b51-a7b5-3d88f6a7aa23
+selection_logic: and
+weight: -5
+relationships: {  }

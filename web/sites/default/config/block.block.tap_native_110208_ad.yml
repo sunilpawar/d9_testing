@@ -1,0 +1,27 @@
+uuid: 92b17935-8542-4e8c-9e23-c01ad508b53f
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_visibility_groups
+    - bn_ads
+  theme:
+    - behave
+id: tap_native_110208_ad
+theme: behave
+region: content
+weight: -6
+provider: null
+plugin: tap_native_ad_block
+settings:
+  id: tap_native_ad_block
+  label: 'Tap Native 110208 ad'
+  provider: bn_ads
+  label_display: '0'
+  number: '110208'
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }

@@ -1,0 +1,23 @@
+uuid: f23a21a0-7739-4390-9455-254b18d74a59
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_is_list
+    - taxonomy.vocabulary.behavenet_terms
+id: taxonomy_term.behavenet_terms.field_is_list
+field_name: field_is_list
+entity_type: taxonomy_term
+bundle: behavenet_terms
+label: 'Is a list?'
+description: 'If this option is ticked, all related terms will be displayed under the heading "Glossary" instead of a "See Also" block.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
