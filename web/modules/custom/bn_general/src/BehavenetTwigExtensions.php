@@ -2,10 +2,11 @@
 
 namespace Drupal\bn_general;
 
-
 use Drupal\Core\Render\Element;
-use Drupal\node\Entity\Node;
 
+/**
+ * Class for Twig Extension.
+ */
 class BehavenetTwigExtensions extends \Twig_Extension {
 
   /**
@@ -42,7 +43,7 @@ class BehavenetTwigExtensions extends \Twig_Extension {
    * Sorts a terms render array alphabetically.
    *
    * @param array $terms
-   *   Array of terms (as render arrays) to sort
+   *   Array of terms (as render arrays) to sort.
    *
    * @return array
    *   The sorted render arrays.
@@ -61,7 +62,7 @@ class BehavenetTwigExtensions extends \Twig_Extension {
       $isRenderArray = TRUE;
     }
 
-    // Collect all terms keyed by title
+    // Collect all terms keyed by title.
     $sorted = [];
     foreach ($terms as $term) {
       $title = $isRenderArray ? $term['#title'] : $term['content']['#title'];
@@ -86,7 +87,7 @@ class BehavenetTwigExtensions extends \Twig_Extension {
     if ($isRenderArray) {
       // Repack the items in the render array so it displays correctly.
       $index = 0;
-      foreach($sorted as $item) {
+      foreach ($sorted as $item) {
         $original[$index] = $item;
         $index++;
       }
@@ -99,7 +100,8 @@ class BehavenetTwigExtensions extends \Twig_Extension {
 
   /**
    * Processes a collection of related content so it's arranged by type and,
-   * optionally, sorted by title.
+   *
+   * Optionally, sorted by title.
    *
    * @param array $related_content
    *   An array of related content links.
@@ -117,7 +119,7 @@ class BehavenetTwigExtensions extends \Twig_Extension {
     //  ...
     $results = [];
     foreach ($related_content as $item) {
-      /** @var Node $node */
+      /** @var \Drupal\node\Entity\Node $node */
       $node = $item['content']['#options']['entity'];
       if (!isset($results[$node->bundle()])) {
         $results[$node->bundle()] = [];
@@ -132,28 +134,29 @@ class BehavenetTwigExtensions extends \Twig_Extension {
       }
     }
 
-    // If the parent bundle is Generic Drugs, move Trade Name Drugs to the top of the list.
+    // If the parent bundle is Generic Drugs, move Trade Name Drugs to the top
+    // of the list.
     if ($parent_bundle == 'generic_drugs' && isset($results['drugs'])) {
       $results = ['drugs' => $results['drugs']] + $results;
     }
-   $key_order = array(
-    'compound', 
-    'preparation', 
-    'combination', 
-    'movies', 
-    'people', 
-    'book', 
-  );
-  $results_orderd = array_replace(array_flip($key_order), $results);
-  $results = $results_orderd;
-  return $results;
+    $key_order = [
+      'compound',
+      'preparation',
+      'combination',
+      'movies',
+      'people',
+      'book',
+    ];
+    $results_orderd = array_replace(array_flip($key_order), $results);
+    $results = $results_orderd;
+    return $results;
   }
 
   /**
    * Wrapper for Element::children()
    *
-   * @param $eleemnt
-   *   Element to process
+   * @param array $eleemnt
+   *   Element to process.
    *
    * @return array
    *   List of keys in $element that represent children of that element.
@@ -163,7 +166,7 @@ class BehavenetTwigExtensions extends \Twig_Extension {
       return Element::children($element);
     }
     else {
-      return[];
+      return [];
     }
   }
 

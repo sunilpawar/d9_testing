@@ -1,13 +1,12 @@
 <?php
-/**
- * @file
- * Contains Drupal\amazon\LookupXmlToItemsArray
- */
 
 namespace Drupal\amazon;
 
 use ApaiIO\ResponseTransformer\ResponseTransformerInterface;
 
+/**
+ *
+ */
 class LookupXmlToItemsArray implements ResponseTransformerInterface {
 
   /**

@@ -1,12 +1,7 @@
 <?php
-/**
- * @file
- * Contains Drupal\amazon\Amazon
- */
 
 namespace Drupal\amazon;
 
-use Drupal\amazon\AmazonRequest;
 use ApaiIO\ApaiIO;
 use ApaiIO\Configuration\GenericConfiguration;
 use ApaiIO\Operations\Lookup;
@@ -76,7 +71,7 @@ class Amazon {
    * @return string|bool
    *   String on success, FALSE otherwise.
    */
-  static public function getAccessSecret() {
+  public static function getAccessSecret() {
     // Use credentials from environment variables, if available.
     $secret = getenv(self::AMAZON_ACCESS_SECRET);
     if ($secret) {
@@ -99,7 +94,7 @@ class Amazon {
    * @return string|bool
    *   String on success, FALSE otherwise.
    */
-  static public function getAccessKey() {
+  public static function getAccessKey() {
     // Use credentials from environment variables, if available.
     $key = getenv(self::AMAZON_ACCESS_KEY);
     if ($key) {
@@ -136,7 +131,7 @@ class Amazon {
 
     $results = [];
     // Cannot ask for info from more than 10 items in a single call.
-    foreach(array_chunk($items, 10) as $asins) {
+    foreach (array_chunk($items, 10) as $asins) {
       $lookup = new Lookup();
       $lookup->setItemIds($asins);
       $lookup->setResponseGroup(['Small', 'Images']);

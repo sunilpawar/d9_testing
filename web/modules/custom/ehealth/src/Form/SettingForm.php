@@ -58,7 +58,7 @@ class SettingForm extends ConfigFormBase {
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
     foreach ($form_state->getValues() as $key => $value) {
-      // @TODO: Validate fields.
+      // @todo Validate fields.
     }
     parent::validateForm($form, $form_state);
   }
@@ -74,4 +74,5 @@ class SettingForm extends ConfigFormBase {
 
     return parent::submitForm($form, $form_state);
   }
+
 }

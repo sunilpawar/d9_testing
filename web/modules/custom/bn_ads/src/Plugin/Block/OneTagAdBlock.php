@@ -22,7 +22,7 @@ class OneTagAdBlock extends BlockBase {
       'onetag_ad_block' => [
         '#markup' => '<script src="//get.s-onetag.com/84024822-360d-424d-9b9f-2bfaa41afd8a/tag.min.js" async defer></script>',
         '#allowed_tags' => ['div', 'script'],
-      ]
+      ],
     ];
   }
 

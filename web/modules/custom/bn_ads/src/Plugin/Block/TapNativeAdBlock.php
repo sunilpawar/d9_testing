@@ -44,7 +44,7 @@ class TapNativeAdBlock extends BlockBase {
   public function blockSubmit($form, FormStateInterface $form_state) {
     $this->setConfigurationValue('number', $form_state->getValue('number'));
   }
-  
+
   /**
    * {@inheritdoc}
    */
@@ -58,6 +58,9 @@ class TapNativeAdBlock extends BlockBase {
     ];
   }
 
+  /**
+   *
+   */
   protected function ad_markup($number) {
     return '<div id="adx_native_ad_' . $number . '"></div><script type="text/javascript">(function() {var a="",b=["aid=' . $number . '"];for (var c=0;c<b.length;++c){a+=b[c]+"&";}a+="r="+Math.random()*1e16+"&url="+encodeURIComponent(window.location.href);var x="https://content.tapnative.com/tn/?"+a;var y=document.createElement("script");y.type="text/javascript";y.async=true;y.src=x;var z=document.getElementsByTagName("script")[0];z.parentNode.insertBefore(y, z);})();</script>';
   }

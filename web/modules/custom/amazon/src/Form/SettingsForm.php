@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains Drupal\amazon\Form\SettingsForm.
- */
-
 namespace Drupal\amazon\Form;
 
 use Drupal\Core\Form\ConfigFormBase;

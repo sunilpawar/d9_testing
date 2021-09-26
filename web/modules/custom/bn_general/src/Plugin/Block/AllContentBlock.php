@@ -73,13 +73,16 @@ class AllContentBlock extends BlockBase implements ContainerFactoryPluginInterfa
     $settingsForm['split_by_type'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('Split up items by node type'),
-      '#description' => $this->t('If selected, items will be passed to the template in the form of <code>[\'node_type\' => [ array, of, items]</code> instead of just an [array, of items]. The <code>split_by_type</code> variable will be TRUE.'),
+      '#description' => $this->t('If selected, items will be passed to the template in the form of <code>["node_type" => [ array, of, items]</code> instead of just an [array, of items]. The <code>split_by_type</code> variable will be TRUE.'),
       '#default_value' => $config['split_by_type'],
     ];
 
     return $settingsForm;
   }
 
+  /**
+   * {@inheritdoc}
+   */
   public function blockSubmit($form, FormStateInterface $form_state) {
     foreach (['node_types', 'split_by_type'] as $item) {
       $this->setConfigurationValue($item, $form_state->getValue($item));
@@ -120,7 +123,7 @@ class AllContentBlock extends BlockBase implements ContainerFactoryPluginInterfa
         $new = [];
         if ($type == 'field_acronyms') {
           // Special case the need to display a list of generic drug acronyms.
-          $results = db_select('node__field_generic_acronyms', 'a')
+          $results = \Drupal::database()->select('node__field_generic_acronyms', 'a')
             ->fields('a', ['field_generic_acronyms_value', 'entity_id'])
             ->condition('a.bundle', 'generic_drugs')
             ->orderBy('a.field_generic_acronyms_value')
@@ -143,10 +146,10 @@ class AllContentBlock extends BlockBase implements ContainerFactoryPluginInterfa
             ->execute();
           $nodes = Node::loadMultiple($nids);
 
-          /** @var Node $node */
+          /** @var \Drupal\node\Entity\Node $node */
           foreach ($nodes as $node) {
             $new[] = [
-              'url' => $node->url(),
+              'url' => $node->toUrl(),
               'text' => $node->label(),
             ];
           }
@@ -167,8 +170,7 @@ class AllContentBlock extends BlockBase implements ContainerFactoryPluginInterfa
     $build['#split_by_type'] = $split_by_type;
     $build['items'] = $items;
 
-    // @TODO: invalidate the cache tag whenever node labels are changed.
-
+    // @todo invalidate the cache tag whenever node labels are changed.
     return $build;
   }
 

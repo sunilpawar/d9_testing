@@ -1,9 +1,9 @@
 <?php
+
 /**
  * @file
  * Provides the easy integration of the Amazon Product Advertising API.
  */
-
 
 /**
  * Implements hook_theme().
@@ -83,7 +83,7 @@ function template_preprocess_amazon_inline(&$variables) {
  *   Array of variables including the results of the APA API call.
  */
 function template_preprocess_amazon_image(&$variables) {
-  switch($variables['size']) {
+  switch ($variables['size']) {
     case 'small':
       $image = $variables['results'][0]->SmallImage;
       break;

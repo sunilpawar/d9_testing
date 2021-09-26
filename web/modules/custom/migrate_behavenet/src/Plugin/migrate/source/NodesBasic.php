@@ -2,7 +2,6 @@
 
 namespace Drupal\migrate_behavenet\Plugin\migrate\source;
 
-
 use Drupal\migrate\Row;
 use Drupal\node\Plugin\migrate\source\d6\Node;
 use Drupal\Component\Utility\UrlHelper;
@@ -51,7 +50,6 @@ class NodesBasic extends Node {
     return $values;
   }
 
-
   /**
    * {@inheritdoc}
    */
@@ -65,9 +63,9 @@ class NodesBasic extends Node {
       $row->setSourceProperty('title', 'Missing title in original dataset');
     }
 
-    //// This particular Link field was the only one that allowed link text to be
-    //// entered. Preserve the URI and title.
-    //if ($row->hasSourceProperty('field_directory_url')) {
+    // This particular Link field was the only one that allowed link text to be
+    // entered. Preserve the URI and title.
+    // if ($row->hasSourceProperty('field_directory_url')) {
     //  $link = $row->getSourceProperty('field_directory_url');
     //  $link = $link[0];
     //  if (isset($link['uri'])) {
@@ -76,9 +74,8 @@ class NodesBasic extends Node {
     //      'title' => $link['title'],
     //    ]);
     //  }
-    //}
+    // }
     //
-
     // Clean basic (single entry) CCK fields that for some reason aren't working
     // with the CckFieldBase processor. Also clean up some fields that were
     // never expected to work with CckFieldBase.
@@ -111,7 +108,7 @@ class NodesBasic extends Node {
             case 'field_directory_url':
             case 'field_drug_url':
 
-              // Clean up poorly formed URLs
+              // Clean up poorly formed URLs.
               if (strpos($value, 'http://') === FALSE && strpos($value, 'https://') === FALSE) {
                 // Asssume they forgot the protocol and assume it's non-SSL.
                 $value = 'http://' . $value;
@@ -182,20 +179,19 @@ class NodesBasic extends Node {
       $related = array_merge($related, array_filter($sources));
     }
 
-    //// Add chemical class from the movie content type to related terms.
-    //if ($row->getSourceProperty('type') == 'movie') {
+    // Add chemical class from the movie content type to related terms.
+    // if ($row->getSourceProperty('type') == 'movie') {
     //  $backref = $this->select('content_field_chemical_class', 'c')
     //    ->fields('c', ['field_chemical_class_value'])
     //    ->condition('nid', $row->getSourceProperty('nid'))
     //    ->execute()
     //    ->fetchCol();
     //  $related = array_merge($related, array_filter($backref));
-    //}
-
+    // }
     if (!empty($related)) {
       $related = array_values(array_unique($related));
       $row->setSourceProperty('incoming_related_content', $related);
-      //print "\n    has " . count($related) . ' incoming references';
+      // Print "\n    has " . count($related) . ' incoming references';.
     }
 
     // All terms that reference this node.
@@ -255,7 +251,7 @@ class NodesBasic extends Node {
 
     // Destination plugin expects the ASIN to be in the value field, not the
     // asin field.
-    foreach(['field_general_additional_asin', 'field_general_asin'] as $field) {
+    foreach (['field_general_additional_asin', 'field_general_asin'] as $field) {
       if ($row->hasSourceProperty($field)) {
         $amazon = $row->getSourceProperty($field);
         foreach ($amazon as $index => $item) {
@@ -269,7 +265,7 @@ class NodesBasic extends Node {
     // bother using the migration process plugin since we're forcing NIDs to
     // remain the same between D6 and D8.
     $fields = [
-      //'field_general_related_content',    // No longer needed since we handle
+      // 'field_general_related_content',    // No longer needed since we handle
       // this above... See incoming_related_content.
       'field_indication_drug',
       'field_device_indication',
@@ -358,7 +354,7 @@ class NodesBasic extends Node {
     }
 
     // File fields just want a list of fids to associate.
-    foreach(['field_generic_graphic', 'field_people_image', 'field_drug_image', 'field_general_upload'] as $field) {
+    foreach (['field_generic_graphic', 'field_people_image', 'field_drug_image', 'field_general_upload'] as $field) {
       if ($row->hasSourceProperty($field)) {
         $fids = [];
         foreach ($row->getSourceProperty($field) as $item) {
@@ -374,10 +370,9 @@ class NodesBasic extends Node {
       }
     }
 
-    //print "\n";
+    // Print "\n";.
     print "\nImported nid: " . $row->getSourceProperty('nid');
-    //print "\n";
-
+    // Print "\n";.
     return TRUE;
   }
 

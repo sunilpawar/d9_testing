@@ -17,6 +17,8 @@ class AdBlock extends BlockBase {
 
   /**
    * Holds machine_name => human-readable options for ad locations.
+   *
+   * @var array
    */
   protected $layoutOptions = [];
 
@@ -107,15 +109,24 @@ class AdBlock extends BlockBase {
         '#theme' => 'bn_ad',
         '#content' => $adBlock,
         '#attached' => [
-          'library' => ['bn_ads/dfp']
+          'library' => ['bn_ads/dfp'],
         ],
         '#cache' => [
           'max-age' => 0,
         ],
-      ]
+      ],
     ];
   }
 
+  /**
+   * Function nto get ads js snippet.
+   *
+   * @param int $drupalUserID
+   *   Drupal User Id.
+   *
+   * @return string
+   *   Js Code
+   */
   protected function leader_ad($drupalUserID) {
     return <<<HERE
       <!-- ASYNC UAT M - 728x90/320x50(t,l) - Physicians (MD)/Psychiatry/ -->
@@ -168,6 +179,9 @@ class AdBlock extends BlockBase {
 HERE;
   }
 
+  /**
+   *
+   */
   protected function skyscraper_ad($drupalUserID) {
     return <<<HERE
       <!-- ASYNC UAT M - 160x600(t,l) - Physicians (MD)/Psychiatry/ -->
@@ -200,6 +214,9 @@ HERE;
 HERE;
   }
 
+  /**
+   *
+   */
   protected function rectangle_ad($drupalUserID) {
     return <<<HERE
       <!-- ASYNC UAT M - 300x250(t,r) - Physicians (MD)/Psychiatry/ -->
@@ -229,6 +246,9 @@ HERE;
 HERE;
   }
 
+  /**
+   *
+   */
   protected function footer_ad($drupalUserID) {
     return <<<HERE
       <!-- ASYNC UAT M - 728x90/320x50(t,l) - Physicians (MD)/Psychiatry/ -->
@@ -281,6 +301,9 @@ HERE;
 HERE;
   }
 
+  /**
+   *
+   */
   protected function interstitial_ad($drupalUserID) {
     return <<<HERE
       <!-- ASYNC UAT M - inter - Physicians (MD)/Psychiatry/ -->
@@ -308,6 +331,9 @@ HERE;
 HERE;
   }
 
+  /**
+   *
+   */
   protected function content_footer_ad($drupalUserID) {
     return <<<HERE
       <!-- ASYNC UAT M - 300x600(t,l) - Physicians (MD)/Psychiatry/ -->
@@ -341,4 +367,3 @@ HERE;
   }
 
 }
-

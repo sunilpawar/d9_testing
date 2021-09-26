@@ -44,8 +44,8 @@ function bn_ads_update_8001() {
   bn_ads_import_default_content('block_content/19886a02-2254-47c8-94b9-fa2055ef3768.json');
   bn_ads_import_default_content('block_content/4730396b-4beb-48b7-b913-936cb29fdd16.json');
   bn_ads_import_default_content('block_content/28ce3be5-d452-4e66-a140-6e1d41205ed3.json');
-
-  drupal_set_message('Successfully generated default content for Behavenet Ads.');
+  $messenger = \Drupal::messenger();
+  $messenger->addMessage(t('Successfully generated default content for Behavenet Ads.'));
 }
 
 /**
@@ -99,16 +99,17 @@ function bn_ads_import_default_content($path_to_content_json) {
   $content['_links']['type']['href'] = str_replace('http://drupal.org/', $url, $content['_links']['type']['href']);
   $contents = $serializer->encode($content, 'hal_json');
   $class = 'Drupal\\' . $entity_type_id . '\Entity\\' . str_replace(' ', '', ucwords(str_replace('_', ' ', $entity_type_id)));
-  $entity = $serializer->deserialize($contents, $class, 'hal_json', array('request_method' => 'POST'));
+  $entity = $serializer->deserialize($contents, $class, 'hal_json', ['request_method' => 'POST']);
 
   // Try loading the entity to see if it already exists.
+  $messenger = \Drupal::messenger();
   $storage = \Drupal::entityTypeManager()->getStorage($entity_type_id);
   if ($storage->load($entity->id())) {
-    drupal_set_message(t('An entity with the UID %uid already exists. Using existing content for that entity.', ['%uid' => $entity->uuid()]));
+    $messenger->addMessage(t('An entity with the UID %uid already exists. Using existing content for that entity.', ['%uid' => $entity->uuid()]));
   }
   else {
     $entity->enforceIsNew(TRUE);
     $entity->save();
-    drupal_set_message('Set default content for the entity %uid', ['%uid' => $entity->uuid()]);
+    $messenger->addMessage(t('Set default content for the entity %uid', ['%uid' => $entity->uuid()]));
   }
 }

@@ -1,6 +1,9 @@
 <?php
 
-use Drupal\Core\Session\AccountInterface;
+/**
+ * @file
+ */
+
 /**
  * @file
  * Contains ehealth.module.
@@ -23,7 +26,6 @@ function ehealth_help($route_name, RouteMatchInterface $route_match) {
     default:
   }
 }
-
 
 /**
  * Implements hook_theme().

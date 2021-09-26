@@ -35,14 +35,13 @@ class JumpMenu extends StylePluginBase {
   protected $usesRowClass = TRUE;
 
   /**
-   * Set default options
+   * Set default options.
    */
   protected function defineOptions() {
     $options = parent::defineOptions();
 
-    $options['text_field'] = array('default' => '');
-    //$options['wrapper_class'] = array('default' => 'item-list');
-
+    $options['text_field'] = ['default' => ''];
+    // $options['wrapper_class'] = array('default' => 'item-list');
     return $options;
   }
 
@@ -52,20 +51,20 @@ class JumpMenu extends StylePluginBase {
   public function buildOptionsForm(&$form, FormStateInterface $form_state) {
     parent::buildOptionsForm($form, $form_state);
     $fields = $this->view->display_handler->getFieldLabels();
-    $form['text_field'] = array(
+    $form['text_field'] = [
       '#type' => 'select',
       '#title' => $this->t('Text field'),
       '#options' => $fields,
       '#default_value' => $this->options['text_field'],
-    );
-    //$form['wrapper_class'] = array(
-    //  '#title' => $this->t('Wrapper class'),
-    //  '#description' => $this->t('The class to provide on the wrapper, outside the list.'),
-    //  '#type' => 'textfield',
-    //  '#size' => '30',
-    //  '#default_value' => $this->options['wrapper_class'],
-    //);
+    ];
+    // $form['wrapper_class'] = array(
+    // '#title' => $this->t('Wrapper class'),
+    // '#description' => $this->t('The class to provide on the wrapper,
+    // outside the list.'),
+    // '#type' => 'textfield',
+    // '#size' => '30',
+    // '#default_value' => $this->options['wrapper_class'],
+    // );
   }
 
 }
-

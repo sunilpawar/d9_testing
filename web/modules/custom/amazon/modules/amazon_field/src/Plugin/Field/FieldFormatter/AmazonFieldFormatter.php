@@ -2,8 +2,7 @@
 
 namespace Drupal\amazon_field\Plugin\Field\FieldFormatter;
 
-use Drupal\Component\Utility\Html;
-use Drupal\Core\Field\FieldItemInterface;
+use Drupal\Core\Field\FieldDefinitionInterface;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\FormatterBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -30,7 +29,10 @@ class AmazonFieldFormatter extends FormatterBase {
    */
   protected $templateOptions = [];
 
-  public function __construct($plugin_id, $plugin_definition, \Drupal\Core\Field\FieldDefinitionInterface $field_definition, array $settings, $label, $view_mode, array $third_party_settings) {
+  /**
+   *
+   */
+  public function __construct($plugin_id, $plugin_definition, FieldDefinitionInterface $field_definition, array $settings, $label, $view_mode, array $third_party_settings) {
     parent::__construct($plugin_id, $plugin_definition, $field_definition, $settings, $label, $view_mode, $third_party_settings);
 
     $this->templateOptions = [
@@ -50,13 +52,13 @@ class AmazonFieldFormatter extends FormatterBase {
       throw new \InvalidArgumentException('Missing Amazon settings: default max age.');
     }
 
-    return array(
+    return [
       'max_age' => $defaultMaxAge,
       'template' => 'image_large',
       'advanced' => [
         'extraResponseGroups' => '',
       ],
-  ) + parent::defaultSettings();
+    ] + parent::defaultSettings();
   }
 
   /**
@@ -70,7 +72,7 @@ class AmazonFieldFormatter extends FormatterBase {
       '#title' => $this->t('Max age for cached results'),
       '#description' => $this->t('The number of seconds that the system should cache the results from Amazon\'s servers. Leave blank to use the default max age set on the <a href=":url">Amazon settings page</a>, currently set at @default_max_age seconds.', [
         ':url' => Url::fromRoute('amazon.settings_form')->toString(),
-        '@default_max_age' => $defaultMaxAge
+        '@default_max_age' => $defaultMaxAge,
       ]),
       '#default_value' => ($this->getSetting('max_age') == $defaultMaxAge) ? '' : $this->getSetting('max_age'),
     ];
@@ -95,7 +97,6 @@ class AmazonFieldFormatter extends FormatterBase {
       ),
       '#default_value' => $this->getSettings()['advanced']['extraResponseGroups'],
     ];
-
 
     return $form + parent::settingsForm($form, $form_state);
   }

@@ -2,7 +2,6 @@
 
 namespace Drupal\bn_general\Plugin\views\area;
 
-use Drupal\Core\Form\FormStateInterface;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\views\Plugin\views\area\AreaPluginBase;
 use Drupal\Core\Url;
@@ -34,7 +33,7 @@ class TermSearch extends AreaPluginBase {
       ->execute();
     $terms = Term::loadMultiple($tids);
 
-    /** @var Term $term */
+    /** @var \Drupal\taxonomy\Entity\Term $term */
     foreach ($terms as $term) {
       $output[] = [
         '#type' => 'link',
@@ -43,7 +42,7 @@ class TermSearch extends AreaPluginBase {
       ];
     }
     if (!empty($output)) {
-      return[
+      return [
         '#theme' => 'term_search',
         '#items' => $output,
       ];

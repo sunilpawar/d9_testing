@@ -8,8 +8,14 @@ use Drupal\Core\Url;
 use Drupal\node\Entity\Node;
 use Drupal\taxonomy\Entity\Term;
 
+/**
+ *
+ */
 class MigrateBehavenet extends ControllerBase {
 
+  /**
+   *
+   */
   public function FixVideoTerms($offset, $range) {
     $old_db = Database::getConnection('default', 'migrate');
     $current = Database::getConnection();
@@ -30,14 +36,14 @@ class MigrateBehavenet extends ControllerBase {
       if (empty($result->field_outside_video_embed) || strpos($result->field_outside_video_embed, 'youtu.be') === FALSE) {
         $output[] = $this->t('Bogus video embed code for %id: %embed', [
           '%id' => $result->field_tt_extras_term_value,
-          '%embed' => $result->field_outside_video_embed
+          '%embed' => $result->field_outside_video_embed,
         ]);
         continue;
       }
       if (!$term->hasField('field_outside_media')) {
         $output[] = $this->t('Term id %id does not have an outside media field. (Trying to embed %embed)', [
           '%id' => $result->field_tt_extras_term_value,
-          '%embed' => $result->field_outside_video_embed
+          '%embed' => $result->field_outside_video_embed,
         ]);
         continue;
       }
@@ -69,17 +75,20 @@ class MigrateBehavenet extends ControllerBase {
     ];
   }
 
+  /**
+   *
+   */
   public function FindSelfReferences() {
     $old_db = Database::getConnection('default', 'migrate');
     $current = Database::getConnection();
 
-    $query = db_select('taxonomy_term__field_related_terms', 'r');
+    $query = \Drupal::database()->select('taxonomy_term__field_related_terms', 'r');
     $query->where('r.field_related_terms_target_id = r.entity_id');
     $query->addField('r', 'entity_id');
     $tids = $query->execute()->fetchCol();
     $terms = Term::loadMultiple($tids);
     $output = [];
-    /** @var Term $term */
+    /** @var \Drupal\taxonomy\Entity\Term $term */
     foreach ($terms as $term) {
       $url = Url::fromRoute('entity.taxonomy_term.canonical', ['taxonomy_term' => $term->id()]);
 
@@ -111,6 +120,9 @@ class MigrateBehavenet extends ControllerBase {
 
   }
 
+  /**
+   *
+   */
   public function FixAliases() {
     $old_db = Database::getConnection('default', 'migrate');
     $current = Database::getConnection();
@@ -119,7 +131,7 @@ class MigrateBehavenet extends ControllerBase {
     for ($i = 1; $i < 54; $i++) {
       $query = $current->select('url_alias', 'url')
         ->fields('url', ['source', 'pid'])
-        ->condition('url.alias', '%-' .  $i, 'LIKE');
+        ->condition('url.alias', '%-' . $i, 'LIKE');
       $results = $query->execute();
 
       foreach ($results as $result) {
@@ -153,6 +165,9 @@ class MigrateBehavenet extends ControllerBase {
     ];
   }
 
+  /**
+   *
+   */
   public function FixCredits($offset, $range) {
     // Array in the form of tid => credit_nid.
     $tid_to_credit_nid = [];
@@ -188,6 +203,9 @@ class MigrateBehavenet extends ControllerBase {
     ];
   }
 
+  /**
+   *
+   */
   public function FixUrls() {
     $fields = [
       'field_directory_url',
@@ -219,7 +237,7 @@ class MigrateBehavenet extends ControllerBase {
 
     return [
       '#type' => 'markup',
-      '#markup' => '<p>Fixed the following: <ul><li>' . join('</li><li>', $results)  . '</li></ul>',
+      '#markup' => '<p>Fixed the following: <ul><li>' . join('</li><li>', $results) . '</li></ul>',
     ];
   }
 
@@ -229,14 +247,14 @@ class MigrateBehavenet extends ControllerBase {
    * it.
    */
   public function FixDirectories($offset, $range) {
-    $nids = db_select('node', 'n')
+    $nids = \Drupal::database()->select('node', 'n')
       ->fields('n', ['nid'])
       ->condition('type', 'directory')
       ->execute()
       ->fetchCol();
     $nids = array_slice($nids, $offset, $range);
     $nodes = Node::loadMultiple($nids);
-    /** @var Node $node */
+    /** @var \Drupal\node\Entity\Node $node */
     foreach ($nodes as $node) {
       $node->save();
     }
@@ -249,8 +267,11 @@ class MigrateBehavenet extends ControllerBase {
     return $html;
   }
 
+  /**
+   *
+   */
   public function FixSource() {
-    $sources = db_select('node', 'n')
+    $sources = \Drupal::database()->select('node', 'n')
       ->fields('n', ['nid'])
       ->condition('type', 'source')
       ->execute()
@@ -284,8 +305,8 @@ class MigrateBehavenet extends ControllerBase {
     $html = [
       '#type' => 'markup',
       '#markup' => '<ul><li>'
-        . implode('</li><li>', $results)
-        . '</li></ul>',
+      . implode('</li><li>', $results)
+      . '</li></ul>',
     ];
 
     return $html;

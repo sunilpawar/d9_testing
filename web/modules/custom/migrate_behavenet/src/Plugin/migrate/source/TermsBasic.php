@@ -2,9 +2,8 @@
 
 namespace Drupal\migrate_behavenet\Plugin\migrate\source;
 
-
 use Drupal\migrate\Row;
-use \Drupal\taxonomy\Plugin\migrate\source\d6\Term;
+use Drupal\taxonomy\Plugin\migrate\source\d6\Term;
 
 /**
  * Source plugin for basic term import.
@@ -66,7 +65,7 @@ class TermsBasic extends Term {
       $query = $this->select('term_relation', 'tr')
         ->fields('tr', ['tid1'])
         ->condition('tid2', $tid);
-      $more_related= $query->execute()
+      $more_related = $query->execute()
         ->fetchCol();
       $related = array_filter(array_merge($related, $more_related));
 
@@ -81,7 +80,7 @@ class TermsBasic extends Term {
       $row->setSourceProperty('is_acronym', empty($acronym) ? 0 : 1);
 
       // List status is stored as a serialized list of tids.
-      // @todo: store statically?
+      // @todo store statically?
       $lists = $this->select('variable', 'v')
         ->fields('v', ['value'])
         ->condition('name', 'behave_lists_tids')
@@ -90,7 +89,7 @@ class TermsBasic extends Term {
       $lists = unserialize($lists);
       $row->setSourceProperty('is_list', in_array($tid, $lists) ? 1 : 0);
 
-      // Credit field
+      // Credit field.
       $query = $this->select('content_type_tax_tweaks_extras', 'tt')
         ->condition('tt.field_tt_extras_term_value', $tid)
         ->fields('ttc', ['field_tt_extras_credit_nid']);
@@ -101,7 +100,7 @@ class TermsBasic extends Term {
         $row->setSourceProperty('credit', $credit);
       }
 
-      // Outside media field
+      // Outside media field.
       $query = $this->select('content_type_tax_tweaks_extras', 'tt')
         ->condition('tt.field_tt_extras_term_value', $tid);
       $query->join('content_field_outside_video', 'v', 'v.vid = tt.vid AND v.nid = tt.nid');

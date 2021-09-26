@@ -44,13 +44,15 @@ class LinkTextFieldFormatter extends LinkFormatter {
     unset($settings['trim_length']);
 
     // Push this setting to the top of the form.
-    $settings = ['link_text' => [
-      '#type' => 'textfield',
-      '#title' => $this->t('Use this text for the link'),
-      '#description' => $this->t('Override any custom entered text with this text for the link.'),
-      '#default_value' => $this->getSetting('link_text'),
-      '#required' => TRUE,
-    ]] + $settings;
+    $settings = [
+      'link_text' => [
+        '#type' => 'textfield',
+        '#title' => $this->t('Use this text for the link'),
+        '#description' => $this->t('Override any custom entered text with this text for the link.'),
+        '#default_value' => $this->getSetting('link_text'),
+        '#required' => TRUE,
+      ],
+    ] + $settings;
 
     return $settings;
   }

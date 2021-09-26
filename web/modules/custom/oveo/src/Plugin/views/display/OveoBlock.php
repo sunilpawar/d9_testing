@@ -83,7 +83,7 @@ class OveoBlock extends Block {
   public function optionsSummary(&$categories, &$options) {
     parent::optionsSummary($categories, $options);
 
-    // @todo: make this more general and not reliant on the fact that
+    // @todo make this more general and not reliant on the fact that
     // items_per_page is currently the only allowed block config setting.
     $filtered_allow = array_filter($this->getOption('allow'));
     $allowed = [];
@@ -99,11 +99,11 @@ class OveoBlock extends Block {
     if (isset($filtered_allow['contextual_filter'])) {
       $allowed[] = $this->t('Contextual filters');
     }
-    $options['allow'] = array(
+    $options['allow'] = [
       'category' => 'block',
       'title' => $this->t('Allow settings'),
       'value' => empty($allowed) ? $this->t('None') : implode(', ', $allowed),
-    );
+    ];
   }
 
   /**
@@ -118,7 +118,7 @@ class OveoBlock extends Block {
    * @param \Drupal\Core\Form\FormStateInterface $form_state
    *   The current state of the form.
    *
-   * @return array $form
+   * @return array
    *   The renderable form array representing the entire configuration form.
    *
    * @see \Drupal\views\Plugin\Block\ViewsBlock::blockForm()
@@ -137,11 +137,11 @@ class OveoBlock extends Block {
         $items = $this->view->display_handler->getHandlers('filter');
         $item_label = $this->t('Exposed filter');
       }
-      else if ($type == 'exposed_sort') {
+      elseif ($type == 'exposed_sort') {
         $items = $this->view->display_handler->getHandlers('sort');
         $item_label = $this->t('Exposed sort');
       }
-      else if ($type == 'contextual_filter') {
+      elseif ($type == 'contextual_filter') {
         $items = $this->view->display_handler->getHandlers('argument');
         $item_label = $this->t('Contextual filter');
       }
@@ -158,7 +158,7 @@ class OveoBlock extends Block {
           $title = $this->t('@type: @id (%label)', [
             '@type' => $item_label,
             '@id' => $id,
-            '%label' => $item->options['expose']['label']
+            '%label' => $item->options['expose']['label'],
           ]);
         }
         else {
@@ -177,7 +177,7 @@ class OveoBlock extends Block {
           '#states' => [
             'visible' => [
               [
-                ':input[name="settings[override][' . $type . '][' . $id . '][enabled]"]' => array('checked' => TRUE),
+                ':input[name="settings[override][' . $type . '][' . $id . '][enabled]"]' => ['checked' => TRUE],
               ],
             ],
           ],

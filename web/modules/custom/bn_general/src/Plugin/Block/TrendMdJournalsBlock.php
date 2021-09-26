@@ -20,9 +20,9 @@ class TrendMdJournalsBlock extends BlockBase {
   public function build() {
     return [
       '#markup' => '<div id="trendmd-suggestions"></div>',
-      '#attached' => array(
-        'library' => array('bn_general/trendmd_journals'),
-      ),
+      '#attached' => [
+        'library' => ['bn_general/trendmd_journals'],
+      ],
     ];
   }
 

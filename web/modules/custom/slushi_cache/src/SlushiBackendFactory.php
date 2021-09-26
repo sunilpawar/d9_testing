@@ -12,7 +12,7 @@ class SlushiBackendFactory extends DatabaseBackendFactory {
   /**
    * {@inheritdoc}
    */
-  function get($bin) {
+  public function get($bin) {
     return new SlushiDatabaseBackend($this->connection, $this->checksumProvider, $bin);
   }
 

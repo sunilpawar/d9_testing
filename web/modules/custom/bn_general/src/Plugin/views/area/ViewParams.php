@@ -19,8 +19,8 @@ class ViewParams extends View {
    */
   protected function defineOptions() {
     $options = parent::defineOptions();
-    $options['override_arguments'] = array('default' => FALSE);
-    $options['arguments'] = array('default' => '');
+    $options['override_arguments'] = ['default' => FALSE];
+    $options['arguments'] = ['default' => ''];
     return $options;
   }
 
@@ -30,22 +30,22 @@ class ViewParams extends View {
   public function buildOptionsForm(&$form, FormStateInterface $form_state) {
     parent::buildOptionsForm($form, $form_state);
 
-    $form['override_arguments'] = array(
+    $form['override_arguments'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('Override contextual filters'),
       '#default_value' => $this->options['override_arguments'],
       '#description' => $this->t('Allow contextual filter arguments to be passed to the embedded view.'),
-    );
-    $form['arguments'] = array(
+    ];
+    $form['arguments'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Contextual filter value(s)'),
       '#default_value' => $this->options['arguments'],
       '#states' => [
         'visible' => [
-          ':input[name="options[override_arguments]"]' => array('checked' => TRUE),
+          ':input[name="options[override_arguments]"]' => ['checked' => TRUE],
         ],
       ],
-    );
+    ];
   }
 
   /**
@@ -63,18 +63,21 @@ class ViewParams extends View {
       }
 
       if (empty($view) || !$view->access($display_id)) {
-        return array();
+        return [];
       }
       $view->setDisplay($display_id);
 
-      // Avoid recursion
+      // Avoid recursion.
       $view->parent_views += $this->view->parent_views;
       $view->parent_views[] = "$view_name:$display_id";
 
-      // Check if the view is part of the parent views of this view
+      // Check if the view is part of the parent views of this view.
       $search = "$view_name:$display_id";
       if (in_array($search, $this->view->parent_views)) {
-        drupal_set_message(t("Recursion detected in view @view display @display.", array('@view' => $view_name, '@display' => $display_id)), 'error');
+        $messenger = \Drupal::messenger();
+        $message = $this->t("Recursion detected in view @view display @display.",
+          ['@view' => $view_name, '@display' => $display_id]);
+        $messenger->addMessage($message, $messenger::TYPE_ERROR);
       }
       else {
         if (!empty($this->options['inherit_arguments']) && !empty($this->view->args)) {
@@ -87,7 +90,7 @@ class ViewParams extends View {
         return $output;
       }
     }
-    return array();
+    return [];
   }
 
 }

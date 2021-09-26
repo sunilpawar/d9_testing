@@ -22,12 +22,15 @@ use Drupal\Core\TypedData\DataDefinition;
  */
 class AmazonAsinField extends FieldItemBase {
 
+  /**
+   *
+   */
   public static function defaultStorageSettings() {
-    return array(
+    return [
       'max_length' => 10,
       'is_ascii' => FALSE,
       'case_sensitive' => FALSE,
-    ) + parent::defaultStorageSettings();
+    ] + parent::defaultStorageSettings();
   }
 
   /**
@@ -47,15 +50,15 @@ class AmazonAsinField extends FieldItemBase {
    * {@inheritdoc}
    */
   public static function schema(FieldStorageDefinitionInterface $field_definition) {
-    $schema = array(
-      'columns' => array(
-        'value' => array(
+    $schema = [
+      'columns' => [
+        'value' => [
           'type' => $field_definition->getSetting('is_ascii') === TRUE ? 'varchar_ascii' : 'varchar',
           'length' => (int) $field_definition->getSetting('max_length'),
           'binary' => $field_definition->getSetting('case_sensitive'),
-        ),
-      ),
-    );
+        ],
+      ],
+    ];
 
     return $schema;
   }
@@ -68,17 +71,17 @@ class AmazonAsinField extends FieldItemBase {
 
     if ($max_length = $this->getSetting('max_length')) {
       $constraint_manager = \Drupal::typedDataManager()->getValidationConstraintManager();
-      $constraints[] = $constraint_manager->create('ComplexData', array(
-        'value' => array(
-          'Length' => array(
+      $constraints[] = $constraint_manager->create('ComplexData', [
+        'value' => [
+          'Length' => [
             'max' => $max_length,
-            'maxMessage' => t('%name: may not be longer than @max characters.', array(
+            'maxMessage' => t('%name: may not be longer than @max characters.', [
               '%name' => $this->getFieldDefinition()->getLabel(),
-              '@max' => $max_length
-            )),
-          ),
-        ),
-      ));
+              '@max' => $max_length,
+            ]),
+          ],
+        ],
+      ]);
     }
 
     return $constraints;

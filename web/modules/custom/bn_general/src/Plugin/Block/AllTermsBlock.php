@@ -4,10 +4,8 @@ namespace Drupal\bn_general\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Drupal\taxonomy\Entity\Term;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Url;
-use Drupal\taxonomy\Entity\Vocabulary;
 
 /**
  * Provides a 'AllTermsBlock' block.
@@ -63,8 +61,8 @@ class AllTermsBlock extends BlockBase implements ContainerFactoryPluginInterface
     }
     else {
       // Using Drupal::entityQuery and Term::loadMultiple( took between 8 - 10
-      // times longer to process than db_select().
-      $results = db_select('taxonomy_term_field_data', 't')
+      // times longer to process than \Drupal::database()->select()...
+      $results = \Drupal::database()->select('taxonomy_term_field_data', 't')
         ->fields('t', ['tid', 'name'])
         ->condition('t.vid', 'behavenet_terms')
         ->orderBy('t.name')

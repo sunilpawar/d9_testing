@@ -2,7 +2,6 @@
 
 namespace Drupal\migrate_behavenet\Plugin\migrate\source;
 
-
 use Drupal\migrate\Row;
 use Drupal\node\Plugin\migrate\source\d6\Node;
 
@@ -35,7 +34,7 @@ class DsmNodesFC extends Node {
    */
   public function query() {
     // query() should return a simple query that will accurately report the
-    // number of rows in the source. We'll add
+    // number of rows in the source. We'll add.
     $query = $this->select('content_field_dsm_version', 'v');
     $query->innerJoin('node', 'n', 'n.vid = v.vid');
     $query->fields('v', ['nid', 'vid', 'delta', 'field_dsm_version_value'])
@@ -58,7 +57,7 @@ class DsmNodesFC extends Node {
       'delta' => [
         'type' => 'integer',
         'alias' => 'v',
-      ]
+      ],
     ];
   }
 

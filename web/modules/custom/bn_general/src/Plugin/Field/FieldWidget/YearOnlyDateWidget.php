@@ -27,6 +27,9 @@ class YearOnlyDateWidget extends WidgetBase {
    */
   protected $displayOptions = [];
 
+  /**
+   * Constructor.
+   */
   public function __construct($plugin_id, $plugin_definition, FieldDefinitionInterface $field_definition, array $settings, array $third_party_settings) {
     parent::__construct($plugin_id, $plugin_definition, $field_definition, $settings, $third_party_settings);
 
@@ -40,11 +43,11 @@ class YearOnlyDateWidget extends WidgetBase {
    * {@inheritdoc}
    */
   public static function defaultSettings() {
-    return array(
+    return [
       'start_year' => '2001',
       'end_year' => '+3 years',
       'display' => 'select',
-    ) + parent::defaultSettings();
+    ] + parent::defaultSettings();
   }
 
   /**
