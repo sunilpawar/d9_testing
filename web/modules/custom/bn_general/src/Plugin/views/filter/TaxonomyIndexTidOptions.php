@@ -76,7 +76,8 @@ class TaxonomyIndexTidOptions extends TaxonomyIndexTidDepth {
       if ($tree) {
         foreach ($tree as $term) {
           $choice = new \stdClass();
-          $choice->option = [$term->id() => str_repeat('-', $term->depth) . \Drupal::entityManager()->getTranslationFromContext($term)->label()];
+          $choice->option = [$term->id() => str_repeat('-', $term->depth) .
+            \Drupal::service('entity.repository')->getTranslationFromContext($term)->getName()];
           $new_options[] = $choice;
         }
       }
@@ -90,7 +91,8 @@ class TaxonomyIndexTidOptions extends TaxonomyIndexTidDepth {
         if ($tree) {
           foreach ($tree as $term) {
             $choice = new \stdClass();
-            $choice->option = [$term->id() => str_repeat('-', $term->depth) . \Drupal::entityManager()->getTranslationFromContext($term)->label()];
+            $choice->option = [$term->id() => str_repeat('-', $term->depth)
+              . \Drupal::service('entity.repository')->getTranslationFromContext($term)->getName()];
             $new_options[] = $choice;
           }
         }
