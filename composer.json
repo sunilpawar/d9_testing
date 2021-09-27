@@ -41,7 +41,7 @@
         "drupal/devel_entity_updates": "^3.0",
         "drupal/easy_social": "3.x-dev@dev",
         "drupal/field_display_label": "^1.2",
-        "drupal/field_group": "^3.1",
+        "drupal/field_group": "^3.2",
         "drupal/field_permissions": "^1.1",
         "drupal/first_time_login": "^2.1",
         "drupal/formblock": "^2.0@beta",
