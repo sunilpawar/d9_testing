@@ -177,7 +177,7 @@ function bn_general_form_taxonomy_term_behavenet_terms_form_alter(&$form, FormSt
   foreach ($dup_terms as $dup) {
     $terms = Term::loadMultiple(array_keys($all_terms, $dup));
     foreach ($terms as $term) {
-      $form['relations']['parent']['#options'][$term->id()] .= t('(@url)', ['@url' => $term->url()]);
+      $form['relations']['parent']['#options'][$term->id()] .= t('(@url)', ['@url' => $term->toLink()->toString()]);
     }
   }
 
