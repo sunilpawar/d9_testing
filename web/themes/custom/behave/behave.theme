@@ -195,7 +195,7 @@ function behave_preprocess_taxonomy_term(&$variables) {
     $variables['children'][$sort_string] =  [
       'text' => $child->getName(),
       //'url' => $child->url(),
-      'url' => $child->toLink()->toString(),
+      'url' => $child->toLink()->getUrl()->toString(),
     ];
    
     
@@ -229,7 +229,7 @@ function behave_preprocess_taxonomy_term(&$variables) {
     foreach ($lists as $tid => $list) {
       $variables['memberOf'][$tid] = [
         'text' => $list->getName(),
-        'url' => $list->toLink()->toString(),
+        'url' => $list->toLink()->getUrl()->toString(),
       ];
     }
   }
