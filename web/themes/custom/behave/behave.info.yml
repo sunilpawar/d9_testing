@@ -87,11 +87,10 @@ libraries:
 # to reference .twig files in your sass/ directory by using the Twig namespace:
 # @behave
 component-libraries:
-  namespaces:
-    behave:
-      paths:
-        - components
-        - templates
+  behave:
+    paths:
+      - components
+      - templates
 
 
 # This section lists the regions defined in Zen's default page.html.twig and
