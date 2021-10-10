@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e76baf762a8fbe87d77687e3f37de0ae",
+    "content-hash": "3579f96e7628f3727e7882ef419f55fb",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4334,17 +4334,17 @@
         },
         {
             "name": "drupal/linkit",
-            "version": "5.0.0-beta12",
+            "version": "5.0.0-beta13",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/linkit.git",
-                "reference": "8.x-5.0-beta12"
+                "reference": "8.x-5.0-beta13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/linkit-8.x-5.0-beta12.zip",
-                "reference": "8.x-5.0-beta12",
-                "shasum": "9e03975b476f893112d8b12d8b8610926a4e7f2c"
+                "url": "https://ftp.drupal.org/files/projects/linkit-8.x-5.0-beta13.zip",
+                "reference": "8.x-5.0-beta13",
+                "shasum": "9215fbea84166cabc9b7a2d9a04dedaffb9fc1ed"
             },
             "require": {
                 "drupal/core": "^8.7.7 || ^9"
@@ -4355,8 +4355,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-5.0-beta12",
-                    "datestamp": "1608957625",
+                    "version": "8.x-5.0-beta13",
+                    "datestamp": "1632933670",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -4373,6 +4373,10 @@
                     "homepage": "https://stjerneman.com",
                     "email": "emil@stjerneman.com",
                     "role": "Maintainer"
+                },
+                {
+                    "name": "johnwebdev",
+                    "homepage": "https://www.drupal.org/user/3331569"
                 }
             ],
             "description": "Linkit - Enriched linking experience",
@@ -9986,7 +9990,7 @@
             "alias_normalized": "1.3.9999999.9999999-dev"
         }
     ],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {
         "behat/mink": 20,
         "behat/mink-selenium2-driver": 20,

@@ -802,7 +802,7 @@ $config['automated_cron.settings']['interval'] = 0;
     '^.+-behavenet\.pantheonsite\.io$',
   );
 
-$settings['update_free_access'] = true;
+//$settings['update_free_access'] = true;
 
 if (isset($GLOBALS['request']) && '/web/index.php' === $GLOBALS['request']->server->get('SCRIPT_NAME')) {
   $GLOBALS['request']->server->set('SCRIPT_NAME', '/index.php');
