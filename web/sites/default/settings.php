@@ -779,9 +779,9 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
 $databases['default']['default'] = array (
-  'database' => 'behavenet_live',
-  'username' => 'sunil',
-  'password' => 'sunil',
+  'database' => 'dbf4f7wxskh2dh', //'dbql8mgm0auksz',
+  'username' => 'uxgbl8gl35g2y',
+  'password' => 'iv1m0bdogcnn',
   'prefix' => '',
   'host' => 'localhost',
   'port' => '3306',
@@ -789,17 +789,21 @@ $databases['default']['default'] = array (
   'driver' => 'mysql',
 );
 $settings['config_sync_directory'] = 'sites/default/files/config_mTX63JsbxmWsOi0e-rjU43fOieGudOL3jbUiTfoFLb_plwfYlw5-5JQOGzSlLMUlxG7jzRcCIg/sync';
+$settings['config_sync_directory'] = 'sites/default/files/config_mTX63JsbxmWsOi0e-rjU43fOieGudOL3jbUiTfoFLb_plwfYlw5-5JQOGzSlLMUlxG7jzRcCIg/sync';
 
 $config['automated_cron.settings']['interval'] = 0;
 
   $settings['trusted_host_patterns'] = array(
-    '^local.behavenet.local$',
     '^behavenet\.com$',
     '^www\.behavenet\.com$',
     '^dev\.behavenet\.com$',
     '^test\.behavenet\.com$',
-    '^local\.behavenet\.com$',
+    '^live\.behavenet\.com$',
     '^.+-behavenet\.pantheonsite\.io$',
   );
 
 $settings['update_free_access'] = true;
+
+if (isset($GLOBALS['request']) && '/web/index.php' === $GLOBALS['request']->server->get('SCRIPT_NAME')) {
+  $GLOBALS['request']->server->set('SCRIPT_NAME', '/index.php');
+}

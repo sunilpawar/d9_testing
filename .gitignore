@@ -70,4 +70,4 @@ Vagrantfile.local
 web/sites/sites.php
 
 web/sites/default/services.yml
-
+web/php_errorlog
