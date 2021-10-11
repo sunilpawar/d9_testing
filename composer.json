@@ -57,6 +57,7 @@
         "drupal/paragraphs": "^1.12",
         "drupal/pathauto": "^1.8",
         "drupal/redirect": "^1.6",
+        "drupal/responsive_favicons": "^1.6",
         "drupal/search404": "^2.0",
         "drupal/search_autocomplete": "^2.0",
         "drupal/simple_popup_blocks": "^2.8",
