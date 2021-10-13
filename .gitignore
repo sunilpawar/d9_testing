@@ -71,3 +71,11 @@ web/sites/sites.php
 
 web/sites/default/services.yml
 web/php_errorlog
+
+/.vscode/
+/backup.sql
+/db_back
+/logs
+/old_live
+/public_html_1
+/webstats

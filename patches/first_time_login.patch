@@ -1,0 +1,13 @@
+diff --git a/first_time_login.module b/first_time_login.module
+index 60d400e..f6d2bd2 100644
+--- a/first_time_login.module
++++ b/first_time_login.module
+@@ -120,7 +120,7 @@ function first_time_login_user_login($account) {
+         ]))
+         );
+       }
+-      $response->send();
++      //$response->send();
+     }
+   }
+ }
