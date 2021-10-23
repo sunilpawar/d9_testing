@@ -2,7 +2,6 @@
 .eslintignore
 .eslintrc.json
 .ht.router.php
-.htaccess
 INSTALL.txt
 README.txt
 autoload.php
@@ -11,3 +10,4 @@ index.php
 robots.txt
 update.php
 web.config
+sites/default/config/.htaccess
