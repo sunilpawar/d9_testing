@@ -48,6 +48,7 @@
         "drupal/formblock": "^2.0@beta",
         "drupal/honeypot": "^2.0",
         "drupal/inline_entity_form": "^1.0@RC",
+        "drupal/linkchecker": "^1.0@beta",
         "drupal/linkit": "^6.0@beta",
         "drupal/masquerade": "^2.0@beta",
         "drupal/menu_link_config": "^1.0@alpha",
