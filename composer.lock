@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c2a043ffd1ec04553944c4a005cff716",
+    "content-hash": "0bb7878b9afc86446288d32a697ed7e9",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3190,6 +3190,56 @@
             }
         },
         {
+            "name": "drupal/field_label",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/field_label.git",
+                "reference": "8.x-1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/field_label-8.x-1.0.zip",
+                "reference": "8.x-1.0",
+                "shasum": "f199ac368dba86e45cc3c167c28bdb6a258c0578"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0",
+                    "datestamp": "1598886629",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Caldwell (justcaldwell)",
+                    "homepage": "https://www.drupal.org/u/justcaldwell",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Allow authorized users to customize field label formatter settings",
+            "homepage": "https://drupal.org/project/field_label",
+            "keywords": [
+                "Drupal",
+                "Field label"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/field_label",
+                "issues": "https://www.drupal.org/project/issues/field_label"
+            }
+        },
+        {
             "name": "drupal/field_permissions",
             "version": "1.1.0",
             "source": {
@@ -3494,6 +3544,10 @@
                     "email": "geerlingguy@mac.com"
                 },
                 {
+                    "name": "TR",
+                    "homepage": "https://www.drupal.org/user/202830"
+                },
+                {
                     "name": "geerlingguy",
                     "homepage": "https://www.drupal.org/user/389011"
                 },
@@ -3581,6 +3635,10 @@
                 {
                     "name": "oknate",
                     "homepage": "https://www.drupal.org/user/471638"
+                },
+                {
+                    "name": "ram4nd",
+                    "homepage": "https://www.drupal.org/user/601534"
                 },
                 {
                     "name": "rszrama",
@@ -3936,7 +3994,7 @@
             "extra": {
                 "drupal": {
                     "version": "6.0.0-beta3",
-                    "datestamp": "1632933683",
+                    "datestamp": "1632946984",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -4699,17 +4757,17 @@
         },
         {
             "name": "drupal/twig_tweak",
-            "version": "3.1.2",
+            "version": "3.1.3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/twig_tweak.git",
-                "reference": "3.1.2"
+                "reference": "3.1.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/twig_tweak-3.1.2.zip",
-                "reference": "3.1.2",
-                "shasum": "b0482fd5414a51d6f93b1c4fc181cdb28ec42677"
+                "url": "https://ftp.drupal.org/files/projects/twig_tweak-3.1.3.zip",
+                "reference": "3.1.3",
+                "shasum": "9f2f6813bf6d40faded73b0fd36e6c669565c7f7"
             },
             "require": {
                 "drupal/core": "^9.0",
@@ -4724,8 +4782,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "3.1.2",
-                    "datestamp": "1625377167",
+                    "version": "3.1.3",
+                    "datestamp": "1635338145",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6185,16 +6243,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.13.0",
+            "version": "v4.13.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "50953a2691a922aa1769461637869a0a2faa3f53"
+                "reference": "63a79e8daa781cac14e5195e63ed8ae231dd10fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/50953a2691a922aa1769461637869a0a2faa3f53",
-                "reference": "50953a2691a922aa1769461637869a0a2faa3f53",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/63a79e8daa781cac14e5195e63ed8ae231dd10fd",
+                "reference": "63a79e8daa781cac14e5195e63ed8ae231dd10fd",
                 "shasum": ""
             },
             "require": {
@@ -6235,9 +6293,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nikic/PHP-Parser/issues",
-                "source": "https://github.com/nikic/PHP-Parser/tree/v4.13.0"
+                "source": "https://github.com/nikic/PHP-Parser/tree/v4.13.1"
             },
-            "time": "2021-09-20T12:20:58+00:00"
+            "time": "2021-11-03T20:52:16+00:00"
         },
         {
             "name": "pear/archive_tar",
@@ -9738,6 +9796,7 @@
                 "issues": "https://github.com/webmozart/path-util/issues",
                 "source": "https://github.com/webmozart/path-util/tree/2.3.0"
             },
+            "abandoned": "symfony/filesystem",
             "time": "2015-12-17T08:42:14+00:00"
         }
     ],
