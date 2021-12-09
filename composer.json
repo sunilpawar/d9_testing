@@ -60,9 +60,12 @@
         "drupal/pathauto": "^1.8",
         "drupal/redirect": "^1.6",
         "drupal/responsive_favicons": "^1.6",
+        "drupal/s3fs": "^3.0@beta",
         "drupal/search404": "^2.0",
         "drupal/simple_popup_blocks": "^2.8",
+        "drupal/taxonomy_manager": "^2.0",
         "drupal/token": "^1.9",
+        "drupal/twig_debugger": "^1.1",
         "drupal/twig_tweak": "^3.1",
         "drupal/video_embed_field": "^2.4",
         "drupal/views_bulk_operations": "^4.0",
@@ -78,6 +81,23 @@
     "prefer-stable": true,
     "config": {
         "sort-packages": true
+    },
+    "scripts": {
+        "pre-install-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+        ],
+        "pre-update-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+        ],
+        "post-install-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ],
+        "post-update-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ],
+        "post-drupal-scaffold-cmd": [
+            "cd web && patch -p1 -r - <patches/htaccess-timbers.patch"
+        ]
     },
     "extra": {
         "drupal-scaffold": {
@@ -136,6 +156,9 @@
             ]
         },
         "patches": {
+            "drupal/advagg": {
+                "AdvaggCommands TypeError: Argument 3 must be an instance of DrupalCoreFileFileSystem": "https://www.drupal.org/files/issues/2021-03-10/fix-issue-with-advagg-and-s3fs-modules-3201922-3.patch"
+            },
             "drupal/first_time_login": {
                 "first time login redirect stop": "patches/first_time_login.patch"
             }
