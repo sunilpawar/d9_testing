@@ -96,7 +96,7 @@
             "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
         ],
         "post-drupal-scaffold-cmd": [
-            "cd web && patch -p1 -r - < patches/htaccess.patch"
+            "cd web && patch -p2 -r - < patches/htaccess.patch"
         ]
     },
     "extra": {
