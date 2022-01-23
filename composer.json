@@ -31,9 +31,9 @@
         "drupal/cer": "4.x-dev@dev",
         "drupal/chosen": "^3.0",
         "drupal/components": "^2.4",
-        "drupal/core-composer-scaffold": "9.2.7",
-        "drupal/core-project-message": "9.2.7",
-        "drupal/core-recommended": "9.2.7",
+        "drupal/core-composer-scaffold": "9.3.3",
+        "drupal/core-project-message": "9.3.3",
+        "drupal/core-recommended": "9.3.3",
         "drupal/csv_serialization": "^2.0",
         "drupal/ctools": "^3.7",
         "drupal/db_maintenance": "^2.0",
@@ -72,7 +72,7 @@
         "drupal/views_data_export": "^1.0",
         "drush/drush": "^10.5",
         "guzzlehttp/guzzle": "^6.0@dev",
-        "typo3/phar-stream-wrapper": "v3.1.6"
+        "typo3/phar-stream-wrapper": "v3.1.7"
     },
     "conflict": {
         "drupal/drupal": "*"
