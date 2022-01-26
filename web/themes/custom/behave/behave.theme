@@ -186,7 +186,7 @@ function behave_preprocess_taxonomy_term(&$variables) {
   // Collect child terms for display.
   $children = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadChildren($term->id());
 
-  
+
   $variables['children'] = [];
   foreach ($children as $child) {
     $label = $child->getName() ;
@@ -197,15 +197,15 @@ function behave_preprocess_taxonomy_term(&$variables) {
       //'url' => $child->url(),
       'url' => $child->toLink()->getUrl()->toString(),
     ];
-   
-    
+
+
   }
    ksort($variables['children']);
   /* usort($variables['children'], function($a, $b) {
     return $a['text'] <=> $b['text'];
   });*/
 
-  
+
 
   // Check if this term is a list or not -- changes wording in the display.
   $variables['isList'] = FALSE;
@@ -378,7 +378,7 @@ function behave_preprocess_field__field_movie_twitter(array &$variables) {
     // to Twitter.
     $twitterUrl = '';
     if (strpos($value, '#') === 0) {
-      $twitterUrl = Url::fromUri('http://www.tchat.io/rooms/' . substr($value, 1));
+      $twitterUrl = Url::fromUri('http://www.twubs.com/' . substr($value, 1));
     }
     else {
       if (strpos($value, '@') === 0) {
