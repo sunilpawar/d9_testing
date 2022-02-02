@@ -37,14 +37,14 @@ class AutocompleteController extends ControllerBase {
     $query = \Drupal::entityQuery('node', 'OR');
     $nids = $query
       ->condition('field_slang', "%$input%", 'LIKE')
-      ->condition('field_slang_terms', "%$input%", 'LIKE')
+      //->condition('field_slang_terms', "%$input%", 'LIKE')
       ->sort('title', 'ASC')
       ->range(0, 10)
       ->execute();
     $nodes = Node::loadMultiple($nids);
     /** @var \Drupal\node\Entity\Node $node*/
     foreach ($nodes as $node) {
-      $terms = $node->hasField('field_slang') ? $node->get('field_slang')->getValue() : $node->get('field_slang_terms')->getValue();
+      $terms = $node->hasField('field_slang') ? $node->get('field_slang')->getValue() : []; //$node->get('field_slang_terms')->getValue();
       $slangs = [];
       foreach ($terms as $slang_term) {
         if (strpos(strtolower($slang_term['value']), strtolower($input)) !== FALSE) {
