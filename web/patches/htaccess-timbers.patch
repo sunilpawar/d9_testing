@@ -1,8 +1,24 @@
 diff --git a/.htaccess b/.htaccess
-index 9a73a3d3a3..c1f838b371 100644
+index b1ee36b..e830603 100644
 --- a/.htaccess
 +++ b/.htaccess
-@@ -187,3 +187,32 @@ AddEncoding gzip svgz
+@@ -98,6 +98,15 @@ AddEncoding gzip svgz
+   # RewriteCond %{HTTP_HOST} .
+   # RewriteCond %{HTTP_HOST} !^www\. [NC]
+   # RewriteRule ^ http%{ENV:protossl}://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
++
++  # http -> https keeping same domain
++  RewriteCond %{ENV:HTTPS} !on
++  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,NE,L]
++
++  # then add www while keeping it https
++  RewriteCond %{HTTP_HOST} !^dev\. [NC]
++  RewriteRule ^ https://dev.%{HTTP_HOST}%{REQUEST_URI} [R=301,NE,L]
++
+   #
+   # To redirect all users to access the site WITHOUT the 'www.' prefix,
+   # (http://www.example.com/foo will be redirected to http://example.com/foo)
+@@ -180,3 +189,23 @@ AddEncoding gzip svgz
    # Disable Proxy header, since it's an attack vector.
    RequestHeader unset Proxy
  </IfModule>
@@ -10,12 +26,6 @@ index 9a73a3d3a3..c1f838b371 100644
 +<If "%{HTTPS} == 'on'">
 +  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
 +</If>
-+
-+<IfModule mod_expires.c>
-+  RewriteEngine On
-+  RewriteCond %{HTTP_HOST} ^tomoarigato.com [NC]
-+  RewriteRule ^(.*)$ http://www.tomoarigato.com/$1 [L,R=301]
-+</IfModule>
 +
 +# EXPIRES CACHING
 +<IfModule mod_expires.c>
