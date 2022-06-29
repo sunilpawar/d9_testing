@@ -1,0 +1,35 @@
+{%
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
+  ]
+%}
+<div{{ attributes.addClass(classes, 'field__items') }}>
+  {% if not label_hidden %}
+    {%
+    set title_classes = [
+    'field__label',
+    label_display == 'visually_hidden' ? 'visually-hidden',
+    ]
+    %}
+    <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
+  {% endif %}
+
+  {% if items | length <= 10 %}
+    <ul class="field__items">
+      {% for item in items %}
+        <li{{ item.attributes.addClass('field__item') }}>{{ item.content }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    {{ attach_library('behave/jumpmenu') }}
+    <select class="js-jumpmenu">
+      <option selected>- Choose -</option>
+      {% for item in items %}
+        <option value="{{ attribute(item.content, '#url') }}">{{ attribute(item.content, '#title') }}</option>
+      {% endfor %}
+    </select>
+  {% endif %}
+</div>

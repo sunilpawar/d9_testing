@@ -109,6 +109,9 @@
         ],
         "post-drupal-scaffold-cmd": [
             "cd web && patch -p1 -r - <patches/htaccess-timbers.patch"
+        ],
+        "post-autoload-dump": [
+            "rsync -a patches/olivero/ web/core/themes/olivero/"
         ]
     },
     "extra": {

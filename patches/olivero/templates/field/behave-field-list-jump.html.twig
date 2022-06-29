@@ -1,0 +1,64 @@
+{#
+  Displays a field as normal list if it has 10 items or fewer, or a select list
+  (non-jumpmenu) or jumpmenu if it has greater than 10 items in it. Optionally,
+  can force the select/jumpmenu regardless of number of items list if force is
+  TRUE.
+
+  Variables used in this template in addition to those defined in
+  @classy/field/field.html.twig:
+    - classes: array of classes to be applied to the wrapper <div>.
+    - title_classes: array of classes to be applied to the field label, if
+      visible.
+    - force: boolean, indicates if the template should always use a select
+      element. Default: FALSE.
+    - jump: boolean, indicates if the template should build a jumpmenu instead
+      of a static dropdown list. Default: TRUE.
+#}
+{% set force = force ?? FALSE %}
+{% set jump = jump ?? TRUE %}
+{% set classes = classes ?? [] %}
+{% set title_classes = title_classes ?? [] %}
+{% if not label_hidden %}
+  {% if items | length <= 10 and not force %}
+    <div{{ attributes.addClass(classes, 'comma-separated', 'field--label-inline') }}>
+    <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
+    {% if multiple %}
+      <div{{ attributes.addClass(classes, 'field__items', 'comma-separated', 'field--label-inline') }}>
+        {% for item in items %}
+          <div{{ item.attributes.addClass('field__item') }}>{{ item.content }}</div>
+        {% endfor %}
+      </div>
+    {% else %}
+      {% for item in items %}
+        <div{{ attributes.addClass(classes, 'field__item') }}>{{ item.content }}</div>
+      {% endfor %}
+    {% endif %}
+  {% else %}
+    <div{{ attributes.addClass(classes) }}>
+    <div{{ title_attributes.addClass(title_classes, 'jump-label') }}>{{ label }}</div>
+    {% if multiple %}
+      <div{{ attributes.addClass(classes, 'field__items') }}>
+        {% if jump %}
+          {{ attach_library('behave/jumpmenu') }}
+          <select class="js-jumpmenu">
+            <option selected>- Choose -</option>
+        {% else %}
+          <select>
+        {% endif %}
+        {% for item in items %}
+          {% if jump %}
+            <option value="{{ attribute(item.content, '#url') }}">{{ item.content }}</option>
+          {% else %}
+            <option>{{ item.content }}</option>
+          {% endif %}
+        {% endfor %}
+        </select>
+      </div> 
+    {% else %}
+      {% for item in items %}
+        <div{{ attributes.addClass(classes, 'field__item') }}>{{ item.content }}</div>
+      {% endfor %}
+    {% endif %}
+  {% endif %}
+  </div>
+{% endif %}

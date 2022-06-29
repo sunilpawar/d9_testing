@@ -1,0 +1,51 @@
+{%
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
+  ]
+%}
+{%
+  set title_classes = [
+    'field__label',
+    label_display == 'visually_hidden' ? 'visually-hidden',
+  ]
+%}
+{% import 'themes/custom/behave/templates/behavenet.twig' as behavenet %}
+{% set bundle = attribute(element, '#bundle') %}
+{% for type, related in process_related_content(items, bundle) if type != 'source' and type not in excluded %}
+{% set count = 0 %}
+  {% for item in related %}
+ {% set count = count + 1 %}
+  {% endfor %}
+{% if count > 0 %}
+<h2 class="block__title">{{ behavenet.pluralize(type)|capitalize }}</h2>
+ {% if related | length <= 5 %}
+    <ul{{ attributes.addClass(classes, 'field__items') }}>
+      {% for item in related %}
+        <li{{ item.attributes.addClass('field__item') }}>{{ item.content }}</li>
+      {% endfor %}
+    </ul>
+
+  {% else %}
+
+    {{ attach_library('behave/jumpmenu') }}
+
+    <select class="js-jumpmenu">
+      <option selected>- Choose -</option>
+      {% for item in related %}
+        <option value="{{ attribute(item.content, '#url') }}">{{ attribute(item.content, '#title') }}</option>
+      {% endfor %}
+    </select>
+  {% endif %}
+{% else %}
+{% endif %}
+{#
+ {% if related | length > 1 %}
+<h2>{{ behavenet.pluralize(type)|capitalize }}</h2>
+{% else %}
+<h2>{{ behavenet.pluralize(type)|capitalize }}</h2>
+{% endif %}
+#}
+{% endfor %}

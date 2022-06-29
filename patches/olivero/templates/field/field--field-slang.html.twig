@@ -1,0 +1,14 @@
+{% include active_theme_path() ~ '/templates/field/behave-field-list-jump.html.twig' with {
+  classes: [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
+  ],
+  title_classes: [
+    'field__label',
+    label_display == 'visually_hidden' ? 'visually-hidden',
+  ],
+  force: FALSE,
+  jump: FALSE,
+}%}
